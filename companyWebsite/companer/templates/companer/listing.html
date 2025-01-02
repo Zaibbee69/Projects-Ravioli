@@ -1,0 +1,104 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Listings
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/listing.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+    <section id="job-listings">
+        <h2>Current Job Openings</h2>
+        <ul>
+        <li>
+            <h3>Marketing Coordinator</h3><br>
+            <p><strong>Location:</strong> New York, NY</p>
+            <p><strong>Company:</strong> Creative Solutions Inc.</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Description:</strong> We are seeking a dynamic Marketing Coordinator to support our marketing team in executing campaigns and managing projects. This role involves assisting in content creation, social media management, and event planning.</p>
+            <p><strong>Requirements:</strong>
+            <ul>
+                <li>Bachelor’s degree in Marketing, Communications, or related field</li>
+                <li>1-2 years of experience in marketing or related roles</li>
+                <li>Proficient in Microsoft Office and social media platforms</li>
+                <li>Strong written and verbal communication skills</li>
+            </ul>
+            </p>
+            <p><strong>Application Deadline:</strong> October 15, 2024</p>
+        </li>
+        <li>
+            <h3>Software Engineer</h3><br>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Company:</strong> Tech Innovators LLC</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Description:</strong> Join our team as a Software Engineer, where you will develop and maintain software applications, collaborate with cross-functional teams, and participate in code reviews to enhance code quality.</p>
+            <p><strong>Requirements:</strong>
+            <ul>
+                <li>Bachelor’s degree in Computer Science or related field</li>
+                <li>3+ years of experience in software development</li>
+                <li>Proficiency in Java, Python, or JavaScript</li>
+                <li>Experience with Agile methodologies</li>
+            </ul>
+            </p>
+            <p><strong>Application Deadline:</strong> October 30, 2024</p>
+        </li>
+        <li>
+            <h3>Customer Service Representative</h3><br>
+            <p><strong>Location:</strong> Chicago, IL</p>
+            <p><strong>Company:</strong> Service First Co.</p>
+            <p><strong>Job Type:</strong> Part-Time</p>
+            <p><strong>Description:</strong> We are looking for a Customer Service Representative to assist customers via phone, email, and chat. This role requires patience and a positive attitude to resolve inquiries and ensure customer satisfaction.</p>
+            <p><strong>Requirements:</strong>
+            <ul>
+                <li>High school diploma or equivalent</li>
+                <li>Previous customer service experience preferred</li>
+                <li>Excellent communication and problem-solving skills</li>
+                <li>Availability to work evenings and weekends</li>
+            </ul>
+            </p>
+            <p><strong>Application Deadline:</strong> October 20, 2024</p>
+        </li>
+        <li>
+            <h3>Project Manager</h3><br>
+            <p><strong>Location:</strong> San Francisco, CA</p>
+            <p><strong>Company:</strong> BuildIt Corp.</p>
+            <p><strong>Job Type:</strong> Full-Time</p>
+            <p><strong>Description:</strong> We are seeking a Project Manager to oversee multiple construction projects from inception to completion. The ideal candidate will ensure projects are completed on time and within budget.</p>
+            <p><strong>Requirements:</strong>
+            <ul>
+                <li>Bachelor’s degree in Construction Management, Engineering, or related field</li>
+                <li>5+ years of experience in project management</li>
+                <li>PMP certification preferred</li>
+                <li>Strong leadership and organizational skills</li>
+            </ul>
+            </p>
+            <p><strong>Application Deadline:</strong> October 25, 2024</p>
+        </li>
+        </ul>
+    </section>
+    
+        <!-- Application Form Section -->
+    <section id="application-form">
+        <h2>Apply Now</h2>
+        <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="resume">Resume:</label>
+        <input type="file" id="resume" name="resume">
+        <label for="cover-letter">Cover Letter:</label>
+        <input type="file" id="cover-letter" name="cover-letter">
+        <input type="submit" value="Submit Application">
+        </form>
+    </section>
+
+{% endblock body %}

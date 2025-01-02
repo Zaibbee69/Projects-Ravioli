@@ -1,0 +1,71 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Login
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href=".vscode/logo2.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "companer/login.css" %}">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="curved-shape"></div>
+        <div class="curved-shape2"></div>
+        <div class="form-box login">
+            <h2>Register</h2>
+            <form method="post">
+                {% csrf_token %}
+                {% if message %}
+                    <p>{{ message }}</p>
+                {% endif %}
+                <div class="input-box">
+                    <input class="log-form" type="text" name="username" id="username" required>
+                    <label for="">Username</label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input class="log-form" type="email" name="email" id="email" required>
+                    <label for="">Email</label>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input class="log-form" type="password" name="password" id="password" required>
+                    <label for="">Password</label>
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="input-box">
+                    <input class="log-form" type="password" name="confirmation" id="confirmation" required>
+                    <label for="">Confirmation</label>
+                    <i class="fa-solid fa-key"></i>
+                </div>
+                
+                <div class="input-box">
+                    <button class="btn" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+        
+        </div>
+    
+    </div>
+
+{% endblock body %}

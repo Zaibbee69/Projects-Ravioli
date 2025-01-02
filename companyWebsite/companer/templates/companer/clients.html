@@ -1,0 +1,76 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Clientle
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/clients.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--Main section for getting clients in-->
+    <section class="clients-banner-container">
+        
+        <div class="clients-header-container">
+            <h1 class="clients-header">Well, Don't just take our word for it!</h1>
+            <h2 class="clients-header-alt">See how our past clientle have been responding to our services</h2>
+        </div>
+
+    </section>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            {% for testimonial in text_testimonials %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="testimonial-card">
+                    <img src="{{ testimonial.client_image.url }}" alt="{{ testimonial.client_name }}" class="client-avatar">
+                    <h4 class="client-name">{{ testimonial.client_name }}</h4>
+                    <p>{{ testimonial.feedback }}</p>
+                    <div class="rating">
+                        {% for i in "12345"|slice:":testimonial.rating" %}
+                        <i class="fas fa-star"></i>
+                        {% endfor %}
+                        {% for i in "12345"|slice:"testimonial.rating:" %}
+                        <i class="far fa-star"></i>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Video Testimonials Section -->
+    <div class="video-testimonials">
+        <h2 class="video-header">Video Testimonials</h2>
+        <div class="row">
+            {% for video in video_testimonials %}
+            <div class="col-md-6">
+                <div class="video-card">
+                    <iframe class="video-element" width="100%" height="250" src="{{ video.video_url }}" title="{{ video.client_name }}" frameborder="0" allowfullscreen></iframe>
+                    <p>{{ video.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock body %}

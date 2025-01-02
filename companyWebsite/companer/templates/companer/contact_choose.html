@@ -1,0 +1,181 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Contact  Choose Us
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/contact_choose.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <div class="container">
+        <!-- Contact Us Section -->
+        <div class="side contact-side" id="contact-section">
+            <h2><i class="fa-solid fa-hippo"></i> Contact Us <i class="fa-solid fa-address-book"></i></h2>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="side why-side" id="why-section">
+            <h2><i class="fa-solid fa-ghost"></i> Why Choose Us <i class="fa-solid fa-bolt"></i></h2>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="content" id="contact-content">
+      <a href="{% url "contact_choose" %}" class="backer">Go Back</a>
+        <div class="contact-container-main">
+          <h1 class="contact-us-header">Contact Us</h1>
+
+          <form class="contact-form">
+            <div class="form-flex-us">
+              <div class="form-group">
+                <i class="fa-solid fa-signature contact-us-icon"></i> 
+                <input class="contact-us-form" type="text" id="name" name="name" placeholder="Your Name">
+              </div>
+        
+              <div class="form-group">
+                <i class="fa-solid fa-envelope contact-us-icon"></i>
+                <input class="contact-us-form" type="email" id="email" name="email" placeholder="Your Email">
+              </div>
+            </div>
+        
+            <div class="form-flex-us">
+              <div class="form-group">
+                <i class="fa-solid fa-phone contact-us-icon"></i>
+                <input class="contact-us-form" type="tel" id="phone" name="phone" placeholder="Your Phone">
+              </div>
+       
+              <div class="form-group">
+                <i class="fa-solid fa-address-book contact-us-icon"></i>
+                <select class="contact-us-form" id="contact-method" name="contact-method">
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
+                  <option value="chat">Live Chat</option>
+                </select>
+              </div>
+            </div>
+        
+              <div class="form-group form-text-us">
+                <i class="fa-solid fa-message contact-us-icon"></i>
+                <textarea class="contact-us-form" id="message" name="message" placeholder="Your Message"></textarea>
+              </div>
+            
+      
+            <div class="contact-us-btn-container">
+              <button type="submit" class="contact-us-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="map-container">
+          <h2 class="contact-us-header">Our Location</h2>
+          <iframe
+              src="https://www.google.com/maps/embed?pb=lahore"
+              width="100%"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              class="map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+    </div>
+
+    <div class="content" id="why-content">
+      <a href="{% url "contact_choose" %}" class="backer">Go Back</a>
+        
+      <!--Intro Section-->
+      <section class="choose-intro-container">
+        <div class="choose-intro-header-container">
+          <h1 class="choose-intro-header">Why Choose Us <i class="fa-solid fa-heart"></i></h1>
+        </div>
+        <div class="choose-intro-description-container">
+          <p class="choose-intro-description">At Nexoria, we believe in delivering the best to our customers with a focus on innovation, quality, and customer-centric services. Our key achievements reflect our dedication to excellence.</p>
+        </div>
+      </section>
+
+      <!--Differentiation Section-->
+      <section class="differentiators">
+        <h2 class="differentiators-header">Our Differentiators</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static "companer/images/innovative.jpg" %}" class="card-img-top" alt="innovation">
+                    <div class="card-body">
+                        <h5 class="card-title">Innovative Solutions</h5>
+                        <p class="card-text">We offer cutting-edge solutions that help businesses stay ahead of the curve.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static "companer/images/customer.jpeg" %}" class="card-img-top" alt="customer">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer First</h5>
+                        <p class="card-text">Our approach is always centered around delivering the best experience to our clients.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static "companer/images/proven.png" %}" class="card-img-top" alt="proven">
+                    <div class="card-body">
+                        <h5 class="card-title">Proven Results</h5>
+                        <p class="card-text">Our strategies are backed by years of experience and success in the industry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="success-stories">
+      <h2 class="success-header">Success Stories <i class="fa-solid fa-stopwatch-20"></i></h2>
+      <div class="success-grid">
+          <div class="success-item">
+              <img class="success-image" src="{% static "companer/images/suc1.jpeg" %}" alt="Success Story 1">
+              <div class="success-caption">
+                  <p>"Thanks to Nexoria, we scaled our business 3x in the last year!"<br> - Keanu Reeves</p>
+              </div>
+          </div>
+          <div class="success-item">
+              <img class="success-image" src="{% static "companer/images/suc2.jpeg" %}" alt="Success Story 2">
+              <div class="success-caption">
+                  <p>"The best service we've ever received in our industry."<br> - John Wick</p>
+              </div>
+          </div>
+      </div>
+    </section>
+
+
+    <!-- Recognition Section -->
+    <section class="recognition">
+      <h2 class="recognition-header">Our Recognitions</h2>
+      <div class="recog-grid">
+          <div class="recog-item">
+              <img src="{% static "companer/images/inawr.jpeg" %}" alt="Award 1" class="recog-img">
+              <p class="recog-text">Best Innovation Award 2023</p>
+          </div>
+          <div class="recog-item">
+              <img src="{% static "companer/images/cusawr.png" %}" alt="Award 2" class="recog-img">
+              <p class="recog-text">Customer Service Excellence 2022</p>
+          </div>
+          <div class="recog-item">
+              <img src="{% static "companer/images/indawr.png" %}" alt="Award 3" class="recog-img">
+              <p class="recog-text">Industry Leader 2021</p>
+          </div>
+      </div>
+    </section>
+    </div>
+
+{% endblock body %}

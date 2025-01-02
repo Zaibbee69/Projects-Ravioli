@@ -1,0 +1,95 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Main
+
+{% endblock title %}
+
+{% block body %}
+
+
+<!--Hero banner text-->
+<section class="welcome-banner-container">
+    <div class="welcome-banner-one">
+        <h1 class="welcome-banner-one-text">We Are <span class="welcum">Nexoria</span></h1>
+        <i class="fa-brands fa-squarespace welcummed"></i>
+    </div>
+    <div class="welcome-banner-two">
+        <h2 class="welcome-banner-two-text">We Make Your Business Digital</h2>
+    </div>
+    <div class="welcome-banner-three">
+        <h2 class="welcome-banner-three-text">Our Team Transforms your business with our cutting-edge digital solutions, designed to drive growth and innovation. From strategy to implementation, we’ll guide you every step of the way</h2>
+    </div>
+    <div class="welcome-banner-btn-ctn">
+        <a class="welcome-banner-btn" href="{% url "contact_choose" %}">Why Choose Us?</a>
+    </div>
+</section>
+
+
+<section class="hero-banner-container">
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="hero-video-container">
+        <source class="hero-video" src="{% static 'companer/videos/herobanner.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Banner Content -->
+    <div class="banner-content-container">
+        <h1 class="banner-tagline">{{ banner.tagline }}</h1>
+        <div class="banner-buttons">
+            <a href="{{ banner.learn_more_link }}" class="banner-learn">Learn More</a>
+            <a href="{{ banner.get_started_link }}" class="banner-start">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!--Section for awards and acheievements-->
+<section class="expertise-container">
+
+    <h1 class="expertise-header">Our Services & Expertise</h1>
+    <h2 class="expertise-alias">Comprehensive IT Solutions & Consulting</h2>
+
+    <div class="expertise-content-container">
+        <div class="expertise-content-items">
+            <div class="expertise-item">
+                <p class="exp-item-text"><i class="fa-solid fa-laptop exp-icon"></i> Web Development</p>
+            </div>
+            <div class="expertise-item">
+                <p class="exp-item-text"><i class="fa-solid fa-mobile exp-icon"></i> App Development</p>
+            </div>
+            <div class="expertise-item">
+                <p class="exp-item-text"><i class="fa-solid fa-chart-simple exp-icon"></i> Graphic Designing</p>
+            </div>
+            <div class="expertise-item">
+                <p class="exp-item-text"><i class="fa-brands fa-digital-ocean exp-icon"></i> Digital Marketing</p>
+            </div>
+            <div class="expertise-item">
+                <p class="exp-item-text"><i class="fa-solid fa-server exp-icon"></i> Seo Prevailance</p>
+            </div>
+        </div>
+        <div class="expertise-content-image">
+            <img src="{% static "companer/images/exper.jpg" %}" alt="Expertise" class="exp-img">
+        </div>
+    </div>
+
+    <div class="exp-btn-ctn">
+        <a href="{% url "services" %}" class="exp-btn">Browse Our Services</a>
+    </div>
+</section>
+
+<!--Section for drawing users in-->
+<section class="drawer-ctn">
+
+    <div class"drawer-text-ctn">
+        <p class="drawer-text">"Ready to Elevate Your Experience? Discover More About Us!"</p>
+    </div>
+
+    <div class="drawer-btn-ctn">
+        <a href="{% url "clients" %}" class="drawer-btn">Our Reviews</a>
+    </div>
+</section>
+{% endblock body %}

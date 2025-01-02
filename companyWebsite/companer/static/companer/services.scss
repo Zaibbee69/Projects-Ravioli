@@ -1,0 +1,99 @@
+@use "styles";
+
+
+body
+{
+    background-color: styles.$ashGray;
+}
+
+.services-header
+{
+    font-family: styles.$boldFont;
+    font-size: 2.5rem;
+    color: styles.$sageGreen;
+}
+
+.services-description
+{
+    color: styles.$mutedNavy;
+    font-family: styles.$modernMonoFont;
+    border-bottom: 2px solid styles.$dustyRose;
+    font-weight: 900;
+}
+
+.stylizer
+{
+    color: styles.$dustyRose;
+    font-family: styles.$funkyFont;
+}
+
+.service-button
+{
+    @extend %big-buttoner-extender;
+    background-color: styles.$mutedNavy;
+    color: styles.$pureWhite;
+    font-size: 16px;
+    margin: 20px;
+    text-decoration: none;
+    &:hover
+    {
+        background-color: styles.$slateGray;
+    }
+}
+
+.container
+{
+    margin-top: 100px;
+}
+.service-panel
+{
+    padding: 40px;
+    background-color: styles.$ashGray;
+    border-radius: 20px;
+}
+
+.card {
+    @extend %hover-extender;
+}
+
+.card-body {
+    i {
+        color: styles.$dustyRose;  // Icon color
+        margin-bottom: 15px;
+    }
+}
+
+.ser-atn-ctn
+{
+    background-color: styles.$ashGray;
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.ser-text
+{
+    font-size: 3rem;
+    font-family: styles.$boldFont;
+    color: styles.$mutedNavy;
+    font-weight: 500;
+}
+
+.ser-btn-ctn
+{
+    @extend %flexer-extender;
+}
+
+.ser-btn
+{
+    @extend %buttoner-extender;
+    background-color: styles.$dustyRose;
+    padding: 20px 100px;
+    font-size: 2rem;
+    border-radius: 100px;
+
+    &:hover
+    {
+        background-color: styles.$pewter;
+    }
+}

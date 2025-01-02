@@ -1,0 +1,85 @@
+@use "styles";
+
+
+.projects-banner-container
+{
+    background-color: styles.$dustyRose;
+    margin: 80px 0px;
+    padding: 40px;
+}
+
+.projects-header
+{
+    font-size: 2.5rem;
+    font-family: styles.$sassyFont;
+    color: styles.$pureWhite;
+}
+
+.projects-header-alt
+{
+    font-size: 1rem;
+    font-family: styles.$modernMonoFont;
+    color: styles.$lightIvory;
+    font-weight: 500;
+}
+
+.fa-face-smile
+{
+    color: styles.$lightIvory;
+}
+
+.project-grid {
+    padding: 40px 0;
+}
+
+.project-item {
+    margin-bottom: 30px;
+}
+
+.card {
+    @extend %hover-extender;
+    border: none;
+    
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 200px;
+}
+
+.filter-options {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    @extend %big-buttoner-extender;
+    margin: 5px;
+    cursor: pointer;
+    background-color: styles.$ashGray!important;
+    font-size: 16px;
+    border: 2px solid styles.$sageGreen;
+    padding: 8px 30px;
+    &:hover
+    {
+        background-color: styles.$sageGreen !important;
+    }
+}
+
+.card-title
+{
+    color: styles.$sageGreen !important;
+    font-family: styles.$modernMonoFont;
+}
+
+.read-case-btn
+{
+    @extend %buttoner-extender;
+    background-color: styles.$dustyRose;
+
+    &:hover
+    {
+        background-color: styles.$pewter;
+    }
+}
+

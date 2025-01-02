@@ -1,0 +1,111 @@
+@use "styles";
+
+.clients-banner-container
+{
+    margin: 80px 10px;
+}
+
+.clients-header-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: styles.$lightPewter;
+    padding: 60px;
+    border-left: 4px solid styles.$sageGreen;
+}
+
+.clients-header
+{
+    font-size: 3rem;
+    font-family: styles.$boldFont;
+    color: styles.$mutedNavy;
+    width: 300px;
+}
+
+.clients-header-alt
+{
+    font-size: 2rem;
+    font-family: styles.$modernMonoFont;
+    color: styles.$sageGreen;
+    border-bottom: 4px solid styles.$mutedNavy;
+}
+
+.client-name
+{
+    font-family: styles.$sassyFont;
+    color: styles.$slateGray;
+}
+
+.video-testimonials
+{
+    margin: 60px 0px;
+    padding: 40px;
+    background-color: styles.$lightPewter;
+}
+
+.video-header
+{
+    text-align: center;
+    color: styles.$slateGray;
+    font-family: styles.$modernMonoFont;
+    margin-bottom: 40px;
+}
+
+.video-element
+{
+    border-left: 8px solid styles.$dustyRose;
+}
+
+/* Styling for Testimonial Carousel */
+.testimonial-card {
+    text-align: center;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.client-avatar {
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Ensure the carousel images maintain their size across items */
+.carousel-inner {
+    max-height: 450px;
+}
+
+.carousel-item {
+    transition: transform 0.5s ease-in-out;
+}
+
+h4 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.rating i {
+    color: styles.$dustyRose;
+    margin: 0 2px;
+}
+
+/* Video Testimonials Styling */
+.video-card {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.video-card p {
+    margin-top: 15px;
+    color: #555;
+    font-size: 1rem;
+}

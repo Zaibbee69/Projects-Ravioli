@@ -1,0 +1,116 @@
+@use "styles";
+
+
+.blog-banner-container
+{
+    @extend %box-shadower-extender;
+    margin: 80px 0px;
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 20px;
+}
+
+.blog-header-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    padding: 20px;
+    background-color: styles.$dustyRose;
+    color: styles.$pureWhite;
+    border-left: 10px groove styles.$mutedNavy;
+    font-family: styles.$sassyFont;
+    font-size: 20px;
+}
+
+.blog-excerpt-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    background-color: styles.$mutedNavy;
+    color: styles.$pureWhite;
+    border-right: 10px groove styles.$dustyRose;
+    font-family: styles.$modernMonoFont;
+}
+
+.blog-excerpt
+{
+    width: 500px;
+}
+
+.blog-main-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: styles.$lightPewter;
+    padding: 40px;
+    margin: 80px 0px;
+}
+
+.blog-content
+{
+    color: styles.$mutedNavy;
+    font-family: styles.$modernMonoFont;
+    width: 1050px;
+}
+
+.blog-author
+{
+    color: styles.$sageGreen;
+    font-family: styles.$elegantFont;
+    text-decoration: underline;
+}
+
+.blog-comment-header
+{
+    font-family: styles.$boldFont;
+    color: styles.$mutedNavy;
+    margin-bottom: 40px;
+    font-size: 32px;
+    margin-left: 20px;
+}
+
+.comments-section
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    margin: 30px 60px;
+    flex-direction: column;
+    background-color: styles.$mutedNavy;
+    color: styles.$pureWhite;
+    border-radius: 8px;
+}
+
+.blog-comment-author
+{
+    font-family: styles.$modernMonoFont;
+}
+
+.blog-maker
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.form-comment
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$mutedNavy;
+    border-radius: 8px;
+    border-bottom: 8px groove styles.$mutedNavy;
+    padding: 20px;
+}
+
+.comment-button-container
+{
+    @extend %flexer-extender;
+}
+
+.comment-button
+{
+    @extend %buttoner-extender;
+    color: styles.$pureWhite;
+    font-family: styles.$modernMonoFont;
+    font-weight: 900;
+    background-color: styles.$dustyRose;
+    margin: 40px 0px;
+}

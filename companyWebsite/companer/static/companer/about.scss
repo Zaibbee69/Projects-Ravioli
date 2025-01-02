@@ -1,0 +1,159 @@
+@use "styles";
+
+.company-core
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    padding: 40px;
+    padding-top: 100px; 
+    background-color: styles.$lightIvory;
+    border-bottom: 4px solid styles.$dustyRose;
+}
+
+.fa-wand-magic-sparkles
+{
+    color: styles.$dustyRose;
+}
+
+.company-core-title
+{
+    font-size: 2.3rem;
+    font-family: styles.$boldFont;
+    color: styles.$sageGreen;
+    border-bottom: 6px solid styles.$dustyRose;
+}
+
+.company-core-description
+{
+    font-family: styles.$modernMonoFont;
+    font-weight: 450;
+    width: 70%;
+    color: styles.$sageGreen;
+    
+}
+
+.company-time-container
+{
+    background-color: styles.$lightPewter;
+    padding: 20px;
+    border-bottom: 4px solid styles.$mutedNavy;
+    border-left: 4px solid styles.$dustyRose;
+    margin: 0px;
+}
+
+.company-time-header
+{
+    font-size: 2.3rem;
+    font-family: styles.$sassyFont;
+    text-align: center;
+    padding-top: 80px;
+    color: styles.$slateGray;
+}
+
+.fa-star
+{
+    color: styles.$dustyRose;
+}
+
+.timeline-container
+{
+    @extend %flexer-extender;
+    flex: 1fr 1fr;
+
+    &:nth-child(odd) 
+    {
+        flex-direction: row-reverse;
+    }
+    margin: 20px;
+}
+
+.timeline-item-image
+{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.timeline-item
+{
+    @extend %flexer-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    background-color: styles.$pureWhite;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    border-right: 2px solid styles.$dustyRose;
+    border-left: 2px solid styles.$sageGreen;
+}
+
+.timeline-item-date
+{
+    color: styles.$dustyRose;
+    text-decoration: underline;
+    font-family: styles.$modernMonoFont;
+}
+
+.timeline-item-title
+{
+    color: styles.$sageGreen;
+    font-size: 20px;
+    font-family: styles.$sassyFont;
+}
+
+.timeline-item-description
+{
+    width: 600px;
+    font-family: styles.$decentFont;
+    color: styles.$slateGray;
+}
+
+.timeline-item-image
+{
+    flex: 1fr;
+}
+
+.company-value-container
+{
+    background-color: styles.$dustyRose;
+    padding: 20px;
+    border-right: 4px solid styles.$mutedNavy;
+}
+
+.company-value-header
+{
+    text-align: center;
+    color: styles.$lightPewter;
+    font-size: 2.3rem;
+}
+.value-container-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+.value-container
+{
+    @extend %box-shadower-extender;
+    @extend %flexer-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    background-color: styles.$lightPewter;
+    border-bottom: 8px solid styles.$mutedNavy;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.fa-vault
+{
+    color: styles.$mutedNavy;
+    margin-left: 5px;
+}
+
+.value-name
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$mutedNavy;
+    border-bottom: 2px solid styles.$dustyRose;
+}

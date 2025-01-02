@@ -1,0 +1,50 @@
+{% extends "companer/layout.html" %}    
+
+{% load static %}
+
+{% block title %}
+
+    Projects
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/projects.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <section class="projects-banner-container">
+        <h1 class="projects-header">We take pride in our work <i class="fa-solid fa-face-smile"></i></h1>
+        <p class="projects-header-alt">Ensuring clients satisfaction our priority, We go above and beyond to meet their needs</p>
+
+    </section>
+
+    <div class="container project-grid">
+        <!-- Filter Options -->
+        <div class="filter-options">
+            <button class="filter-btn" onclick="filterProjects('all')">All</button>
+            <button class="filter-btn" onclick="filterProjects('category')">Category</button>
+            <button class="filter-btn" onclick="filterProjects('date')">Date</button>
+            <button class="filter-btn" onclick="filterProjects('client')">Client</button>
+        </div>
+
+        <div class="row projects-container">
+            {% for project in projects %}
+            <div class="col-md-4 project-item" data-category="{{ project.category }}" data-date="{{ project.date }}" data-client="{{ project.client }}">
+                <div class="card">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.name }}</h5>
+                        <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                        <a href="{{ project.case_study_link }}" class="read-case-btn">Read Case Study</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock body %}

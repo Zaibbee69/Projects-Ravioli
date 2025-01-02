@@ -1,0 +1,45 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ post.title }}
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/blog_details.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--This will be the blogs main upper echelon section-->
+    <section class="blog-banner-container">
+
+        <div class="blog-header-container">
+            <h1 class="blog-header"> {{ post.title }} </h1>
+        </div>
+
+        <div class="blog-excerpt-container">
+            <p class="blog-excerpt"> {{ post.excerpt }} </p>
+        </div>
+
+    </section>
+
+    <!--Main section of the blog-->
+    <section class="blog-main-container">
+
+        <div class="blog-content-container">
+            <p class="blog-content"> {{ post.content }} </p>
+        </div>
+
+        <div class="blog-author-container">
+            <p class="blog-author">Created by <strong> {{ post.author }} </strong></p>
+        </div>
+
+    </section>
+
+{% endblock body %}

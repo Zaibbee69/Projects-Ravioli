@@ -1,0 +1,59 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Services
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/services.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+<div class="container py-5">
+    <div class="row text-center">
+        <h2 class="mb-4 services-header"><span class="stylizer">Our</span> Services</h2>
+        <p class="lead services-description">Explore what we offer to take your business to the next level</p>
+    </div>
+
+    <div class="row service-panel">
+        <!-- Loop through services dynamically -->
+        {% for service in services %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <!-- Use the icon class stored in the model -->
+                    <i class="{{ service.icon }} fa-3x mb-3"></i>
+                    <h5 class="card-title">{{ service.title }}</h5>
+                    <p class="card-text">{{ service.summary }}</p>
+                    <a href="#" class="service-button" data-bs-toggle="collapse" data-bs-target="#serviceDetails{{ forloop.counter }}">Learn More</a>
+                    
+                    <!-- Collapsible section for more details -->
+                    <div id="serviceDetails{{ forloop.counter }}" class="collapse mt-3">
+                        <p>{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<section class="ser-atn-ctn">
+
+    <div class"ser-text-ctn">
+        <p class="ser-text">Reach Out to Us Now!, We're Here For You Partner</p>
+    </div>
+
+    <div class="ser-btn-ctn">
+        <a href="{% url "contact_choose" %}" class="ser-btn">Contact Us</a>
+    </div>
+</section>
+
+{% endblock body %}

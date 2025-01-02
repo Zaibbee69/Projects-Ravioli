@@ -1,0 +1,279 @@
+@use "styles";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: styles.$boldFont !important;
+}
+.container {
+    margin-top: 100px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    border-radius: 8px;
+}
+.side {
+    @extend %box-shadower-extender;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover
+    {
+        background-color: styles.$pewter;
+        width: 53%;
+    }
+}
+.contact-side {
+    background-color: styles.$dustyRose;
+    color: styles.$pureWhite;
+}
+.why-side {
+    background-color: styles.$ashGray;
+    color: styles.$pureWhite;
+}
+.content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.content.active {
+    display: flex;
+}
+.back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-container-main
+{
+    margin-top: 100px;
+    border-radius: 8px;
+}
+
+.contact-us-header
+{
+    text-align: center;
+    font-family: styles.$modernMonoFont;
+    color: styles.$dustyRose;
+    font-size: 2.3rem;
+}
+
+.contact-form
+{
+    background-color: styles.$lightPewter;
+    padding: 150px;
+    border-top: 4px solid styles.$dustyRose;
+}
+
+.form-flex-us
+{
+    @extend %flexer-extender;
+}
+.contact-us-form
+{
+    @extend %former-extender;
+    border: 2px solid styles.$ashGray;
+    color: styles.$sageGreen;
+}
+
+.contact-us-icon
+{
+    color: styles.$dustyRose;
+    font-size: 26px;
+}
+
+.form-text-us
+{
+    margin-left: 170px;
+}
+
+.contact-us-btn-container
+{
+    @extend %flexer-extender;
+}
+
+.contact-us-btn
+{
+    @extend %buttoner-extender;
+
+    background-color: styles.$sageGreen;
+    color: styles.$pureWhite;
+
+    &:hover
+    {
+        background-color: styles.$ashGray;
+    }
+}
+
+.backer
+{
+    margin-top: 40px;
+    margin-right: 1000px;
+    @extend %buttoner-extender;
+    background-color: styles.$mutedNavy;
+    color: styles.$pureWhite;
+
+    &:hover
+    {
+        background-color: styles.$slateGray;
+    }
+}
+
+.map-container
+{
+    padding: 40px;
+    width: 81.5%;
+    background-color: styles.$lightIvory;
+}
+
+.choose-intro-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    margin-top: 80px;
+    background-color: styles.$mutedNavy;
+    padding: 60px;
+    width: 100%;
+}
+
+.choose-intro-header
+{
+    font-family: styles.$boldFont;
+    color: styles.$pureWhite;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.choose-intro-description
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$pewter;
+    width: 700px;
+}
+
+.differentiators
+{
+    background-color: styles.$lightPewter;
+    padding: 80px;
+}
+
+.differentiators-header
+{
+    text-align: center;
+    color: styles.$dustyRose;
+    font-size: 2.1rem;
+    margin-bottom: 60px;
+}
+
+.card
+{
+    @extend %hover-extender;
+    border-radius: 8px;
+}
+
+.card-title
+{
+    color: styles.$dustyRose !important;
+}
+
+.card-text
+{
+    color: styles.$mutedNavy !important;
+    font-family: styles.$monoFont;
+}
+
+.success-stories
+{
+    background-color: styles.$dustyRose;
+    padding: 80px;
+    width: 100%;
+}
+.success-header
+{
+    text-align: center;
+    color: styles.$pureWhite;
+    font-size: 2.1rem;
+    margin-bottom: 60px;
+}
+
+.success-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.success-item
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    margin: 10px;
+    background-color: styles.$pureWhite;
+    border-radius: 8px;
+}
+
+.success-image
+{
+    width: 100%;
+    height: 100%;
+}
+
+.success-caption
+{
+    margin-top: 10px;
+    color: styles.$mutedNavy;
+    font-family: styles.$monoFont;
+    font-size: 14px;
+}
+
+.recognition
+{
+    background-color: styles.$mutedNavy;
+    padding: 80px;
+    width: 100%;
+}
+
+.recognition-header
+{
+    text-align: center;
+    color: styles.$lightPewter;
+    font-size: 2.1rem;
+    margin-bottom: 60px;
+}
+
+.recog-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.recog-item
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+    background-color: styles.$slateGray;
+    border-radius: 10px;
+}
+
+.recog-text
+{
+    font-weight: bolder;
+    color: styles.$lightPewter;
+    font-size: 16px;
+    margin-top: 8px;
+}

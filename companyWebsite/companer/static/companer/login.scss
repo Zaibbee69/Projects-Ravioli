@@ -1,0 +1,155 @@
+@use "styles";
+
+
+*{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background: #b2beb5;
+}
+.container{
+    margin-top: 100px;
+    position: relative;
+    width: 750px;
+    height: 450px;
+    border: 2px solid #f5f5dc;
+    box-shadow: 0 0 25px #f5f5dc ;
+    overflow: hidden;
+    overflow: hidden;
+}
+.container .form-box{
+position: absolute;
+top:0;
+width: 50%;
+height: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.form-box.login{
+    left: 0;
+    padding: 0 40px;
+}
+.form-box.Register{
+ right: 0;
+ padding: 0 60px;
+display:none;
+
+}
+
+.form-box h2{
+    font-size: 32px;
+    text-align: center;
+}
+.form-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+   border: none;
+   outline: none;
+   font-size: 16px;
+   color: black;
+   font-weight: 600;
+   border-bottom: 2px solid black;
+   padding-right: 23px;
+   transition: .5s;
+
+}
+.input-box input:focus ,
+.input-box input:valid {
+   border-bottom: 2px solid #d3a3a7;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+    transition: .5s;
+}
+.input-box input:focus ~label,
+.input-box input:valid ~label{
+    top: -5px;
+    color:  #d3a3a7;
+}
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 18px;
+    transform: translateY(-50%);
+}
+.input-box input:focus ~i,
+.input-box input:valid ~i{
+    
+    color:  #d3a3a7;
+}
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #52524f ;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#b2beb5,#f5f5dc,#b2beb5);
+    top:-100%;
+    left:0;
+    z-index: -1;
+    transition:.5s;
+}
+.btn:hover::before{
+top: 0;
+} 
+.link{
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+.link a{
+    text-decoration: none;
+    color:#52524f;
+    font-weight: 600;
+}
+.link a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.container .curved-shape{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: 600px;
+    width: 850px;
+    background: linear-gradient(45deg,#b2beb5,#d3a3a7);
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition:.5s;
+}
+
+
+
+

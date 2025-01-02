@@ -1,0 +1,60 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Blog
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/blogs.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--Section for all the blog posts main container-->
+    <section class="blogs-container">
+
+        <!--Mqin header of the blog-->
+        <div class="blogs-banner-container">
+
+            <div class="blogs-header-container">
+                <h1 class="blogs-header">Blogs</h1>
+            </div>
+
+            <div class="blogs-appealer-container">
+                <h2 class="blogs-appealer">"Actions Speak,<br> <span class="appealer">Louder Than Words.</span>"</h2>
+            </div>
+        </div>
+
+        <div class="blog-post-container">
+
+            <!--List of availiable Blogs-->
+            {% for post in posts %}
+                <div class="blog-post">
+                    <h3 class="blog-header">{{ post.title }}</h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <a class="blog-read" href="{% url "blog_detail" post.id %}">Read More</a>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="blog-event-container">
+
+            <div class="blog-event-header-container">
+                <h1 class="blog-event-header">Unlock the Full Potential of Your Business. Explore Our Services Today!</h2>
+            </div>
+        
+            <div class="blog-button-container">
+                <a href="{% url "services" %}" class="blog-button">Browse Services</a>
+            </div>
+
+        </div>
+
+    </section>
+{% endblock body %}

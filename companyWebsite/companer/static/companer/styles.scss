@@ -1,0 +1,639 @@
+/*All my Colors*/
+$offWhite: whitesmoke;
+$pureWhite: white;
+$lightIvory: #F5F5DC;
+$Taupe: #C2B280;
+$sageGreen: #77815C;
+$lightSage: #dce0d0;
+$dustyRose: #D3A3A7;
+$mutedNavy: #4C5A67;
+$ashGray: #B2BEB5;
+$lightPewter: #ecf0f1;
+$pewter: #B0B7C3;
+$slateGray: #708090;
+
+/*Quick Accessing*/
+$navBarBack: $pureWhite;
+$spacingStandard: 40px;
+
+
+$modernMonoFont: Roboto Mono;
+$monoFont: monospace;
+$boldFont: Ubuntu;
+$funkyFont: Playwrite CU;
+$sassyFont: SUSE;
+$retroFont: Handjet;
+$elegantFont: Roboto Slab;
+$defaultFont: Poppins;
+$decentFont: Roboto;
+
+/*ALL MY EXTENDER CODES*/
+%flexer-extender
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%box-shadower-extender
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+%text-shadower-extender
+{
+    text-shadow: 3px 3px $slateGray;
+}
+
+%linker-extender
+{
+    text-decoration: none;
+    &:hover
+    {
+        text-decoration: underline;
+    }
+}
+
+%highlighter-extender
+{
+    transition: 0.15s;
+    font-weight: 550;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover
+    {
+        background-color: $offWhite;
+        font-weight: bolder;
+    }
+}
+
+%big-buttoner-extender
+{
+    padding: 10px 20px;
+    margin: 0px 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: $decentFont;
+    font-size: 1.2rem;
+    color: $pureWhite;
+
+    &:active
+    {
+        filter: sepia(50%);
+    }
+}
+
+%hover-extender
+{
+    transition: 0.3s ease;
+    transform: scale(1.0);
+    &:hover
+    {
+        @extend %box-shadower-extender;
+        background-color: $lightPewter;
+        transform: scale(1.02);
+    }
+}
+
+%buttoner-extender
+{
+    color: $pureWhite;
+    text-decoration: none;
+    font-family: $boldFont;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    transition: 0.3s;
+
+    &:active
+    {
+        filter: sepia(40%);
+    }
+}
+
+%former-extender
+{
+    padding: 12px 35px;   
+    margin: 20px;
+    border-radius: 4px;
+    font-family: $modernMonoFont;
+    font-family: 16px;
+
+    &::placeholder
+    {
+        color: $sageGreen;
+    }
+}
+
+body
+{
+    background-color: $offWhite;
+    font-family: $defaultFont;
+}
+
+.fa-squarespace
+{
+    color: $dustyRose;
+}
+
+.nav-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    justify-content: space-between;
+    background-color: $navBarBack;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+}
+
+.logo-container
+{
+    margin-left: 40px;
+    margin-right: 30px;
+}
+
+.nav-logo
+{
+    flex-wrap: nowrap;
+    font-size: 35px;
+    font-family: $boldFont;
+    color: $sageGreen;
+}
+
+.nav-logo-alt
+{
+    color: $dustyRose;
+    font-family: $funkyFont;
+}
+
+.nav-element-main
+{
+    @extend %flexer-extender;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.nav-element-container
+{
+    padding-left: 20px;
+    padding-right: 20px; 
+    margin: 0px;
+    font-family: $defaultFont;
+    font-size: 16px;
+}
+
+.nav-element
+{
+    @extend %highlighter-extender;
+    padding: 12px;
+    color: $dustyRose;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+    
+    &:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    background-color: red;
+    transition: all 0.3s ease;
+}
+
+.search-container
+{
+    @extend %flexer-extender;
+    justify-content: space-between;
+}
+
+.search-bar-container
+{
+    display: none;
+    transition: width 2s ease;
+}
+
+.search-icon
+{  
+    @extend %highlighter-extender;
+    background-color: $ashGray;
+    color: $sageGreen;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 12px 15px;
+    border-radius: 4px;
+}
+
+.search-bar
+{
+    font-family: $modernMonoFont;
+    padding: 12px 15px;
+    width: 200px;
+    border-radius: 6px;
+    background-color: $offWhite;
+    border: 2px solid $sageGreen;
+    color: $sageGreen;
+    margin-left: 8px;
+    
+    &::placeholder
+    {
+        color: $sageGreen;
+        padding-left: 15px;
+        font-family: $modernMonoFont;
+    }
+}
+
+.hero-banner-container
+{
+    @extend %box-shadower-extender;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    border-left: 12px groove $sageGreen;
+}
+
+.hero-video-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.banner-content-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+.banner-tagline
+{
+    @extend %text-shadower-extender;
+    font-family: $decentFont;
+    font-size: 1.8rem;
+    font-weight: 900;
+    width: 100%;
+    padding: 15px;
+    background-color: $sageGreen;
+    color: $pureWhite;
+}
+
+.banner-buttons
+{
+    margin-top: 40px;
+}
+
+.banner-learn
+{
+    @extend %big-buttoner-extender;
+    background-color: $slateGray;
+
+    &:hover
+    {
+        background-color: $mutedNavy;
+    }
+}
+
+.banner-start
+{
+    @extend %big-buttoner-extender;
+    background-color: $dustyRose;
+    
+    &:hover
+    {
+        background-color: $ashGray;
+    }
+}
+
+.footer-container
+{
+    border-top: 10px solid $slateGray;
+    background-color: $mutedNavy;
+    padding: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-grid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+}
+
+.contact-header, .social-header, .news-header
+{
+    font-family: $boldFont;
+    font-size: 1.4rem;
+    color: $pewter;
+}
+
+.contact-container, .social-container, .news-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+
+.contact-details
+{
+    color: $offWhite;
+    font-family: $modernMonoFont;
+}
+
+.stylize
+{
+    color: $pewter;
+}
+
+.socialer
+{
+    @extend %linker-extender;
+    font-size: 30px;
+    margin: 20px;
+    color: $pewter;
+}
+
+.social-icons
+{
+    margin: 40px;
+}
+.social-icon
+{
+    text-decoration: none;
+}
+
+.news-form
+{
+    padding: 12px 35px;
+    border-radius: 6px;
+    color: $mutedNavy;
+    font-family: $modernMonoFont;
+    font-size: 14px;
+    border: none;
+
+    &::placeholder
+    {
+        color: $mutedNavy;
+        padding-left: 10px;
+    }
+}
+
+.news-btn, .footer-flex-btn
+{
+    @extend %buttoner-extender;
+    background-color: $pewter;
+
+    &:hover
+    {
+        background-color: $slateGray;
+    }
+}
+
+.footer-flex
+{
+    @extend %flexer-extender;
+}
+
+.dropdown {
+    position: relative;
+
+    &:hover .dropdown-menu {
+        display: block;
+    }
+}
+
+.logger-menu
+{
+    left: -100px;
+}
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    background-color: $lightPewter !important; // Adjust the color as needed
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); // Adds a subtle shadow for better visibility
+    padding: 12px 0;
+    z-index: 1000;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+            a {
+                display: block;
+                padding: 10px 16px;
+                color: $dustyRose !important;
+                text-decoration: none;
+                font-family: $defaultFont !important;
+
+                &:hover {
+                    background-color: $lightSage !important; // Adjust the hover effect
+                    color: $mutedNavy !important; // Adjust the text color on hover
+                }
+            }
+        }
+    }
+}
+
+.logger
+{
+    font-size: 20px;
+}
+
+.welcome-banner-container
+{
+    flex-direction: column;
+    width: 100%;
+    background-color: $mutedNavy;
+    padding: 100px;
+    background-image: url(images/cummer.jpg);
+    background-size:cover;
+}
+
+.welcome-banner-one
+{
+    @extend %flexer-extender;
+    justify-content: space-evenly;
+}
+
+.welcummed
+{
+    font-size: 10rem;
+}
+.welcome-banner-one-text
+{
+    padding: 40px;
+    font-size: 3.5rem;
+    color: $sageGreen;
+    margin-right: 30px;
+    font-family: $boldFont;
+    font-weight: 500;
+}
+
+.welcum
+{
+    color: $dustyRose;
+}
+
+.welcome-banner-two-text
+{
+    font-size: 3rem;
+    color: $lightSage;
+    font-weight: 700;
+    font-family: $sassyFont;
+}
+
+.welcome-banner-three-text
+{
+    font-size: 2rem;
+    color: $pewter;
+    font-family: $sassyFont;
+    margin-top: 30px;
+}
+
+.welcome-banner-btn-ctn
+{
+    margin-top: 30px;
+}
+
+.welcome-banner-btn
+{
+    @extend %buttoner-extender;
+    background-color: $dustyRose;
+
+    &:hover
+    {
+        background-color: $slateGray;
+    }
+}
+
+.expertise-container
+{
+    background-color: $sageGreen;
+    padding: 40px;
+}
+
+.expertise-header
+{
+    text-align: center;
+    font-size: 3rem;
+    color: $lightIvory;
+    border-bottom: 2px solid $pewter;
+}
+
+.expertise-alias
+{
+    color: $lightPewter;
+    font-size: 2.5rem;
+    width: 300px;
+    margin-top: 40px;
+}
+
+.expertise-content-container
+{
+    @extend %flexer-extender;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.expertise-content-items
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.expertise-item
+{
+    @extend %hover-extender;
+    background-color: $lightIvory;
+    padding: 8px 60px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.exp-img
+{
+    @extend %box-shadower-extender;
+    width: 300px;
+    border-radius: 200px;
+}
+
+.exp-item-text
+{
+    font-size: 1.3rem;
+    color: $slateGray;
+    font-weight: 600;
+}
+
+.exp-icon
+{
+    font-size: 1.5rem;
+    color: $sageGreen;
+}
+
+.exp-btn-ctn
+{
+    margin: 30px;
+}
+
+.exp-btn
+{
+    @extend %buttoner-extender;
+    background-color: $Taupe;
+
+    &:hover
+    {
+        background-color: $ashGray;
+    }
+}
+
+.drawer-ctn
+{
+    background-color: $dustyRose;
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.drawer-text
+{
+    font-size: 3rem;
+    font-family: $boldFont;
+    color: $lightPewter;
+    font-weight: 500;
+}
+
+.drawer-btn-ctn
+{
+    @extend %flexer-extender;
+}
+
+.drawer-btn
+{
+    @extend %buttoner-extender;
+    background-color: $slateGray;
+    padding: 20px 100px;
+    font-size: 2rem;
+    border-radius: 100px;
+
+    &:hover
+    {
+        background-color: $pewter;
+    }
+}

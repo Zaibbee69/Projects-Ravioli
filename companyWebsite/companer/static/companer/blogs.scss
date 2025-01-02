@@ -1,0 +1,133 @@
+@use "styles";
+
+
+.blogs-container
+{
+    margin-top: 100px;
+}
+.blogs-banner-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.blogs-header-container
+{
+    @extend %box-shadower-extender;
+    background-color: styles.$dustyRose;
+    padding: 0px 230px;
+    width: 50%;
+    border-left: 10px groove styles.$pewter;
+    margin-bottom: styles.$spacingStandard;
+}
+
+.blogs-header
+{
+    font-family: styles.$elegantFont;
+    font-size: 2.5rem;
+    color: styles.$pureWhite;
+    margin: 12px;
+}
+
+.blogs-appealer-container
+{
+    @extend %box-shadower-extender;
+    background-color: styles.$mutedNavy;
+    padding: 30px 350px;
+    border-left: 10px groove styles.$dustyRose;
+    width: 100%;
+    margin-bottom: styles.$spacingStandard;
+}
+
+.blogs-appealer
+{
+    font-family: styles.$boldFont;
+    color: styles.$pureWhite;
+    font-size: 2.7rem;
+}
+
+.appealer
+{
+    margin-left: 83px;
+    border-bottom: 8px solid styles.$dustyRose;
+}
+
+.blog-post-container
+{
+    margin: 100px 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.blog-post
+{
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    border-left: 10px groove styles.$dustyRose;
+    background-color: styles.$pureWhite;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.blog-header
+{
+    font-family: styles.$sassyFont;
+    color: styles.$mutedNavy;
+    font-size:larger;
+}
+
+.blog-excerpt
+{
+    font-family: styles.$monoFont;
+    width: 200px;
+    font-size: large;
+}
+
+.blog-read
+{
+    @extend %buttoner-extender;
+    text-decoration: none;
+    font-family: styles.$monoFont;
+    color: styles.$pureWhite;
+    background-color: styles.$mutedNavy;
+    padding: 6px 15px;
+    
+    &:hover
+    {
+        padding: 8px 20px;
+    }
+}
+
+.blog-event-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    flex-direction: column;
+    padding: styles.$spacingStandard;
+    background-color: styles.$pureWhite;
+    margin: 80px;
+    border-radius: 10px;
+    border-right: 10px groove styles.$mutedNavy;
+}
+
+.blog-event-header
+{
+    color: styles.$mutedNavy;
+    font-family: styles.$modernMonoFont;
+}
+
+.blog-button
+{
+    @extend %buttoner-extender;
+    color: styles.$pureWhite;
+    background-color: styles.$mutedNavy;
+    font-family: styles.$modernMonoFont;
+    text-decoration: none;
+    font-size: small;
+}
+
+.blog-button-container
+{
+    margin-top: 40px;
+}

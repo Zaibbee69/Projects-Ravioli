@@ -1,0 +1,77 @@
+{% extends "companer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+    
+    About
+    
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "companer/about.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--First making a section for displaying company overview-->
+    <section class="company-core-container">
+
+        <div class="company-core">
+            <h1 class="company-core-title"><i class="fa-solid fa-wand-magic-sparkles"></i>{{ overview.title }}</h1>
+            <p class="company-core-description">{{ overview.description }}</p>
+        </div>
+
+    </section>
+
+    <!--Section for displaying the timeline of company-->
+    <section class="company-time-container">
+
+        <h2 class="company-time-header"><i class="fa-solid fa-star"></i>Our Journey<i class="fa-regular fa-star"></i></h2>    
+
+            {% for milestone in milestones %}
+
+                <div class="timeline-container">
+
+                    <div class="timeline-item">
+                        <div class="timeline-item-date">{{ milestone.date }}</div>
+                        <h3 class="timeline-item-title">{{ milestone.title }}</h3>
+                        <p class="timeline-item-description">{{ milestone.description }}</p>
+                    </div>
+
+                    <div class="timeline-item-image">
+                        {% if milestone.image %}
+                            <img class="timeline-item-image" src="{{ milestone.image.url }}" alt="Milestone Image">
+                        {% endif %}
+                    </div>
+                </div>
+
+            {% endfor %}
+        
+    </section>
+
+    <!--Section for displaying our company values-->
+    <section class="company-value-container">
+
+        <h2 class="company-value-header">Our Values<i class="fa-solid fa-vault"></i></h2>
+
+        <div class="value-container-grid">
+            {% for value in values %}
+
+                    <div class="value-container">
+                        <div class="value-name-container">
+                            <h1 class="value-name">{{ value.name }}</h1>
+                        </div>
+
+                        <div class="value-description-container">
+                            <p class="value-description">{{ value.description }}</p>
+                        </div>
+                    </div>
+
+            {% endfor %}
+        </div>
+    </section>
+    
+{% endblock body %}
