@@ -1,0 +1,62 @@
+{% extends "auctions/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Watchlist
+
+{% endblock title %}
+
+{% block stylers %}
+
+<link href="{% static "auctions/watch.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--Watchlist HEADER-->
+    <div id="watchlist-header-holder">
+        <h1 id="watchlist-header">Watchlists</h1>
+    </div>
+
+    <!--Watchlist holder-->
+    <div id="watchlist-holder">
+        {% for entry in watchlist %}
+            <a href="{% url "listing" entry.auction.id %}" style="text-decoration: none;">
+                <ul>
+                <!--watch name-->
+                <li><p class="watchlist-name"> <strong>Auction:</strong> {{ entry.auction.name }} </p></li>
+
+                <!--watch pic-->
+                <img class="watchlist-pic" src="{{ entry.auction.pic.url }}" alt="{{ entry.auction.name }}">
+
+                <!--Item Description-->
+                <p class="watchlist-description"><strong>Description:</strong> {{ entry.auction.description }}</p>
+
+                <!--Entry Price-->
+                <p class="watchlist-description"><strong>Price:</strong> ${{ entry.auction.price }}</p>
+
+                <!--Highest bidder rn-->
+                <p class="watchlist-description"><strong>Status:</strong> {{ entry.auction.auction_active }}</p>
+
+                <!--Category-->
+                <!--Highest bidder rn-->
+                <p class="watchlist-description"><strong>Category:</strong> {{ entry.auction.category }}</p>
+
+                <!--Time created-->
+                <p class="watchlist-description"><strong>Time:</strong> {{ entry.auction.time }}</p>
+
+                </ul>
+            </a>
+
+            <hr><hr>
+            <br><br><br>
+        
+        {% empty %}
+        <p class="error_message">You have no watchlists</p>
+        {% endfor %}
+    </div>
+
+{% endblock body %}

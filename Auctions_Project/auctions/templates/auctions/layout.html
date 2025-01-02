@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!--Meta tags for compatibillity-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Title of my web app made dynamic-->
+        <title>Auctions: {% block title %} {% endblock %}</title>
+
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">      
+        <link href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+        <!--Linking my own CSS file-->
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        {% block stylers %} {% endblock %}
+
+    </head>
+
+    <body>
+
+        <!--Main auctions header-->
+        <h1 id="auction-header-main">Auctions</h1>
+        <div>
+            <div id="status-displayer-holder">
+
+                <div class="status-displayer">
+                    Status: 
+                </div>
+
+                <div class="status-displayer">
+                    {% if user.is_authenticated %}
+                    Signed in as <strong>{{ user.username }}</strong>.
+                    {% else %}
+                        Not signed in.
+                    {% endif %}
+                </div>
+                
+            </div>
+        </div>
+
+        <!--Navbar of the main page-->
+        <nav id="navbar-main">
+
+            <div class="navbar-item-holder">
+                <a class="navbar-item" href="{% url 'index' %}">Active Listings</a>
+            </div>
+
+            <div class="navbar-item-holder">
+                <a class="navbar-item" href="{% url "create" %}">Create Listing</a>
+            </div>
+
+            <div class="navbar-item-holder">
+                <a class="navbar-item" href="{% url 'watch' %}">WatchList</a>
+            </div>
+
+            <div class="navbar-item-holder">
+                <a class="navbar-item" href="{% url "category" %}">Categories</a>
+            </div>
+
+            {% if user.is_authenticated %}
+                <div class="navbar-item-holder">
+                    <a class="navbar-item" href="{% url 'logout' %}">Log Out</a>
+                </div>
+            {% else %}
+                <div class="navbar-item-holder">
+                    <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+                </div>
+                <div class="navbar-item-holder">
+                    <a class="navbar-item" href="{% url 'register' %}">Register</a>
+                </div>
+            {% endif %}
+
+        </nav>
+
+        <hr>
+        {% block body %}
+        {% endblock %}
+
+        <!--Footer Tag of my website-->
+        
+        <div class="footer-main">
+            <p id="footer1">@All Rights Reserved</p>
+            <p id="footer2">Made by JahanZaib</p>
+            <p id="footer3"><a href="https://www.djangoproject.com">Django Project</a></p>
+        </div>
+    </body>
+</html>

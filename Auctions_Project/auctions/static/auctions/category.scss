@@ -1,0 +1,104 @@
+@use "styles";
+
+$purpleLight: rgb(245, 221, 255);
+$purpleMedium:rgb(188, 30, 227);
+$purpleDark: rgb(125, 15, 180);
+$purpleDarkest: rgb(91, 1, 91);
+
+body
+{
+    background-color: $purpleLight;
+}
+
+#auction-header-main
+{
+    color: red;
+    color: $purpleDarkest;
+}
+
+#auction-header-main:hover
+{
+    color: $purpleDark;
+}
+.status-displayer
+{
+    color: $purpleMedium;
+}
+
+#navbar-main
+{
+    background-color: $purpleDark;
+}
+
+.error-message
+{
+    color: $purpleMedium;
+}
+
+.submit-button
+{
+    background-color: $purpleDarkest;
+}
+
+.submit-button:hover
+{
+    background-color: $purpleMedium;
+}
+
+
+#category-header-holder
+{
+    @extend %flexer-extender;
+}
+
+#category-header
+{
+    margin-top: 80px;
+    font-size: 32px;
+    font-family: styles.$monoFont;
+    color: $purpleDarkest;
+    border-bottom: 2px solid $purpleMedium;
+}
+
+#category-selector-header
+{
+    margin-top: 50px;
+    color: $purpleMedium;
+    font-size: 22px;
+    font-family: styles.$decentFont;
+}
+
+.form-dark
+{
+    background-color: $purpleDark;
+}
+
+.form-dark:hover
+{
+    background-color: $purpleMedium;
+    color: white;
+}
+
+#category-holder
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+#category-results-header
+{
+    margin-top: 80px;
+    color: $purpleMedium;
+    font-size: 26px;
+    font-family: styles.$funkyFont;
+}
+
+.list-category
+{
+    font-size: 18px;
+    list-style: square;
+    color: $purpleDark;
+    margin-left: 70px;
+    padding-top: 10px;
+    font-family: styles.$monoFont;
+}

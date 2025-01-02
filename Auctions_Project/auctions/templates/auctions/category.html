@@ -1,0 +1,59 @@
+{% extends "auctions/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Category
+
+{% endblock title %}
+
+{% block stylers %}
+
+<link href="{% static "auctions/category.css" %}" rel="stylesheet"> 
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--Categories Header-->
+    <div id="category-header-holder">
+        <h1 id="category-header">Categories</h1>
+    </div>
+
+    <!--First making a panel for the user to select what kinda categories they wanna see-->
+    <div id="category-holder">
+        <h2 id="category-selector-header">Select a category you want to see!</h2>
+        <form action="{% url "category" %}" method="post">
+
+            {% csrf_token %}
+
+            {{ auto_form.category }}
+
+            <button type="submit" class="submit-button">Search</button>
+        </form>
+    </div>
+
+    {% if results %}
+    <!--Making an header for results-->
+    <h2 id="category-results-header">Results:</h2>
+
+    {% endif %}
+
+    {% if results %}
+
+        {% for result in results %}
+
+            <ul>
+                <li class="list-category"><a href="{% url "listing" result.id %}" style="text-decoration: none;"> {{ result.name }}</a> </li>
+            </ul>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p class="error-message">No Search Results Found!</p>
+
+    {% endif %}
+{% endblock body %}
+

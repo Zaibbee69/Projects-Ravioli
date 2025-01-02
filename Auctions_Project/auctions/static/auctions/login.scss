@@ -1,0 +1,84 @@
+@use "styles";
+
+$redLight: rgb(255, 198, 198);
+$redMedium: rgb(222, 37, 37);
+$redDark: rgb(149, 0, 0);
+$redDarkest: rgb(88, 0, 0);
+
+body
+{
+    background-color: $redLight;
+}
+
+#auction-header-main
+{
+    color: $redDarkest;
+}
+
+#auction-header-main:hover
+{
+    color: $redDark;
+}
+.status-displayer
+{
+    color: $redMedium;
+}
+
+#navbar-main
+{
+    background-color: $redDark;
+}
+
+.error-message
+{
+    color: $redMedium;
+}
+
+.submit-button
+{
+    background-color: $redDarkest;
+}
+
+.submit-button:hover
+{
+    background-color: $redMedium;
+}
+
+.form-header
+{
+    color: $redMedium;
+}
+
+.form-light
+{
+    background-color: $redMedium;
+    color: white;
+}
+
+.form-light:hover
+{
+    background-color: $redDark;
+    color: white;
+}
+
+.form-light::placeholder
+{
+    color: white;
+}
+
+.form-dark
+{
+    background-color: $redDark;
+    color: white;
+}
+
+.form-dark:hover
+{
+    background-color: $redDarkest;
+    color: white;
+}
+
+.form-dark::placeholder
+{
+    color: white;
+}

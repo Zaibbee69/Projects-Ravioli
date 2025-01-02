@@ -1,0 +1,52 @@
+{% extends "auctions/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+Register
+
+{% endblock title %}
+
+{% block stylers %}
+
+<link href="{% static "auctions/register.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <div class="form-holder">
+        <h2 class="form-header">Register</h2>
+    </div>
+
+    {% if message %}
+        <div class="error-message">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-holder">
+
+            <div class="form-item-holder">
+                <input class="form-light" autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div class="form-item-holder">
+                <input class="form-dark" type="email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-item-holder">
+                <input class="form-light" type="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-item-holder">
+                <input class="form-dark" type="password" name="confirmation" placeholder="Confirm Password">
+            </div>
+            <input class="submit-button" type="submit" value="Register">
+
+        </div>
+    </form>
+
+    <div class="error-message">
+        Already have an account? <a href="{% url 'login' %}">Log In here.</a>
+    </div>
+
+{% endblock %}

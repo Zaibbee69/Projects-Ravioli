@@ -1,0 +1,140 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+
+{{ listing.name }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <!--First i am gonna display rhe listing name in heading-->
+    <h1 id="auction-header">Listing: {{ listing.name }}</h1>
+
+    {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+
+    {% if not listing.auction_active %}
+        <h1 class="winner-header">LISTING CLOSED!!!</h1>
+        <h2 class="winner-header">{{ highest_bidder }} Won the bid!</h2>
+    {% endif %}
+
+    <!--Now First displaying the listings pic-->
+    <div class="listing-pic-holder">
+        <img class="listing-pic-main" src="{{ listing.pic.url }}" alt="{{ listing.name }}">
+    </div>
+    
+    {% if user.is_authenticated %}
+
+        <div id="new-flexer">
+
+            <!--Adding a watchlist button-->
+            {% if is_in_watchlist %}
+
+                <form action="{% url "remove_watchlist" listing.id %}" method="post">
+                    {% csrf_token %}
+                    <button id="new-button" type="submit">Remove from Watchlist</button>
+                </form>
+
+            {% else %}
+
+                <form action="{% url "add_watchlist" listing.id %}" method="post">
+                    {% csrf_token %}
+                    <button id="new-button" type="submit">Add to Watchlist</button>
+                </form>
+
+            {% endif %}
+
+            <!--Adding a Close listing button-->
+            {% if is_creator %}
+
+                <form action="{% url "close_listing" listing.id %}" method="post">
+                    {% csrf_token %}
+                    <button id="new-button" type="submit">Close Listing</button>
+                </form>
+
+            {% endif %}
+
+        </div>
+
+    {% endif %}
+
+
+    <div id="list-mainer">
+        <div class="listing-content-holder">
+
+            <br><br>
+
+            <!--Now we will be displaying details-->
+            <p class="listing-content-main">{{ listing.description }}</p>
+
+            <!--Now i will be displaying its price-->
+            <h2 class="listing-content-main" style="font-size: 24px;">Starting Bid: ${{ listing.price }}</h2>
+
+            <!--Now i will be displaying the highers BID-->
+            <h2 class="listing-content-main" style="font-size: 20px;">Highest Bid: ${{ listing.highest_bid }}</h2>
+
+            <!--Now displaying all current bids-->
+            <p class="listing-content-main"> {{ total_bids }} bid(s) so far.</p>
+
+            <div id="content-seperator"></div>
+
+            <br><br>
+
+            <div>
+                <!--Input so user can add a new typah bid on the item-->
+                <form action="{% url "listing" listing.id  %}" method="post">
+                    {% csrf_token %}
+                    {{ bid_form }}
+                    <button id="bid-button" type="submit">Place Bid</button>
+                </form>
+            </div>
+
+            <br><br>
+
+            <div id="content-seperator"></div>
+
+            <!--Now creating a list for its details-->
+            <h2 class="listing-content-main" style="font-size: 24px">Details:</h2>
+
+                <ul class"listing-content-list">
+                    <li class="listing-list">Listed By: <strong>{{ listing.creator }}</strong></li>
+                    <li class="listing-list">Highest Bidder: <strong>{{ highest_bidder }}</strong></li>
+                    <li class="listing-list">Category: {{ listing.category }}</li>
+                    <li class="listing-list">Date: {{ listing.time }} </li>
+                    <li class="listing-list">ID Number: {{ listing.id }} </li>
+                </ul>
+
+                <br><br>
+
+        </div>
+    </div>
+
+    <div id="comment-content-holder">
+
+        <!--Comment Heading-->
+        <h2 id="comment-header">Comments</h2>
+
+        <!--First displaying all the availiable comments-->
+        {% for comment in listing.auction_name.all %}
+            <p id="comment-content"><strong>{{ comment.commenter }}:</strong> {{ comment.content }}</p>
+        {% endfor %}
+    </div>
+
+    <!--Now adding the ability for users to add more comments-->
+    <div id="content-data-holder">
+
+        <!--Add Comments header-->
+        <h2 id="comment-data-header">Add a Comment</h2>
+
+        <!--Putting my form for the comments-->
+        <form action="{% url "listing" listing.id %}" method="post">
+            {% csrf_token %}
+            {{ comment_form }}
+            <button id="bid-button" type="submit">Comment</button>
+        </form>
+
+    </div>
+      
+{% endblock body %}

@@ -1,0 +1,86 @@
+@use "styles";
+
+$yellowLight: lightgoldenrodyellow;
+$yellowMedium: rgb(213, 213, 6);
+$yellowDark: rgb(183, 180, 1);
+$yellowDarkest: darkgoldenrod;
+
+body
+{
+    background-color: $yellowLight;
+}
+
+hr
+{
+    color: $yellowDarkest;
+    background-color: $yellowDark;
+    width: 800px;
+}
+#auction-header-main
+{
+    color: $yellowDarkest;
+}
+
+#auction-header-main:hover
+{
+    color: $yellowDark;
+}
+.status-displayer
+{
+    color: $yellowMedium;
+}
+
+#navbar-main
+{
+    background-color: $yellowDark;
+}
+
+#watchlist-holder
+{
+    @extend %flexer-extender;
+    @extend %box-shadow;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 50px;
+    transition: 0.5s;
+}
+
+#watchlist-header-holder
+{
+    @extend %flexer-extender;
+}
+
+#watchlist-header
+{
+    margin-top: 80px;
+    font-size: 32px;
+    font-family: styles.$monoFont;
+    color: $yellowDarkest;
+    border-bottom: 2px solid $yellowMedium;
+}
+
+.watchlist-name
+{
+    color: $yellowDark;
+    font-size: 22px;
+    font-family: styles.$decentFont;
+}
+
+.watchlist-pic
+{
+    @extend %flexer-extender;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.watchlist-description
+{
+    font-family: styles.$monoFont;
+    color: $yellowDarkest;
+    font-size: 15px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    border-bottom: 2px solid $yellowDarkest;
+}
+

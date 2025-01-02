@@ -1,0 +1,537 @@
+$blueLightest: lightcyan;
+$blueLight: lightblue;
+$blueMedium: cornflowerblue;
+$blueDark: rgb(31, 100, 249);
+$blueDarkest: rgb(30, 30, 156);
+$white: whitesmoke;
+
+
+$funkyFont: Playwrite HR Lijeva, monospace, Arial, Helvetica, sans-serif;
+$decentFont: Roboto, Arial, Helvetica, sans-serif;
+$modernFont: Lato, Verdana, Geneva, Tahoma, sans-serif ;
+$monoFont: monospace;
+
+
+%flexer-extender
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%hover-extender
+{
+    scale: (1.0);
+}
+
+%hover-extender:hover
+{
+    scale: (1.1);
+    color: $blueDarkest;
+    text-decoration: underline;
+}
+
+%color-changer-text
+{
+    transition: 1s;
+}
+
+%color-changer-text:hover
+{
+    color: $blueDarkest;
+}
+
+%shadow-extender
+{
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+%box-shadow
+{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+%box-shadow:hover
+{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    scale: (1.01);
+}
+
+%form-standard
+{
+    width: 250px;
+    height: 40px;
+    padding-left: 8px;
+    transition: 1s;
+    border: none;
+    border-radius: 25px;
+}
+
+%form-light
+{
+    @extend %form-standard;
+    background-color: $blueLight;
+    color: $blueDarkest;
+
+}
+
+%form-light::placeholder
+{
+    color: $blueDarkest;
+    padding-left: 8px;
+}
+
+%form-light:hover
+{
+    background: $blueMedium;
+    color: $white;
+}
+
+%form-medium
+{
+    @extend %form-standard;
+    background-color: $blueMedium;
+    color: $white;
+
+}
+
+%form-medium::placeholder
+{
+    color: $blueDarkest;
+    padding-left: 8px;
+}
+
+%form-medium:hover
+{
+    background: $blueDarkest;
+    color: $white;
+}
+
+%form-dark
+{
+    @extend %form-standard;
+    background-color: $blueDark;
+    color: $blueLight;
+}
+
+%form-dark::placeholder
+{
+    color: $blueLight;
+    padding-left: 8px;
+}
+
+%form-dark:hover
+{
+    background: $blueLight;
+    color: $blueDarkest;
+}
+
+%form-darkest
+{
+    @extend %form-standard;
+    background-color: $blueDarkest;
+    color: $white
+
+}
+
+%form-darkest::placeholder
+{
+    color: $white;
+    padding-left: 8px;
+}
+
+%form-darkest:hover
+{
+    background: $blueLight;
+    color: $white;
+}
+
+%form-button
+{
+    background-color: $blueDarkest;
+    color: $white;
+    margin-top: 15px;
+    padding: 10px 60px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+%form-button:hover
+{
+    background-color: $blueMedium;
+    padding: 12px 40px;
+}
+
+%form-button:active
+{
+    opacity: 0.7;
+}
+
+%form-texter
+{
+    background-color: $blueDarkest;
+    color: white;
+    border-radius: 6px;
+    padding-left: 6px;
+    padding-top: 6px;
+    transition: background-color 1s;
+}
+
+
+
+body 
+{
+    padding: 10px;
+    background-color: $blueLightest;
+    font-family: $modernFont;
+}
+
+.footer-main
+{
+    @extend %flexer-extender;
+    margin-top: 220px;
+    border-top: 2px solid $blueDarkest;
+    flex-direction: column;
+}
+
+#footer1
+{
+    font-family: $monoFont;
+    font-size: larger;
+    color: gray;
+    margin-bottom: 6px;
+}
+
+#footer2
+{
+    font-family: $decentFont;
+    color: $blueDark;
+}
+
+#footer3
+{
+    font-family: $modernFont;
+    color: $blueDarkest;
+}
+
+#auction-header-main
+{
+    @extend %flexer-extender;
+    @extend %hover-extender;
+    flex: 1;
+    font-family: $funkyFont;
+    font-size: 36px;
+
+    color: $blueMedium;
+    margin-bottom: 0px;
+    transition: 1s;
+}
+
+#status-displayer-holder
+{
+    @extend %flexer-extender;
+    justify-content: left;
+}
+
+.status-displayer
+{
+    color: $blueMedium;
+    font-family: $decentFont;
+    font-size: 15px;
+    margin: 4px;
+    margin-top: 0px;
+    transition: 1s;
+}
+
+#navbar-main
+{
+    @extend %flexer-extender;
+    justify-content: space-between;
+
+    background-color: $blueMedium;
+    height: 60px;
+    transition: 1s;
+}
+
+.navbar-item
+{
+    @extend %color-changer-text;
+    color: $white;
+    font-family: $monoFont;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.error-message
+{
+    @extend %shadow-extender;
+    font-family: $decentFont;
+    color: $blueDark;
+    margin-bottom: 6px;
+}
+
+.form-holder
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    margin: 6px;
+}
+
+.form-header
+{
+    font-family: $decentFont;
+    font-size: 34px;
+    color: $blueMedium;
+}
+
+.form-item-holder
+{
+    margin: 8px;
+}
+
+.form-light
+{
+    @extend %form-light;
+}
+
+.form-medium
+{
+    @extend %form-medium;
+}
+
+.form-dark
+{
+    @extend %form-dark;
+}
+
+.form-darkest
+{
+    @extend %form-darkest;
+}
+
+.form-text-area
+{
+    @extend %form-texter;
+}
+
+.form-text-area:hover
+{
+    background-color: $blueMedium;
+}
+
+.form-text-area:active
+{
+    background-color: $blueLight;
+}
+
+.form-pic
+{
+    border-radius: 25px;
+    color: $blueMedium;
+    border: 2px solid $blueMedium;
+    padding-left: 60px;
+}
+.submit-button
+{
+    @extend %form-button;
+}
+
+label
+{
+    @extend %shadow-extender;
+    font-family: $decentFont;
+    color: $blueDark;
+    margin-right: 12px;
+}
+
+#auction-header
+{
+    font-family: $funkyFont;
+    @extend %flexer-extender;
+    @extend %shadow-extender;
+    color: $blueDark;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.winner-header
+{
+    font-family: $monoFont;
+    @extend %flexer-extender;
+    @extend %shadow-extender;
+    color: $blueDarkest;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 24px;
+    border-bottom: 2px solid $blueDarkest;
+}
+
+#listing-holder-main
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#listing-holder
+{
+    @extend %box-shadow;
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+    transition: 1s;
+    color: $blueDarkest;
+    background-color: white;
+}
+
+.listing-name
+{
+    @extend %hover-extender;
+    text-align: center;
+    font-family: $monoFont;
+    font-size: 22px;
+    border-bottom: 1px solid $blueDarkest;
+    margin-bottom: 2px;
+    padding-bottom: 10px;
+    transition: 1s;
+}
+
+.listing-pic-holder
+{
+    @extend %flexer-extender;
+    flex: 1;
+
+}
+
+.listing-pic
+{
+    @extend %flexer-extender;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.listing-content
+{
+    @extend %flexer-extender;
+    justify-content:space-between;
+    font-family: $monoFont;
+    font-size:large;  
+    color: $blueDark;
+}
+
+.listing-pic-main
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+#list-mainer
+{
+    @extend %flexer-extender;
+}
+
+.listing-content-holder
+{
+    margin-top: 40px;
+    @extend %flexer-extender;
+    @extend %box-shadow;
+    flex-direction: column;
+    background-color: rgb(200, 255, 255);
+    transition: 1s;
+    border-radius: 10px;
+    width: 1000px;
+}
+
+.listing-content-main
+{
+    @extend %flexer-extender;
+    font-family: $monoFont;
+    font-size:large;  
+    color: $blueDark;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.listing-list
+{
+    list-style: square;
+    color: $blueDarkest;
+    margin-left: 70px;
+    padding-top: 10px;
+}
+
+
+#new-button
+{
+    @extend %form-button;
+    margin-bottom: 20px;
+}
+
+#new-flexer
+{
+    @extend %flexer-extender;
+    justify-content: space-evenly;
+}
+
+
+#bid-button
+{
+    @extend %form-button;
+    margin-left: 40px;
+}
+
+#bidCommentForm
+{
+    @extend %form-dark;
+}
+
+#content-seperator
+{
+    border-bottom: 2px solid $blueDarkest;
+    width: 500px;
+    margin: 30px;
+}
+
+#comment-content-holder
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+#comment-header
+{
+    @extend %box-shadow;
+    border: 4px solid $blueDarkest;
+    padding: 12px 32px;
+    margin-top: 50px;
+    font-family: $funkyFont;
+    color: $blueMedium;
+    background-color: white;
+    font-size: 32px;
+    transition: 0.15s;
+    border-radius: 12px;
+}
+
+#comment-content
+{
+    color: $blueDark;
+    font-family: $monoFont;
+    font-size: 16px;
+}
+
+#comment-data-header
+{
+    padding-top: 20px;
+    font-family: $decentFont;
+    color: $blueDark;
+}

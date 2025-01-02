@@ -1,0 +1,473 @@
+#comment-content-holder, #new-flexer, .listing-content-main, .listing-content-holder, #list-mainer, .listing-content, .listing-pic, .listing-pic-holder, .winner-header, #auction-header, .form-holder, #navbar-main, #status-displayer-holder, #auction-header-main, .footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listing-name, #auction-header-main {
+  scale: 1;
+}
+
+.listing-name:hover, #auction-header-main:hover {
+  scale: 1.1;
+  color: rgb(30, 30, 156);
+  text-decoration: underline;
+}
+
+.navbar-item {
+  transition: 1s;
+}
+
+.navbar-item:hover {
+  color: rgb(30, 30, 156);
+}
+
+.winner-header, #auction-header, label, .error-message {
+  text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#comment-header, .listing-content-holder, #listing-holder {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#comment-header:hover, .listing-content-holder:hover, #listing-holder:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  scale: 1.01;
+}
+
+.form-darkest, #bidCommentForm, .form-dark, .form-medium, .form-light {
+  width: 250px;
+  height: 40px;
+  padding-left: 8px;
+  transition: 1s;
+  border: none;
+  border-radius: 25px;
+}
+
+.form-light {
+  background-color: lightblue;
+  color: rgb(30, 30, 156);
+}
+
+.form-light::-moz-placeholder {
+  color: rgb(30, 30, 156);
+  padding-left: 8px;
+}
+
+.form-light::placeholder {
+  color: rgb(30, 30, 156);
+  padding-left: 8px;
+}
+
+.form-light:hover {
+  background: cornflowerblue;
+  color: whitesmoke;
+}
+
+.form-medium {
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.form-medium::-moz-placeholder {
+  color: rgb(30, 30, 156);
+  padding-left: 8px;
+}
+
+.form-medium::placeholder {
+  color: rgb(30, 30, 156);
+  padding-left: 8px;
+}
+
+.form-medium:hover {
+  background: rgb(30, 30, 156);
+  color: whitesmoke;
+}
+
+#bidCommentForm, .form-dark {
+  background-color: rgb(31, 100, 249);
+  color: lightblue;
+}
+
+#bidCommentForm::-moz-placeholder, .form-dark::-moz-placeholder {
+  color: lightblue;
+  padding-left: 8px;
+}
+
+#bidCommentForm::placeholder, .form-dark::placeholder {
+  color: lightblue;
+  padding-left: 8px;
+}
+
+#bidCommentForm:hover, .form-dark:hover {
+  background: lightblue;
+  color: rgb(30, 30, 156);
+}
+
+.form-darkest {
+  background-color: rgb(30, 30, 156);
+  color: whitesmoke;
+}
+
+.form-darkest::-moz-placeholder {
+  color: whitesmoke;
+  padding-left: 8px;
+}
+
+.form-darkest::placeholder {
+  color: whitesmoke;
+  padding-left: 8px;
+}
+
+.form-darkest:hover {
+  background: lightblue;
+  color: whitesmoke;
+}
+
+#bid-button, #new-button, .submit-button {
+  background-color: rgb(30, 30, 156);
+  color: whitesmoke;
+  margin-top: 15px;
+  padding: 10px 60px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#bid-button:hover, #new-button:hover, .submit-button:hover {
+  background-color: cornflowerblue;
+  padding: 12px 40px;
+}
+
+#bid-button:active, #new-button:active, .submit-button:active {
+  opacity: 0.7;
+}
+
+.form-text-area {
+  background-color: rgb(30, 30, 156);
+  color: white;
+  border-radius: 6px;
+  padding-left: 6px;
+  padding-top: 6px;
+  transition: background-color 1s;
+}
+
+body {
+  padding: 10px;
+  background-color: lightcyan;
+  font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer-main {
+  margin-top: 220px;
+  border-top: 2px solid rgb(30, 30, 156);
+  flex-direction: column;
+}
+
+#footer1 {
+  font-family: monospace;
+  font-size: larger;
+  color: gray;
+  margin-bottom: 6px;
+}
+
+#footer2 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: rgb(31, 100, 249);
+}
+
+#footer3 {
+  font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(30, 30, 156);
+}
+
+#auction-header-main {
+  flex: 1;
+  font-family: Playwrite HR Lijeva, monospace, Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  color: cornflowerblue;
+  margin-bottom: 0px;
+  transition: 1s;
+}
+
+#status-displayer-holder {
+  justify-content: left;
+}
+
+.status-displayer {
+  color: cornflowerblue;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 4px;
+  margin-top: 0px;
+  transition: 1s;
+}
+
+#navbar-main {
+  justify-content: space-between;
+  background-color: cornflowerblue;
+  height: 60px;
+  transition: 1s;
+}
+
+.navbar-item {
+  color: whitesmoke;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.error-message {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: rgb(31, 100, 249);
+  margin-bottom: 6px;
+}
+
+.form-holder {
+  flex-direction: column;
+  margin: 6px;
+}
+
+.form-header {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  color: cornflowerblue;
+}
+
+.form-item-holder {
+  margin: 8px;
+}
+
+.form-text-area:hover {
+  background-color: cornflowerblue;
+}
+
+.form-text-area:active {
+  background-color: lightblue;
+}
+
+.form-pic {
+  border-radius: 25px;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+  padding-left: 60px;
+}
+
+label {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: rgb(31, 100, 249);
+  margin-right: 12px;
+}
+
+#auction-header {
+  font-family: Playwrite HR Lijeva, monospace, Arial, Helvetica, sans-serif;
+  color: rgb(31, 100, 249);
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.winner-header {
+  font-family: monospace;
+  color: rgb(30, 30, 156);
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  border-bottom: 2px solid rgb(30, 30, 156);
+}
+
+#listing-holder-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+#listing-holder {
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  transition: 1s;
+  color: rgb(30, 30, 156);
+  background-color: white;
+}
+
+.listing-name {
+  text-align: center;
+  font-family: monospace;
+  font-size: 22px;
+  border-bottom: 1px solid rgb(30, 30, 156);
+  margin-bottom: 2px;
+  padding-bottom: 10px;
+  transition: 1s;
+}
+
+.listing-pic-holder {
+  flex: 1;
+}
+
+.listing-pic {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.listing-content {
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: large;
+  color: rgb(31, 100, 249);
+}
+
+.listing-pic-main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 350px;
+}
+
+.listing-content-holder {
+  margin-top: 40px;
+  flex-direction: column;
+  background-color: rgb(200, 255, 255);
+  transition: 1s;
+  border-radius: 10px;
+  width: 1000px;
+}
+
+.listing-content-main {
+  font-family: monospace;
+  font-size: large;
+  color: rgb(31, 100, 249);
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.listing-list {
+  list-style: square;
+  color: rgb(30, 30, 156);
+  margin-left: 70px;
+  padding-top: 10px;
+}
+
+#new-button {
+  margin-bottom: 20px;
+}
+
+#new-flexer {
+  justify-content: space-evenly;
+}
+
+#bid-button {
+  margin-left: 40px;
+}
+
+#content-seperator {
+  border-bottom: 2px solid rgb(30, 30, 156);
+  width: 500px;
+  margin: 30px;
+}
+
+#comment-content-holder {
+  flex-direction: column;
+}
+
+#comment-header {
+  border: 4px solid rgb(30, 30, 156);
+  padding: 12px 32px;
+  margin-top: 50px;
+  font-family: Playwrite HR Lijeva, monospace, Arial, Helvetica, sans-serif;
+  color: cornflowerblue;
+  background-color: white;
+  font-size: 32px;
+  transition: 0.15s;
+  border-radius: 12px;
+}
+
+#comment-content {
+  color: rgb(31, 100, 249);
+  font-family: monospace;
+  font-size: 16px;
+}
+
+#comment-data-header {
+  padding-top: 20px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: rgb(31, 100, 249);
+}
+
+body {
+  background-color: rgb(255, 198, 198);
+}
+
+#auction-header-main {
+  color: rgb(88, 0, 0);
+}
+
+#auction-header-main:hover {
+  color: rgb(149, 0, 0);
+}
+
+.status-displayer {
+  color: rgb(222, 37, 37);
+}
+
+#navbar-main {
+  background-color: rgb(149, 0, 0);
+}
+
+.error-message {
+  color: rgb(222, 37, 37);
+}
+
+.submit-button {
+  background-color: rgb(88, 0, 0);
+}
+
+.submit-button:hover {
+  background-color: rgb(222, 37, 37);
+}
+
+.form-header {
+  color: rgb(222, 37, 37);
+}
+
+.form-light {
+  background-color: rgb(222, 37, 37);
+  color: white;
+}
+
+.form-light:hover {
+  background-color: rgb(149, 0, 0);
+  color: white;
+}
+
+.form-light::-moz-placeholder {
+  color: white;
+}
+
+.form-light::placeholder {
+  color: white;
+}
+
+.form-dark {
+  background-color: rgb(149, 0, 0);
+  color: white;
+}
+
+.form-dark:hover {
+  background-color: rgb(88, 0, 0);
+  color: white;
+}
+
+.form-dark::-moz-placeholder {
+  color: white;
+}
+
+.form-dark::placeholder {
+  color: white;
+}/*# sourceMappingURL=login.css.map */

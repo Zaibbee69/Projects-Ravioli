@@ -1,0 +1,53 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+
+Main
+
+{% endblock %}
+
+{% block body %}
+
+    <!--AUCTION MAIN HEADER-->
+    <h1 id="auction-header">Active Listings</h1>
+
+    <!--Printing all the listings-->
+
+    <div id="listing-holder-main">
+
+        {% for listing in listings %}
+
+        <div id="listing-holder">
+
+            <!--Name of the listing header-->
+            <h3 class="listing-name"><a href="{% url "listing" listing.id %}" style="text-decoration: none; color: rgb(30, 30, 156);">{{ listing.name }}</a></h3>
+
+            <!--Creator Of the listing-->
+            <p class="listing-content"><strong>Creator:</strong> {{ listing.creator }}</p>
+            
+            <!--Description of the listing-->
+            <p class="listing-content"><strong>Details:</strong> {{ listing.description }}</p>
+
+            <!--Price of the lisitng-->
+            <p class="listing-content"><strong>Price:</strong> ${{ listing.price }}</p>
+
+            <!--Category of the listing-->
+            <p class="listing-content"><strong>Category:</strong> {{ listing.category }}</p>
+
+            <!--Time created of the listing-->
+            <p class="listing-content"><strong>Date Created:</strong> {{ listing.time }}</p>
+
+            <!--Pic of the listing-->
+            <div class="listing-pic-holder">
+                {% if listing.pic %}
+                    <img class="listing-pic" src="{{ listing.pic.url }}" alt="{{ listing.name }}" loading="lazy">
+                {% endif %}
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+
+Create
+
+{% endblock title %}
+
+{% block body %}
+
+    <!--Form Header-->
+    <div class="form-holder">
+        <h2 class="form-header">Create Listing</h2>
+    </div>
+
+    <!--FORM-->
+    <form action="{% url 'create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-holder">
+            <div class="form-item-holder">
+                <label for="id_name" style"color: red;">Auction Name</label>
+                {{ form.name }}
+            </div>
+            <div class="form-item-holder">
+                <label for="id_price">Auction Price</label>
+                {{ form.price }}
+            </div>
+            <div class="form-item-holder">
+                <label for="id_category">Category</label>
+                {{ form.category }}
+            </div>
+            <div class="form-item-holder">
+                <label for="id_description">Description</label>
+                {{ form.description }}
+            </div>
+            <div class="form-item-holder">
+                <label for="id_pic">Add a Pic</label>
+                {{ form.pic }}
+            </div>
+            
+            <input class="submit-button" type="submit" value="Register">
+
+        </div>
+    </form>
+
+
+{% endblock body %}
