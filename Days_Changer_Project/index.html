@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Adding Meta Tags for better compatibillity-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title of My Website-->
+    <title>Days Changer</title>
+
+    <!--Linking my Own CSS files-->
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+    <!--Making a heading which shows the current day depending upon changes-->
+    <div id="day-head-holder">
+        <h1 id="day-head">Wonder What's The Day Today?</h1>
+    </div>
+
+    <br><br>
+
+    <div id="input-value-holder">
+
+        <!--Input value for the user to enter their day number-->
+        <input id="day-number" type="number" max="7" min="1" placeholder=":-)">
+
+        <br><br>
+
+        <button id="button-handler" type="button">Enter the Day!</button>
+
+    </div>
+
+    <br><br>
+    <br><br>
+    
+    <!--Adding the tags for the quote head-->
+    <div id="quote-holder">
+        <h1 id="quote-head"></h1>
+
+        <p id="quote-text"></p>
+    </div>
+    
+</body>
+
+<script src="index.js"></script>
+</html>

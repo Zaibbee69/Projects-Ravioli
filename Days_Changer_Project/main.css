@@ -1,0 +1,114 @@
+:root
+{
+    --lightBlue: #2F112D;
+    --paletteColor: #2F112D;
+}
+body
+{
+    background-color: lightsteelblue;
+    background-image: url(Pics/Default.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: monospace;
+}
+
+#day-head-holder
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#day-head
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 54px;
+    padding: 2px 8px;
+    color: #2F112D;
+    transition: 1s;
+    background-color: white;
+    border: 6px solid #2F112D;
+    border-radius: 30px;
+    text-shadow: 4px 3px rgba(0, 0, 0, 0.15) ;
+}
+
+#day-head:hover
+{
+    transform: scale(1.2);
+}
+
+#input-value-holder
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#day-number
+{
+    width: 200px;
+    height: 40px;
+    font-size: 32px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 24px;
+    color: var(--paletteColor);
+}
+
+#day-number::placeholder
+{
+    color: var(--paletteColor);
+}
+
+
+#button-handler
+{
+    padding: 12px 40px;
+    border: none;
+    background-color: var(--paletteColor);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#button-handler:hover
+{
+    padding: 12px 60px;
+    background-color: rgb(81, 81, 183);
+}
+
+#button-handler:active
+{
+    opacity: 0.6;
+}
+
+#quote-holder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#quote-head
+{
+    font-size: 18px;
+    color: #820232;
+    background-color: white;
+    border: 4px solid #820232;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+#quote-text
+{
+    color: #2F112D;
+    background-color: white;
+    font-size: 24px;
+    padding: 8px;
+    font-weight: 600;
+    font-family: cursive;
+    border: 4px solid #2F112D;
+}
