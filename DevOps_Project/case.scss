@@ -1,0 +1,60 @@
+@use "styles";
+
+body {
+    background: #1E1E2F;
+    margin-top: 40px;
+
+}
+
+.hero-section {
+    text-align: center;
+    padding: 60px;
+    background: linear-gradient(135deg, #003366, #4682B4);
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+}
+
+.accordion-item {
+    background: #2E2E3E;
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header {
+    background: #1E4B8A;
+}
+
+.accordion-button {
+    background: #1E4B8A;
+    color: white;
+    font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #003B5C;
+    color: #56CCF2;
+}
+
+.accordion-body {
+    background: #1E1E2F;
+    color: #C4C4C4;
+}
+
+.case-img
+{
+    border-radius: 12px;
+    margin-left: 350px;
+    margin-bottom: 40px;
+    width: 400px
+}

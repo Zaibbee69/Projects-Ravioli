@@ -1,0 +1,103 @@
+@use "styles";
+
+
+body
+{
+    background-color: styles.$gunmetalGray;
+}
+
+.lifecycle-header-ctn
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+#lifecycle-header
+{
+    color: styles.$arcticBlue;
+    font-size: 2.8rem;
+    font-family: styles.$openSansFont;
+}
+
+#lifecycle-header-text
+{
+    color: styles.$lightBlue;
+    font-weight: 500;
+    font-family: styles.$monoFont;
+    font-size: 1.5rem;
+    border-bottom: 4px solid styles.$arcticBlue;
+    margin-bottom: 20px;
+}
+
+.fa-arrows-spin
+{
+    font-size: 4rem;
+    margin: 10px;
+    color: styles.$lightBlue;
+    
+}
+
+.lifecycle-main-ctn
+{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.lifecycle-item-ctn
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    background-color: styles.$arcticBlue;
+    padding: 40px;
+    margin: 25px;
+    border-radius: 10px;
+    transition: 0.15s;
+
+    &:nth-child(even)
+    {
+        background-color: styles.$lightBlue;
+        border: 4px solid styles.$arcticBlue;
+    }
+    &:hover
+    {
+        background-color: styles.$skyBlue;
+    }
+}
+
+.lifecycle-item-icon
+{
+    font-size: 3rem;
+    margin: 0px;
+    padding: 0px;
+}
+
+.lifecycle-item-header
+{
+    color: styles.$vividBlue;
+    font-family: styles.$monoFont;
+    font-size: 24px;
+}
+
+.detailer-btn
+{
+    padding: 12px 30px;
+    background-color: styles.$deepBlue !important;
+    color: styles.$pureWhite !important;
+}
+
+.cycle-icon
+{
+    background-color: styles.$lightBlue;
+    width: 90px;
+    border-radius: 20px;
+    padding: 6px;
+    &:nth-child(even)
+    {
+        background-color: styles.$arcticBlue !important;
+    }
+    margin-bottom: 8px;
+}

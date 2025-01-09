@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootsrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Linking My CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Ok first making a navbar for our website -->
+    <nav class="navbar-main">
+        
+        <!-- Main homePage button -->
+        <div class="nav-main-item-ctn">
+            <p class="nav-main-item">Dev<span class="styler">Ops</span></p>
+        </div>
+
+        <div class="nav-side-item-ctn">
+            <div class="nav-item-ctn">
+                <a href="index.html" class="nav-item">Home</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="lifecycle.html" class="nav-item">Life Cycle</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="tools.html" class="nav-item">Tools</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="case.html" class="nav-item">Case Studies</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="quiz.html" class="nav-item">Quiz</a>
+            </div>
+        </div>
+        
+    </nav>
+
+    <!-- Hero section of our website -->
+    <main>
+
+        <section class="hero-main-ctn">
+            <h1 class="hero-header">Welcome to <span class="header-styler">DevOps</span> World <i class="fa-solid fa-infinity"></i></h1>
+            <p class="hero-text"><i class="fa-solid fa-arrow-right"></i> DevOps is transforming how we build, test, and deliver software. Join us to explore the magic of automation, collaboration, and innovation!</p>
+            <p><span class="typing"></span></p>
+            <a class="hero-btn" href="lifecycle.html" class="btn">Explore the Lifecycle</a>
+        </section>
+
+        <section class="about-devops">
+            <h2 id="about-header"><img class="about-gear" src="images/consulting.gif" alt="gear">What is DevOps?🤔</h2>
+            <p id="about-text"><span id="about-styler">➡️</span> DevOps is a set of practices that aims to <strong>"automate and integrate"</strong> the processes between software development. The goal is to shorten the development lifecycle and provide continuous delivery with high software quality. DevOps culture emphasizes collaboration, communication, and integration between teams to <strong>"accelerate the development"</strong> and release of software.</p>
+            <img class="help-chart" src="images/mainChart.webp" alt="HelpChart">
+        </section>
+
+        <section class="key-points">
+            <h2 id="key-header"><i class="fa-regular fa-snowflake"></i> Key Features of DevOps <i class="fa-solid fa-sun"></i></h2>
+            
+            <ul>
+                <li class="key-text"><strong class="key-styler">Continuous Integration:</strong> Developers regularly merge their code changes into a shared repository, automating the build and testing process.</li>
+                <li class="key-text"><strong class="key-styler">Continuous Delivery:</strong> Ensures that software is always in a deployable state, allowing faster and more reliable software releases.</li>
+                <li class="key-text"><strong class="key-styler">Collaboration & Communication:</strong> DevOps encourages collaboration between development, QA, and operations teams to eliminate silos and improve efficiency.</li>
+                <li class="key-text"><strong class="key-styler">Automated Testing & Deployment:</strong> Testing and deployment are automated to ensure consistent and error-free software delivery.</li>
+                <li class="key-text"><strong class="key-styler">Infrastructure as Code:</strong> Infrastructure is managed through code, allowing automated provisioning, configuration, and monitoring of environments.</li>
+            </ul>
+        </section>
+
+        
+        <section class="fun-fact">
+            <button id="showFact" class="btn fun-btn">Click for a DevOps Fact!</button>
+            <p id="fact" class="fun-text" style="display: none;">Netflix deploys code changes hundreds of times per day using DevOps practices!</p>
+        </section>
+        
+
+        <section class="features">
+            <h2 id="features-header"><img class="features-icon" src="images/why.gif" alt="Why"> DevOps<img class="features-icon" src="images/faq.gif" alt="faq"></h2>
+    
+                <ul>
+                    <li class="features-text"><i class="fas fa-bolt iconer"></i> <span class="features-text">Faster Delivery</span></li>
+                    <li class="features-text"><i class="fas fa-cogs iconer"></i> Improved Quality</li>
+                    <li class="features-text"><i class="fas fa-users iconer"></i> Better Collaboration</li>
+                    <li class="features-text"><i class="fa-solid fa-star iconer"></i> Better Quality & Reliability</li>
+                    <li class="features-text"><i class="fa-solid fa-scale-unbalanced-flip iconer"></i> Scalability</li>
+                </ul>
+        
+
+            <h1 class="features-icons-text"><i class="fa-solid fa-arrow-right"></i> All of that comes together to make robust and customer satisfied apps</h1>
+            <div class="features-icons">
+                
+                <img class="features-icon-new" src="images/loop.gif" alt="loop">
+                <img class="features-icon-new" src="images/feedback.gif" alt="thumbs">
+            </div>
+        </section>
+        
+        
+
+    </main>
+    
+    <footer>
+        <p>&copy; Made with ❤️ for Dr. Marriam Daud</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Adding MY JS -->
+     <script src="index.js"></script>
+    
+</body>
+</html>

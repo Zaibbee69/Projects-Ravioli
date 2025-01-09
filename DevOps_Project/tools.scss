@@ -1,0 +1,134 @@
+@use "styles";
+
+body
+{
+    font-family: styles.$openSansFont;
+}
+
+.tools-hero-header-ctn
+{
+    position: relative;
+    margin-top: 35px !important;
+    z-index: 99;
+    padding: 100px !important;
+    background-color: styles.$arcticBlue !important;
+    color: styles.$midnightBlue !important; 
+    border-bottom: 2px solid styles.$midnightBlue !important;
+}
+
+.tools-hero-header-alter-ctn
+{
+    position: absolute;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 70%);
+    z-index: -1;
+    padding: 40px;
+
+    bottom: 0;
+    left: 0;
+    background-color: styles.$midnightBlue !important;
+}
+
+.lead
+{
+    font-weight: 400;
+}
+
+.tools-categories
+{
+    margin-top: 40px !important;
+}
+
+.tools-categories-header
+{
+    font-family: styles.$monoFont;
+    color: styles.$midnightBlue;
+    margin-bottom: 40px !important;
+}
+
+.popular-tools
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    position: relative;
+    margin-top: 35px !important;
+    z-index: 99;
+    padding: 100px !important;
+
+}
+
+.popular-tools-header-ctn
+{
+    @extend %flexer-extender;
+    position: absolute;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 60%);
+    z-index: -1;
+    padding: 40px;
+    top: 0;
+    background-color: styles.$midnightBlue !important;
+}
+
+.popular-tools-styler-ctn
+{
+    position: absolute;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 25%);
+    z-index: -1;
+    padding: 40px;
+    bottom: 0;
+    background-color: styles.$arcticBlue !important;
+}
+.popular-tools-header
+{
+    color: styles.$pureWhite;
+    margin: 60px;
+}
+
+.popular-tools-item-ctn
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.popular-tools-item
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    padding: 10px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.popular-tools-text
+{
+    color: styles.$azure;
+    font-size: large;
+    font-family: styles.$monoFont;
+    font-weight: bolder;
+}
+
+.popular-icon
+{
+   @extend %cool-hover-extender;
+    margin-top: 200px;
+    font-size: 60px;
+    color: styles.$midnightBlue;
+}
+
+.popular-image
+{ 
+    @extend %cool-hover-extender;
+    width: 120px;
+    border-radius: 200px;
+}
+
+.featured-tools
+{
+    margin-top: 60px;
+}
+
+strong
+{
+    color: styles.$azure;
+}

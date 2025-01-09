@@ -1,0 +1,423 @@
+// Setting my standard colors
+$pureWhite: white;
+$offWhite: whitesmoke;
+$darkNavy: #1E1E2F;
+$lightCharcoal: #2E2E3E;
+$electricBlue: #3F88C5;
+$brightCyan: #56CCF2;
+$silverGrey: #C4C4C4;
+
+$deepBlue: #003B5C;
+$skyBlue: #66A8D9;
+$slateGray: #3E4A5D;
+$vividBlue: #1E4B8A;
+$azure: #1E90FF;
+$coolGray: #B0C4DE;
+$arcticBlue: #A9D6E5;
+$steelBlue: #4682B4;
+$gunmetalGray: #2A3439;
+$midnightBlue: #003366;
+$lightBlue: #66CCFF;
+$charcoal: #4A4A4A;
+
+$monoFont: monospace;
+$robotoFont: Roboto;
+$openSansFont: Open Sans;
+
+// My extenders
+%flexer-extender
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%box-shadower-extender
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+%underliner-extender
+{
+    text-decoration: none;
+}
+
+%bottom-line-effect-extender
+{
+    position: relative;
+
+    &::after
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: $brightCyan;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: 0.5s;
+        transform-origin: left;
+    }
+
+    &:hover::after
+    {
+        transform: scaleX(1);
+    }
+}
+
+%big-buttoner-extender
+{
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.15s;
+
+    &:hover
+    {
+        padding: 22px;
+    }
+
+    &:active
+    {
+        opacity: 0.9;
+    }
+}
+
+%glow-effecter-extender
+{
+    box-shadow: 0 0 20px $lightCharcoal, 0 0 30px #3F88C5;
+    transition: 0.3s;
+}
+
+%cool-hover-extender
+{
+    transition: transform 0.3s, color 0.3s;
+
+    &:hover
+    {
+        transform: scale(1.2);
+        color: #56CCF2;
+    }
+}
+
+%hover-extender
+{
+    transition: 0.15s;
+
+    &:hover
+    {
+        transform: scale(1.015);
+    }
+
+}
+
+%background-tilter-extender
+{
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 80%);
+}
+
+/* Body Styling */
+body {
+    font-family: $openSansFont;
+    line-height: 1.6;
+    background-color: $pureWhite;
+    padding-top: 30px;
+}
+
+// Nav Code
+.navbar-main
+{
+    @extend %flexer-extender;
+    justify-content: space-around;
+    background-color: $pureWhite;
+    box-shadow: 0 2px 4px -2px gray;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;  
+}
+
+.nav-main-item-ctn
+{
+    @extend %flexer-extender;
+    flex: 1;
+}
+
+.nav-main-item
+{
+    font-size: 32px;
+
+    margin-left: 25px;
+    flex: 1;
+}
+
+.nav-side-item-ctn
+{
+    @extend %flexer-extender;
+    flex: 8;
+}
+
+.nav-item
+{
+    @extend %underliner-extender;
+    @extend %bottom-line-effect-extender;
+    padding: 10px;
+    margin: 6px 30px;
+    color: $electricBlue;
+    font-weight: bolder;
+    font-size: 16px;
+    font-family: monospace;
+    position: relative;
+}
+
+.styler
+{
+    color: $electricBlue;
+    font-weight: 600;
+    border-bottom: 4px solid $brightCyan;
+}
+
+.hero-main-ctn
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background: linear-gradient(120deg, $electricBlue, $brightCyan);
+    padding: 100px 70px;
+    color: $pureWhite;
+}
+
+.hero-header
+{
+    font-family: $openSansFont;
+    font-weight: bold;
+    font-size: 3.8rem;
+}
+
+.header-styler
+{
+    font-family: $monoFont;
+    color: $lightCharcoal;
+}
+
+.fa-infinity, .fa-arrow-right
+{
+    @extend %cool-hover-extender;
+    color: $lightCharcoal;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: $lightCharcoal;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.hero-text
+{
+    font-family: $robotoFont;
+    font-size: 1.8rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-btn
+{
+    @extend %big-buttoner-extender;
+    @extend %glow-effecter-extender;
+    @extend %underliner-extender;
+    background-color: $offWhite;
+    font-family: $monoFont;
+    font-size: 16px;
+    color: $lightCharcoal;
+    font-weight: bold;
+    border-bottom: 4px solid $lightCharcoal;
+    margin-top: 20px;
+}
+
+/* Typing Effect */
+.typing {
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.fun-fact {
+    text-align: center;
+}
+
+.about-devops
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    padding: 60px;
+}
+
+#about-header
+{
+    font-family: $robotoFont;
+    font-size: 2.8rem;
+    color: $steelBlue;
+}
+
+#about-text
+{
+    font-family: $openSansFont;
+    color: $deepBlue;
+    margin-top: 30px;
+}
+
+.help-chart
+{
+    width: 700px;
+}
+
+#about-styler
+{
+    font-size: 2rem;
+}
+
+.about-gear
+{
+    width: 60px;
+    margin-right: 20px;
+}
+
+.key-points
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    padding: 60px;
+    background-color: $darkNavy;
+}
+
+#key-header
+{
+    font-family: $monoFont;
+    font-size: 2.8rem;
+    color: $pureWhite;
+    margin: 20px;
+    margin-bottom: 50px;
+    
+}
+
+.fa-sun, .fa-snowflake
+{
+    @extend %cool-hover-extender;
+    color: $lightBlue;
+}
+
+.key-styler
+{
+    font-size: 1.2rem;
+    font-family: $monoFont;
+    color: $lightBlue;
+}
+
+.key-text
+{
+    font-family: $robotoFont;
+    color: $pureWhite;
+}
+
+.fun-fact
+{
+    background-color: $lightBlue;
+    padding: 20px;
+}
+
+.fun-btn
+{
+    color: $pureWhite;
+    font-weight: bolder;
+    font-family: $monoFont;
+    font-size: x-large;
+}
+
+.fun-text
+{
+    font-family: $robotoFont;
+    color: $deepBlue;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.features
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    padding: 60px;
+    margin-top: 40px;
+}
+
+#features-header
+{
+    font-size: 2.8rem;
+    font-family: $monoFont;
+    color: $electricBlue;
+    margin-bottom: 40px;
+}
+
+.iconer
+{
+    @extend %cool-hover-extender;
+    font-size: 2rem;
+    margin-right: 8px;
+}
+
+.features-icons
+{
+    @extend %flexer-extender;
+    width: 400px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.features-icon
+{
+    width: 100px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.features-icon-new
+{
+
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.features-text
+{
+    color: $electricBlue;
+    font-size: 1.5rem;
+}
+
+.features-icons-text
+{
+    color: $brightCyan;
+    margin-top: 60px;
+    width: 500px;
+    font-size: 1.9rem;
+}

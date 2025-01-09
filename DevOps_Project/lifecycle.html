@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps: Life Cycle</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootsrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Linking My CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="life.css">
+</head>
+<body>
+    
+    <!-- Ok first making a navbar for our website -->
+    <nav class="navbar-main">
+        
+        <!-- Main homePage button -->
+        <div class="nav-main-item-ctn">
+            <p class="nav-main-item">Dev<span class="styler">Ops</span></p>
+        </div>
+
+        <div class="nav-side-item-ctn">
+            <div class="nav-item-ctn">
+                <a href="index.html" class="nav-item">Home</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="lifecycle.html" class="nav-item">Life Cycle</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="tools.html" class="nav-item">Tools</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="case.html" class="nav-item">Case Studies</a>
+            </div>
+            <div class="nav-item-ctn">
+                <a href="quiz.html" class="nav-item">Quiz</a>
+            </div>
+        </div>
+        
+    </nav>
+
+    <!-- Hero section of our website -->
+    <main>
+
+      <header class="lifecycle-header-ctn">
+        <h1 id="lifecycle-header">DevOps Lifecycle</h1>
+        <i class="fa-solid fa-arrows-spin fa-spin"></i>
+
+        <p id="lifecycle-header-text">Seamless Collaboration from Development to Delivery</p>
+      </header>
+
+
+      <section class="lifecycle-main">
+        
+        <div class="lifecycle-main-ctn">
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/checklist.gif" alt="planning"></icon>
+            <h1 class="lifecycle-item-header">Plan</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#planningBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/laptop.gif" alt="develop"></icon>
+            <h1 class="lifecycle-item-header">Develop</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#developingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/wrench.gif" alt="wrench"></icon>
+            <h1 class="lifecycle-item-header">Build</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#buildingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/test.gif" alt="testing"></icon>
+            <h1 class="lifecycle-item-header">Test</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#testingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/rocket-launch.gif" alt="rocket"></icon>
+            <h1 class="lifecycle-item-header">Release</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#releasingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/package.gif" alt="box"></icon>
+            <h1 class="lifecycle-item-header">Deploy</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#deployingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/efficiency.gif" alt="operate"></icon>
+            <h1 class="lifecycle-item-header">Operate</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#operatingBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/monitor.gif" alt="monitor"></icon>
+            <h1 class="lifecycle-item-header">Monitor</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#monitoringBackdrop">
+              Learn More
+            </button>
+          </div>
+
+          <div class="lifecycle-item-ctn">
+            <icon class="lifecycle-item-icon"><img class="cycle-icon" src="images/pray.gif" alt="pray"></icon>
+            <h1 class="lifecycle-item-header">Pray</h1>
+            <button type="button" class="btn btn-primary detailer-btn" data-bs-toggle="modal" data-bs-target="#prayingBackdrop">
+              Learn More
+            </button>
+          </div>
+        </div>
+        
+      </section>
+
+      <section class="lifecycle-modals">
+
+        <!-- Planning -->
+        <div class="modal fade" id="planningBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Planning Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">In the planning phase, teams define the project goals, create roadmaps, and collaborate to ensure a shared understanding of requirements and objectives.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Developing-->
+        <div class="modal fade" id="developingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Developing Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">This phase involves writing, reviewing, and managing code, leveraging version control systems to ensure efficient collaboration and traceability.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Building-->
+        <div class="modal fade" id="buildingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Building Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">The building phase focuses on automating the integration of code into deployable artifacts, ensuring consistency and reducing manual errors.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Testing-->
+        <div class="modal fade" id="testingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Testing Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">In the testing phase, automated and manual tests are executed to validate the functionality, performance, and security of the application.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Release-->
+        <div class="modal fade" id="releasingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Releasing Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">The building phase focuses on automating the integration of code into deployable artifacts, ensuring consistency and reducing manual errors.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Deploying-->
+        <div class="modal fade" id="deployingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Deploying Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">Deployment involves releasing the application to production environments in a controlled and automated manner to ensure smooth updates.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Operating-->
+        <div class="modal fade" id="operatingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Operating Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">The operate phase monitors and manages the application in production, ensuring high availability, reliability, and performance.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Monitoring-->
+        <div class="modal fade" id="monitoringBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Monitoring Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">Monitoring focuses on gathering and analyzing metrics, logs, and user feedback to improve the application and address issues proactively.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!--Praying-->
+        <div class="modal fade" id="prayingBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Praying Phase</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p class="modal-text">Finger's Crossed everything goes ok!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </section>
+      
+    </main>
+    
+    <footer>
+        <p>&copy; Made with ❤️ for Dr. Marriam Daud</p>
+    </footer>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Adding MY JS -->
+     <script src="index.js"></script>
+    
+</body>
+</html>
