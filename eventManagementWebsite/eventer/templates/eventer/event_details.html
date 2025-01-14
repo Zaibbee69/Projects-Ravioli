@@ -1,0 +1,116 @@
+{% extends "eventer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ event.title }}
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "eventer/event_details.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block naver %}
+
+    <div class="navbar-element-container">
+        <a href="{% url "events" %}" class="nav-element">&laquo; Go back</a>
+    </div>
+
+{% endblock naver %}
+
+{% block body %}
+
+    <!--Making section to represent the event-->
+    <section class="event-detail-container">
+
+        <div class="event-detail-title-container">
+            <h2 class="event-detail-title">{{ event.title }}</h2>
+        </div>
+
+        <div class="event-detail-grid-high">
+            <div class="event-detail-description-container">
+                <p class="event-detail-description">
+                    <div class="popper">Description:</div>
+                    <div class="event-detail-description">{{ event.description }}</div>
+                </p>
+            </div>
+            <div class="event-detail-date-container">
+                <p class="event-detail-date">
+                    <div class="popper">Date:</div>
+                    <div class="event-detail-date">{{ event.date }}</div>
+                </p>
+            </div>
+        </div>
+
+        <div class="event-detail-grid-low">
+
+            <div class="event-detail-schedule-container">
+                <p class="event-detail-schedule">
+                    <div class="popper" style="color: white;">Schedule:</div> 
+                    <div class="event-detail-schedule">{{ event.schedule }}</div>
+                </p>
+            </div>
+            <div class="event-detail-location-container">
+                <p class="event-detail-location">
+                    <div class="popper">Location:</div>
+                    <div class="event-detail-location">{{ event.location }}</div>
+                </p>
+            </div>
+            <div class="event-detail-category-container">
+                <p class="event-detail-category">
+                    <div class="popper">Category:</div>
+                    <div class="event-detail-category">{{ event.category }}</div>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="event-flex-high">
+
+            <div class="event-detail-price-container">
+                <p class="event-detail-price">
+                    <div class="popper">Price:</div>
+                    <div class="event-detail-price">{{ event.ticket_price }}</div>
+                </p>
+            </div>
+
+            <div class="event-detail-ticket-container-main">
+                <p class="event-detail-ticket">
+                    <div style="color: white;" class="popper">Tickets:</div>
+                    <div class="event-detail-ticket">{{ event.total_tickets }}</div>
+                </p>
+            </div>
+            
+        </div>
+        {% if event.learn_more_url %}
+            <div class="event-detail-learner-container">
+                <a href="{{ event.learn_more_url }}" style="text-decoration: none;" class="event-detail-learner">Learn More</a>
+            </div>
+        {% endif %}
+
+    </section>
+
+    <section class="event-detail-ticket-container">
+
+        <!--Putting my form for ticket purchasing-->
+        <form method="POST">
+
+            <div class="event-ticket-container">
+                <h3 class="ticket-header">Purchase tickets for {{ event.title }}</h3>
+                {% csrf_token %}
+
+                <!--Now putting my form-->
+                {{ form.as_p }}
+
+                <!--Putting button for submission-->
+                <button class="form-ticket-button" type="submit">Proceed to Checkout</button>
+            </div>
+        </form>
+
+    </section>
+
+{% endblock body %}

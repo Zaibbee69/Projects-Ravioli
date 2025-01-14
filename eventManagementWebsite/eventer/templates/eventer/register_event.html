@@ -1,0 +1,61 @@
+{% extends "eventer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Registration
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "eventer/register.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <section class="register-form-container">
+
+        <div class="register-header-container">
+            <h1 class="register-header">Register For Events</h1>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="register-form">
+
+                <div class="form-flex">
+                    <label class="register-label" for="form-event">Event</label>
+                    {{ form.event }}
+
+                    <label class="register-label" for="form-name">Name</label>
+                    {{ form.name }}
+                </div>
+                
+                <div class="form-flex">
+                    <label class="register-label" for="form-email">Email</label>
+                    {{ form.email }}
+
+                    <label class="register-label" for="form-phone">Phone Number</label>
+                    {{ form.phone_number }}
+                </div>
+
+                <label class="register-label" for="form-phone">Tickets Quantity</label>
+                    {{ form.ticket_quantity }}
+
+                {% for message in messages %}
+
+                    <p>{{ message }}</p>
+
+                {% endfor %}
+
+                <button type="submit" class="register-button">Register</button>
+
+            </div>
+        </form>
+
+    </section>
+
+{% endblock body %}

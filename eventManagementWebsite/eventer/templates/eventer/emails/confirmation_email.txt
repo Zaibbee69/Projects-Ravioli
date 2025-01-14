@@ -1,0 +1,13 @@
+Hello {{ user.username }},
+
+Thank you for registering for {{ event.title }} on {{ event.date }}.
+You have successfully purchased {{ quantity }} ticket(s).
+
+Event Details:
+- Date: {{ event.date }}
+- Location: {{ event.location }}
+
+We look forward to seeing you there!
+
+Best regards,
+Event Management Team

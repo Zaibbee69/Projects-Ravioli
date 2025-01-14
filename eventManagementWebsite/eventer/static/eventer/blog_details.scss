@@ -1,0 +1,121 @@
+@use "styles";
+
+body
+{
+    background-image: url(images/event_detail.jpg);
+}
+
+.blog-banner-container
+{
+    @extend %box-shadower-extender;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    border-radius: 20px;
+}
+
+.blog-header-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    background-color: styles.$goldenYellow;
+    color: styles.$pureWhite;
+    border-left: 10px groove styles.$hardBlue;
+    font-family: styles.$sassyFont;
+    font-size: 20px;
+}
+
+.blog-excerpt-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    background-color: styles.$hardBlue;
+    color: styles.$pureWhite;
+    border-right: 10px groove styles.$goldenYellow;
+    font-family: styles.$modernMonoFont;
+}
+
+.blog-excerpt
+{
+    width: 500px;
+}
+
+.blog-main-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    flex-direction: column;
+    background-color: styles.$pureWhite;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 80px 10px;
+}
+
+.blog-content
+{
+    color: styles.$hardBlue;
+    font-family: styles.$modernMonoFont;
+    width: 1050px;
+}
+
+.blog-author
+{
+    color: styles.$emeraldGreen;
+    font-family: styles.$elegantFont;
+    text-decoration: underline;
+}
+
+.blog-comment-header
+{
+    font-family: styles.$boldFont;
+    color: styles.$hardBlue;
+    margin-bottom: 40px;
+    font-size: 32px;
+    margin-left: 20px;
+}
+
+.comments-section
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    margin: 30px 60px;
+    flex-direction: column;
+    background-color: styles.$hardBlue;
+    color: styles.$pureWhite;
+    border-radius: 8px;
+}
+
+.blog-comment-author
+{
+    font-family: styles.$modernMonoFont;
+}
+
+.blog-maker
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.form-comment
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$hardBlue;
+    border-radius: 8px;
+    border-bottom: 8px groove styles.$hardBlue;
+    padding: 20px;
+}
+
+.comment-button-container
+{
+    @extend %flexer-extender;
+}
+
+.comment-button
+{
+    @extend %buttoner-extender;
+    color: styles.$pureWhite;
+    font-family: styles.$modernMonoFont;
+    font-weight: 900;
+    background-color: styles.$goldenYellow;
+    margin: 40px 0px;
+}

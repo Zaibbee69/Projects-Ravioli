@@ -1,0 +1,239 @@
+@use "styles";
+
+
+body
+{
+    background-image: url(images/event_detail.jpg);
+}
+
+.popper
+{
+    padding-bottom: 8px;
+}
+
+.event-detail-title-container
+{
+    @extend %flexer-extender;
+}
+
+.event-detail-title
+{
+    font-family: styles.$boldFont;
+    color: styles.$hardBlue;
+    font-size: 28px;
+    border-bottom: 8px solid styles.$purplishBlue;
+    padding-bottom: 6px;
+}
+
+.event-detail-grid-high
+{
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.event-detail-description-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    background-color: white;
+    border-bottom: 6px solid styles.$purplishBlue;
+    border-radius: 2px;
+}
+
+.event-detail-description
+{
+    font-family: styles.$modernMonoFont;
+    font-size: 15px;
+    margin-top: 10px;
+    width: 800px;
+    color: styles.$hardBlue;
+}
+
+.event-detail-date-container
+{
+    @extend %flexer-extender;
+    @extend %hover-extender;
+    background-color: styles.$blendBlue;
+    flex-direction: column;
+    border-left: 6px solid styles.$purplishBlue;
+    border-radius: 2px;
+}
+
+.event-detail-date
+{
+    color: styles.$pureWhite;
+    font-family: styles.$modernMonoFont;
+    font-size: 15px;
+}
+
+.event-detail-grid-low
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2.5fr;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.event-detail-schedule-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: styles.$hardBlue;
+}
+
+.event-detail-schedule
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$pureWhite;
+}
+
+.event-detail-location-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    padding: 5px;
+    border-right: 6px solid styles.$purplishBlue;
+    border-radius: 2px;
+    background-color: styles.$blendBlue;
+}
+
+.event-detail-location
+{
+    font-family: styles.$sassyFont;
+    color: styles.$pureWhite;
+    font-weight: bolder;
+    font-size: 17px;
+}
+
+.event-detail-category-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: styles.$pureWhite;
+}
+
+.event-detail-category
+{
+    color: styles.$hardBlue;
+    font-family: styles.$boldFont;
+}
+
+.event-flex-high
+{
+    @extend %flexer-extender;
+}
+
+.event-detail-price-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    border-radius: 2px;
+    flex-direction: column;
+    background-color: styles.$pureWhite;
+}
+
+.event-detail-price
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$hardBlue;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.event-detail-ticket-container-main
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    @extend %hover-extender;
+    flex-direction: column;
+    border-radius: 2px;
+    border-left: 6px solid styles.$purplishBlue;
+    background-color: styles.$hardBlue;
+}
+
+.event-detail-ticket
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$pureWhite;
+    margin-left: 175px;
+    margin-right: 175px;
+}
+
+.event-detail-learner-container
+{
+    @extend %flexer-extender;
+    margin-top: 40px
+}
+
+.event-detail-learner
+{
+    @extend %buttoner-extender;
+    background-color: styles.$blendBlue;
+    color: styles.$pureWhite;
+    font-size: 16px;
+}
+
+.event-detail-ticket-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    background-color: styles.$pureWhite;
+    border-radius: 10px;
+    margin: 100px 40px;
+}
+
+.event-ticket-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: styles.$offWhite;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.ticket-header
+{
+    @extend %bottom-line-extender;
+    font-family: styles.$boldFont;
+    color: styles.$moderateBlue;
+    border-left: 6px solid styles.$hardBlue;
+    border-right: 6px solid styles.$hardBlue;
+    padding: 6px 15px;
+
+    &::after
+    {
+        background-color: styles.$moderateBlue;
+    }
+}
+
+.ticket-form
+{
+    font-family: styles.$monoFont;
+    padding: 12px 40px;
+    border: 2px solid styles.$hardBlue;
+    color: styles.$purplishBlue;
+}
+
+.form-ticket-button
+{
+    @extend %buttoner-extender;
+    background-color: styles.$hardBlue;
+    color: styles.$pureWhite;
+}

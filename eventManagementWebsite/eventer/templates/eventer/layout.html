@@ -1,0 +1,164 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Adding the meta tags for reliabillity-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title of the webpage made dynamic-->
+    <title>Festify: {% block title %} {% endblock title %}</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=SUSE:wght@100..800&family=Handjet:wght@100..900&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
+
+    <!--Main CSS File-->
+    <link rel="stylesheet" href="{% static "eventer/styles.css" %}">
+
+    <!--Adding a tag to i can add more css tags later-->
+    {% block stylers %}
+    {% endblock stylers %}
+
+    <!--Font Awesome Code-->
+    <script src="https://kit.fontawesome.com/cb1ff0d3b7.js" crossorigin="anonymous"></script>
+
+    <!--My JS Code-->
+    <script src="{% static "eventer/index.js" %}"></script>
+
+</head>
+<body>
+    
+    <!--Navbar made dynamic-->
+    <nav class="navbar-container">
+
+        <!--Title of the website-->
+        <div class="navbar-title-container">
+            <a href="{% url "index" %}" class="nav-title">Festify</a>
+        </div>
+
+        {% block naver %} {% endblock naver %}
+
+        <!--All my nav elements-->
+        <div class="navbar-element-main">
+
+            
+            {% if user.is_authenticated %}
+
+                <div class="navbar-title-container">
+                    <p class="nav-name">{{ user.username }}</p>
+                </div>
+
+                <div class="navbar-element-container">
+                    <a href="{% url "logout" %}" class="nav-element">Logout</a>
+                </div>
+                
+            {% else %}
+
+                <div class="navbar-element-container">
+                    <a href="{% url "login" %}" class="nav-element">Login</a>
+                </div>
+
+                <div class="navbar-element-container">
+                    <a href="{% url "register" %}" class="nav-element">Register</a>
+                </div>
+
+            {% endif %}
+
+            <div class="navbar-element-container">
+                <a href="{% url "events" %}" class="nav-element">Events</a>
+            </div>
+
+            <div class="navbar-element-container">
+                <a href="{% url "gallery" %}" class="nav-element">Gallery</a>
+            </div>
+
+            <div class="navbar-element-container">
+                <a href="{% url "blog" %}" class="nav-element">Blog</a>
+            </div>
+
+            <div class="navbar-element-container">
+                <a href="{% url "contact_page" %}" class="nav-element">Contact</a>
+            </div>
+
+            <div class="navbar-element-container">
+                <a href="{% url "register_for_event" %}" class="nav-element">Registration</a>
+            </div>
+        </div>
+        
+    </nav>
+
+    <!--Main body of the program-->
+    <main>
+        {% block body %}
+        {% endblock body %}
+    </main>
+
+    <!--Footer of the app-->
+    <footer class="footer-container">
+
+        <!--Quick Access links for user to acces my stuff-->
+        <div class="footer-quick-container">
+
+            <div class="footer-quick-main">
+                <h5 class="footer-quick-header"><i class="fa-solid fa-shield-halved">Quick Links</i></h5>
+                <ul class="footer-quick-link">
+                    <li><a href="{% url "events" %}" class="footer-link">Events</a></li>
+                    <li><a href="{% url "gallery" %}" class="footer-link">Gallery</a></li>
+                    <li><a href="{% url "blog" %}" class="footer-link">Blog</a></li>
+                    <li><a href="{% url "contact_page" %}" class="footer-link">Contacts</a></li>
+                    <li><a href="{% url "register_for_event" %}" class="footer-link">Registration</a></li>
+                </ul>
+            </div>
+
+            <!--This will be the section for users to signup for newspapers-->
+            <div class="footer-newssign">
+                <h5 class="footer-newssign-head">Subscribe to our Newsletter &#9829;</h5>
+            
+                <!-- Adding a form for submitting data -->
+                <form id="newsletter-form" class="news-former" method="POST" action="{% url 'newsletter_signup' %}">
+                    {% csrf_token %}
+            
+                    <div id="message-container"></div> <!-- Container for displaying messages -->
+            
+                    <input type="email" name="email" class="news-form" placeholder="Enter your email" required>
+                    <button type="submit" class="news-button">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!--Socail Media Icons for users to go to stuff-->
+        <div class="footer-social-container">
+            <a href="https://www.facebook.com" class="footer-social-icon">
+                <i class="fa-brands fa-facebook"></i>
+                <span class="iconer">Facebook</span>
+            </a>
+            <a href="https://www.x.com" class="footer-social-icon">
+                <i class="fa-brands fa-square-twitter"></i>
+                <span class="iconer">Twitter</span>
+            </a>
+            <a href="https://www.instagram.com" class="footer-social-icon">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="iconer">Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com" class="footer-social-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <span class="iconer">Linked In</span>
+            </a>
+        </div>
+
+        <!--Credits footer-->
+        <div class="footer-credits-container">
+            <p class="footer-one">&#174; All rights reserved</p>
+            <p class="footer-two">Festify.co Limited &#169;</p>
+            <p class="footer-three">Pakistan, Islamabad</p>
+        </div>
+
+    </footer>
+    
+</body>
+</html>

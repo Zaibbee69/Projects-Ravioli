@@ -1,0 +1,81 @@
+{% extends "eventer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    {{ post.title }}
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "eventer/blog_details.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block naver %}
+
+    <div class="navbar-element-container">
+        <a href="{% url "blog" %}" class="nav-element">&laquo; Go back</a>
+    </div>
+
+{% endblock naver %}
+
+{% block body %}
+
+    <!--This will be the blogs main upper echelon section-->
+    <section class="blog-banner-container">
+
+        <div class="blog-header-container">
+            <h1 class="blog-header"> {{ post.title }} </h1>
+        </div>
+
+        <div class="blog-excerpt-container">
+            <p class="blog-excerpt"> {{ post.excerpt }} </p>
+        </div>
+
+    </section>
+
+    <!--Main section of the blog-->
+    <section class="blog-main-container">
+
+        <div class="blog-content-container">
+            <p class="blog-content"> {{ post.content }} </p>
+        </div>
+
+        <div class="blog-author-container">
+            <p class="blog-author">Created by <strong> {{ post.author }} </strong></p>
+        </div>
+
+    </section>
+
+    <!--Comment section-->
+    <section class="blog-comment-container">
+
+        <h2 class="blog-comment-header">Comments</h2>
+        <div class="comments-section">
+            {% for comment in comments %}
+                <div class="comment">
+                    <p class="blog-comment-author"><strong>{{ comment.author }}</strong>: {{ comment.content }}</p>
+                </div>
+            {% empty %}
+                <p class="blog-comment-author">No comments yet. Be the first to comment!</p>
+            {% endfor %}
+        </div>
+
+        <div class="blog-maker">
+            <h2 class="blog-comment-header">Leave a Comment</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <div class="comment-button-container">
+                    <button type="submit" class="comment-button">Submit</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+{% endblock body %}

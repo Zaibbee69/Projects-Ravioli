@@ -1,0 +1,80 @@
+{% extends "eventer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Contact
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "eventer/contact.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+<!--Section so user can contach us-->
+<section class="contact-user-container-main">
+
+    <div class="contact-user-container">
+
+        <div class="contact-user-header-container">
+            <h1 class="contact-user-header">Contact Us</h1>
+        </div>
+        
+        <form class="contact-form" method="post" action="{% url 'contact_page' %}">
+            {% csrf_token %}
+            <div class="form-flex">
+                <div class="form-group">
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    {{ form.email }}
+                </div>
+            </div>
+
+            <div class="form-flex">
+                <div class="form-group">
+                    {{ form.phone_number }}
+                </div>
+                <div class="form-group">   
+                    {{ form.message }}
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="contact-button">Send Message</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+<!-- contact.html -->
+
+<section class="contact-info-container">
+    <div class="contact-info">
+        <h2 class="info">Contact Information</h2>
+        <p class="info">Address: <strong>{{ contact_info.address }}</strong></p>
+        <p class="info">Phone: <strong>{{ contact_info.phone }}</strong></p>
+        <p class="info">Email: <strong>{{ contact_info.email }}</strong></p>
+    </div>
+</section>
+
+<div class="map-container">
+    <h2 class="location-header">Our Location</h2>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_URL"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        class="map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+{% endblock body %}

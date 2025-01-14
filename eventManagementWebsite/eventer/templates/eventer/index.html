@@ -1,0 +1,121 @@
+{% extends "eventer/layout.html" %}
+
+{% block title %}
+
+    Home
+
+{% endblock title %}
+
+{% block body %}
+
+    <!--Making the section for the hero container-->
+    <section class="hero-container">
+
+        <!--Life’s Better When You’re Laughing!-->
+        <!--Head of the banner-->
+        <div class="hero-banner">
+            <h1 class="hero-header">Welcome to our Event Management Services</h1>
+            <p class="hero-text">&#9830; Your one-stop solution for all event needs</p>
+            <p class="markup">&#9827;</p> 
+        </div>
+
+        <div class="hero-banner">
+            <div class="featured-events-container">
+
+                <h2 class="featured-events-header">Featured Events</h2>
+                <!--Looping for all the featured events to find them-->
+                <ul>
+                    {% for event in featured_events %}
+                        <div class="event-item">
+
+                            <!--title and description-->
+                            <li><h3 class="event-item-title">{{ event.title }}</h3></li>
+    
+                            <p class="event-item-description">&#9827; {{ event.truncated_description }} 
+                                {% if event.truncated %}
+                                    <a href="" onclick="toggleDescription(this); return false;" class="event-item-shower">Show More</a>
+                                {% endif %}
+                            </p>
+                            {% if event.truncated %}
+                                <p style="display:none;" class="event-item-description-full">&#9827; {{ event.description }} 
+                                    <a href="" onclick="toggleDescription(this); return false;" class="event-item-shower">Show Less</a>
+                                </p>
+                            {% endif %}
+                        
+                            <hr class="event-item-line">
+                        
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--motivator-->
+    <section class="motivator-container">
+        <h1 class="motivator-header">Memories That Last a Lifetime</h1>
+        <h1 class="motivator-header" style="color: darkblue; font-size: 4rem;">&hearts;</h1>
+    </section>
+
+    <!--Making the section for the upcoming events-->
+    <section class="upcoming-container">
+
+        <!--Banner of said event-->
+        <div class="upcoming-banner">
+            <h2 class="upcoming-header">Festivities</h2>
+        </div>
+
+        <!--Events sections-->
+        <div class="upcoming-events-container">
+
+            <!--Looping over the events-->
+            {% for event in upcoming_events %}
+                <div class="upcoming-events-item">
+                    <h3 class="upcoming-event-title">{{ event.title }}</h3>
+                    <p class="upcoming-event-details"><strong class="popper">Location:</strong>   {{ event.location }}</p>
+                    <p class="upcoming-event-details"><strong class="popper">Date:</strong>   {{ event.date|date:"F j, Y" }}</p>
+
+                    <p class="upcoming-event-description">&#9827; {{ event.description|truncatewords:10 }} 
+                        <a href="" onclick="toggleDescription(this); return false;" class="event-item-shower">Show More</a>
+                    </p>
+                    <p style="display:none;" class="upcoming-event-description-full">&#9827; {{ event.description }} 
+                        <a href="" onclick="toggleDescription(this); return false;" class="event-item-shower">Show Less</a>
+                    </p>
+
+                    <!--Checking does it have a url or not-->
+                    {% if event.learn_more_url %}
+                    <p>
+                        <a href="{{ event.learn_more_url }}" class="upcoming-event-url">Learn More</a>
+                    </p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!--Pagination Section-->
+    <section class="pagination-container">
+
+        <!--Checking are their any pages behind-->
+        {% if upcoming_events.has_previous %}
+            <div class="pagination-previous-container">
+                <a class="pagination-link" href="?page={{ upcoming_events.previous_page_number }}">Previous</a>
+            </div>
+        {% endif %}
+
+        <!--Section for checking what page number we at-->
+        <div class="pagination-pager-container">
+            <p class="pagination-pager">Page {{ upcoming_events.number }} of {{ upcoming_events.paginator.num_pages }}</p>
+        </div>
+
+        <!--Checking if their any pages ahead-->
+        {% if upcoming_events.has_next %}
+            <div class="pagination-next-container">
+                <a class="pagination-link" href="?page={{ upcoming_events.next_page_number }}">Next</a>
+            </div>
+        {% endif %}
+
+    </section>
+{% endblock body %}
+
+

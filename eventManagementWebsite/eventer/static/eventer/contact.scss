@@ -1,0 +1,102 @@
+@use "styles";
+
+
+body
+{
+    background-image: url(images/event_detail.jpg);
+}
+
+.contact-user-container-main
+{
+    @extend %flexer-extender;
+}
+
+.contact-user-container, .form-group
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    width: 70%;
+}
+
+.contact-user-container
+{
+    background-color: styles.$pureWhite;
+    border-radius: 12px;
+    border-left: 10px groove styles.$hardBlue;
+}
+
+.contact-user-header-container
+{
+    @extend %flexer-extender;
+    background-color: styles.$moderateBlue;
+    width: 100%;
+    margin-bottom: styles.$spacingStandard;
+}
+
+.contact-user-header
+{
+    font-size: 30px;
+    color: styles.$pureWhite;
+    font-family: styles.$boldFont;
+}
+
+.contact-form
+{
+    @extend %flexer-extender;
+}
+
+.form-control
+{
+    @extend %former-extender;
+    margin: 20px 20px;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid styles.$hardBlue;
+}
+
+.form-group
+{
+    @extend %flexer-extender;
+}
+
+.contact-button
+{
+    @extend %buttoner-extender;
+    background-color: styles.$hardBlue;
+    color: styles.$pureWhite;
+}
+
+.contact-info-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    border-radius: 12px;
+    justify-content: center;
+    margin: 100px;
+    background-color: styles.$moderateBlue;
+}
+
+.contact-info
+{
+    padding: 40px;
+    background-color: styles.$blendBlue;
+}
+
+.info
+{
+    color: styles.$pureWhite;
+    font-family: styles.$modernMonoFont;
+}
+
+.location-header
+{
+    font-family: styles.$modernMonoFont;
+    margin-left: styles.$spacingStandard;
+    color: styles.$hardBlue;
+}
+
+.map
+{
+    margin-bottom: 100px;
+}

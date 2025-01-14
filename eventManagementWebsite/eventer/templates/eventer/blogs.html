@@ -1,0 +1,60 @@
+{% extends "eventer/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+    Blog
+
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "eventer/blogs.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--Section for all the blog posts main container-->
+    <section class="blogs-container">
+
+        <!--Mqin header of the blog-->
+        <div class="blogs-banner-container">
+
+            <div class="blogs-header-container">
+                <h1 class="blogs-header">Blogs</h1>
+            </div>
+
+            <div class="blogs-appealer-container">
+                <h2 class="blogs-appealer">"Stories Worth Sharing,<br> <span class="appealer">Moments Worth Remembering.</span>"</h2>
+            </div>
+        </div>
+
+        <div class="blog-post-container">
+
+            <!--List of availiable Blogs-->
+            {% for post in posts %}
+                <div class="blog-post">
+                    <h3 class="blog-header">{{ post.title }}</h3>
+                    <p class="blog-excerpt">{{ post.excerpt }}</p>
+                    <a class="blog-read" href="{% url "blog_detail" post.id %}">Read More</a>
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="blog-event-container">
+
+            <div class="blog-event-header-container">
+                <h1 class="blog-event-header">There's much more events going on. Find one for you!</h2>
+            </div>
+        
+            <div class="blog-button-container">
+                <a href="{% url "events" %}" class="blog-button">Find Events</a>
+            </div>
+
+        </div>
+
+    </section>
+{% endblock body %}

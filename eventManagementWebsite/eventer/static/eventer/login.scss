@@ -1,0 +1,63 @@
+@use "styles";
+
+body
+{
+    background-image: none;
+}
+
+.login-form-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: styles.$hardBlue;
+    width: 60%;
+    margin-left: 250px;
+    border-left: 10px groove styles.$blendBlue;
+    border-radius: 8px;
+}
+
+.login-header
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$pureWhite;
+    border-bottom: 3px solid styles.$pureWhite;;
+    font-size: 2.5rem;
+}
+
+.log-form
+{
+    @extend %former-extender;
+    margin: 20px;
+}
+
+.log-button-container
+{
+    @extend %flexer-extender;
+}
+
+.log-button
+{
+    @extend %buttoner-extender;
+    background-color: styles.$goldenYellow;
+    color: styles.$pureWhite;
+    margin-bottom: 40px;
+}
+
+.log-label
+{
+    color: styles.$pureWhite;
+    font-size: 20px;
+}
+
+.log-labeler
+{
+    color: styles.$pureWhite;
+    font-family: styles.$modernMonoFont;
+    font-size: small;
+}
+
+.flexer
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}

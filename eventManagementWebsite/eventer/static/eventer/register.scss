@@ -1,0 +1,99 @@
+@use "styles";
+
+body
+{
+    background-image: none;
+}
+
+.register-form-container
+{
+    @extend %flexer-extender;
+    @extend %box-shadower-extender;
+    flex-direction: column;
+    margin: 80px 210.5px;
+    padding: 80px;
+    background-color: styles.$navyBlue;
+    border-radius: 10px;
+}
+
+.register-form
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: styles.$pureWhite;
+    padding: 60px;
+}
+
+.register-header
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$pureWhite;
+    margin-bottom: 45px;
+}
+
+.register-label
+{
+    font-family: styles.$modernMonoFont;
+    color: styles.$hardBlue;
+    font-weight: bolder;
+    margin: 0px 10px;
+    margin-bottom: 6px;
+}
+
+.form-event, .form-name
+{
+    @extend %former-extender;
+    font-family: styles.$modernMonoFont;
+    margin-bottom: 30px;
+}
+
+.form-event
+{
+    background-color: styles.$offWhite;
+    color: styles.$hardBlue;
+}
+
+.form-name
+{
+    background-color: styles.$hardBlue;
+    color: styles.$offWhite;
+}
+
+.form-email, .form-phone
+{
+    @extend %former-extender;
+    font-family: styles.$modernMonoFont;
+}
+
+.form-email
+{
+    background-color: styles.$hardBlue;
+    color: styles.$offWhite;
+}
+
+.form-phone
+{
+    margin-bottom: 20px;
+    background-color: styles.$offWhite;
+    color: styles.$hardBlue;
+}
+
+.form-ticket
+{
+    @extend %former-extender;
+    font-family: styles.$modernMonoFont;
+    margin-bottom: 30px;
+}
+
+.register-button
+{
+    @extend %buttoner-extender;
+    margin-top: 30px;
+    background-color: styles.$navyBlue;
+    color: styles.$pureWhite;
+}
+
+.form-flex
+{
+    @extend %flexer-extender;
+}
