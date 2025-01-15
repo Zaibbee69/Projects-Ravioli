@@ -1,0 +1,80 @@
+@use "main";
+
+body
+{
+    background-color: main.$googleBlue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-main
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#google-head-holder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.google-head
+{
+    margin-bottom: 6px;
+}
+
+.google-head-text
+{
+    color: main.$googleWhite;
+    font-size: 18px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+#pager-head
+{
+    color: main.$googleWhite;
+    font-family: cursive;
+}
+
+.text-field
+{
+    background-color: main.$googleLighterBlue;
+    border: 2px solid main.$googleDarkBlue;
+}
+
+.text-field-2
+{
+    width: 500px;
+    height: 40px;
+    background-color: main.$googleDarkBlue;
+    border: 2px solid main.$googleLighterBlue;
+    border-radius: 20px;
+    padding-left: 20px;
+    color: main.$googleWhite;
+    transition: background-color 1s, border 1s;
+}
+
+.text-field-2::placeholder
+{
+    color: main.$googleWhite;
+}
+.text-field::placeholder
+{
+    color: main.$googleWhite;
+}
+
+
+.text-field-2:hover
+{
+    background-color: main.$googleBlack;
+    border: 2px solid main.$googleWhite;
+}
+
+.submit-field
+{
+    background-color: main.$googleLighterBlue;
+}

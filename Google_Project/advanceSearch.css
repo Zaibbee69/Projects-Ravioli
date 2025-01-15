@@ -1,0 +1,186 @@
+/* My variables im gonna use */
+#footer-tag, .buttons-holder, .input-holder, .google-head, .google-advanced-holder, .google-image-holder, .nav-main {
+  display: flex;
+  align-items: center;
+}
+
+.google-advanced, .google-image {
+  color: ghostwhite;
+  font-family: monospace;
+  font-size: 20px;
+  transition: color 1s;
+  margin: 20px;
+}
+
+.google-advanced:hover, .google-image:hover {
+  color: #56585a;
+}
+
+.google-head {
+  transition: transform 1s;
+}
+
+.google-head:hover {
+  transform: scale(1.1);
+}
+
+.lucky-field, .submit-field {
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  background-color: #56585a;
+  color: ghostwhite;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 20px;
+  font-size: 14px;
+  font-family: monospace;
+  transition: padding 1s, background-color 1s;
+}
+
+.lucky-field:hover, .submit-field:hover {
+  padding: 15px 60px;
+  background-color: #000000;
+}
+
+body {
+  background-color: #212529;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-main {
+  justify-content: space-between;
+  border-bottom: 2px solid #56585a;
+}
+
+.google-head {
+  justify-content: center;
+  color: ghostwhite;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 86px;
+  font-weight: 500;
+}
+
+.input-holder {
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: 20px;
+}
+
+.text-field {
+  width: 500px;
+  height: 40px;
+  background-color: #212529;
+  border: 2px solid #56585a;
+  border-radius: 20px;
+  padding-left: 20px;
+  color: ghostwhite;
+  transition: background-color 1s, border 1s;
+}
+
+.text-field:hover {
+  background-color: #000000;
+  border: 2px solid ghostwhite;
+}
+
+.text-field::-moz-placeholder {
+  font-size: 16px;
+}
+
+.text-field::placeholder {
+  font-size: 16px;
+}
+
+#footer-tag {
+  justify-content: center;
+  flex-direction: column;
+}
+
+#footer-1 {
+  color: ghostwhite;
+  font-size: 18px;
+  font-family: cursive;
+}
+
+#footer-2 {
+  color: #56585a;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+body {
+  background-color: rgb(38, 38, 147);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#google-head-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.google-head {
+  margin-bottom: 6px;
+}
+
+.google-head-text {
+  color: ghostwhite;
+  font-size: 18px;
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+#pager-head {
+  color: ghostwhite;
+  font-family: cursive;
+}
+
+.text-field {
+  background-color: rgb(50, 131, 217);
+  border: 2px solid rgb(11, 11, 94);
+}
+
+.text-field-2 {
+  width: 500px;
+  height: 40px;
+  background-color: rgb(11, 11, 94);
+  border: 2px solid rgb(50, 131, 217);
+  border-radius: 20px;
+  padding-left: 20px;
+  color: ghostwhite;
+  transition: background-color 1s, border 1s;
+}
+
+.text-field-2::-moz-placeholder {
+  color: ghostwhite;
+}
+
+.text-field-2::placeholder {
+  color: ghostwhite;
+}
+
+.text-field::-moz-placeholder {
+  color: ghostwhite;
+}
+
+.text-field::placeholder {
+  color: ghostwhite;
+}
+
+.text-field-2:hover {
+  background-color: #000000;
+  border: 2px solid ghostwhite;
+}
+
+.submit-field {
+  background-color: rgb(50, 131, 217);
+}/*# sourceMappingURL=advanceSearch.css.map */

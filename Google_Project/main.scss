@@ -1,0 +1,174 @@
+/* My variables im gonna use */
+
+$googleGrey: #212529;
+$googleBlack: #000000;
+$googleWhite: ghostwhite;
+$googleLighterGrey: #56585a;
+$googlePurple: rgb(78, 24, 143);
+$googleDarkerPurple: rgb(49, 21, 83);
+$googleBlue: rgb(38, 38, 147);
+$googleDarkBlue: rgb(11, 11, 94);
+$googleLighterBlue: rgb(50, 131, 217);
+
+%flexer-default
+{
+    display: flex;
+    align-items: center;
+}
+
+%nav-elements
+{
+    color: $googleWhite;
+    font-family: monospace;
+    font-size: 20px;
+    transition: color 1s;
+    margin: 20px;
+}
+
+%nav-elements:hover
+{
+    color: $googleLighterGrey;
+}
+
+%transformer
+{
+    transition: transform 1s;
+}
+
+%transformer:hover
+{
+    transform: scale(1.1);
+}
+
+%google-button
+{
+    cursor: pointer;
+    border-radius: 2px;
+    border: none;
+    background-color: $googleLighterGrey;
+    color: $googleWhite;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 20px;
+    font-size: 14px;
+    font-family: monospace;
+    transition: padding 1s, background-color 1s;
+}
+
+%google-button:hover
+{
+    padding: 15px 60px;
+    background-color: $googleBlack;
+}
+
+body
+{
+    background-color: $googleGrey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-main
+{
+    @extend %flexer-default;
+    justify-content:space-between;
+    border-bottom: 2px solid $googleLighterGrey;
+}
+
+.google-image-holder
+{
+    @extend %flexer-default;
+}
+
+.google-image
+{
+    @extend %nav-elements;
+}
+
+.google-advanced-holder
+{
+    @extend %flexer-default;
+}
+
+.google-advanced
+{
+    @extend %nav-elements;
+}
+
+.google-head
+{
+    @extend %flexer-default;
+    @extend %transformer;
+    justify-content: center;
+    color: $googleWhite;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 86px;
+    font-weight: 500;
+}
+
+.input-holder
+{
+    @extend %flexer-default;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 20px;
+}
+.text-field
+{
+    width: 500px;
+    height: 40px;
+    background-color: $googleGrey;
+    border: 2px solid $googleLighterGrey;
+    border-radius: 20px;
+    padding-left: 20px;
+    color: $googleWhite;
+    transition: background-color 1s, border 1s;
+}
+
+.text-field:hover
+{
+    background-color: $googleBlack;
+    border: 2px solid $googleWhite;
+}
+
+.text-field::placeholder
+{
+    font-size: 16px;
+}
+
+.buttons-holder
+{
+    @extend %flexer-default;
+}
+
+.submit-field
+{
+    @extend %google-button;
+}
+
+.lucky-field
+{
+    @extend %google-button;
+}
+
+#footer-tag
+{
+    @extend %flexer-default;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#footer-1
+{
+    color: $googleWhite;
+    font-size: 18px;
+    font-family: cursive;
+}
+
+#footer-2
+{
+    color: $googleLighterGrey;
+    font-size: 14px;
+    font-family: monospace;
+}

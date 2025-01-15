@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Meta tags for better device compatibility-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Title Of my website-->
+    <title>Google Image Search</title>
+
+    <!--Linking my Own CSS file-->
+    <link rel="stylesheet" href="imageSearch.css">
+
+</head>
+<body>
+
+    <nav class="nav-main">
+
+        <!--Button for my default google going page-->
+        <div class="google-main-holder">
+            <p class="google-image"><a style="text-decoration: none;" class="google-image" href="index.html">Google Search</a></p>
+        </div>
+        
+
+    </nav>
+
+    <br><br>
+
+    <div id="google-head-holder">
+        <h1 class="google-head">Google</h1>
+        <p class="google-head-text">Image Search</p>
+    </div>
+    <!--Form for making queries-->
+    <form action="https://www.google.com/search">
+        
+        <!--Input tag for getting input from the user-->
+        <div class="input-holder">
+            <input type="hidden" name="udm" value="2">
+            <input class="text-field" type="text" name="q" placeholder="Search">
+
+            <br><br>
+
+            <div class="buttons-holder">
+                <!--Input tag for submitting the query to the user-->
+                <input class="submit-field" type="submit" value="Google Search Image">
+            </div>
+
+        </div>
+
+    </form>
+    
+
+    <br><br>
+    <br><br>
+    <hr>
+    <br><br>
+
+    <div id="footer-tag">
+        <p id="footer-1">@All rights reserved</p>
+        <p id="footer-2">Inspiration taken from <a href="https://www.google.com">Google</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@use "main";
+
+body
+{
+    background-color: main.$googlePurple;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-main
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#google-head-holder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.google-head
+{
+    margin-bottom: 6px;
+}
+
+.google-head-text
+{
+    color: main.$googleWhite;
+    font-size: 18px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.text-field
+{
+    background-color: main.$googleDarkerPurple;
+}
+
+.submit-field
+{
+    background-color: main.$googleDarkerPurple;
+}
