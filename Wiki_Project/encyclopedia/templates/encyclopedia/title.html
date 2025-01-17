@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wiki: {{ title }} </title>
+
+    <link rel="stylesheet" href="{% static "encyclopedia/title.css" %}">
+</head>
+<body>
+
+    <nav id="nav-holder">
+
+       <div class="nav-element-holder">
+            <a class="nav-element" href="{% url "index" %}" >Go back to Home</a>
+       </div>
+
+       <div class="nav-element-holder">
+            <a class="nav-element" href="{% url "edit" title %}" >Edit Page</a>
+       </div>
+
+    </nav>
+
+    {% if entry_data %}
+        <!--Inputting the head here from python file-->
+        <h1 class="title-head"> {{ title }} </h1>
+
+        <!--Printing the data from the function-->
+        <div class="entry-data-holder">
+            <p class="entry-data">{{ entry_data|safe }}</p>
+        </div>
+
+    {% else %}
+
+        <h1 class="title-head">No Such Entry Exists: {{ title }} </h1>
+
+        <div class="entry-data-holder">
+            <p class="entry-data">The requested entry could not be found.</p>
+        </div>
+
+    {% endif %}
+
+
+</body>
+</html>

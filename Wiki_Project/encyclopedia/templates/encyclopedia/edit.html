@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit Wiki: {{ title }} </title>
+
+    <link rel="stylesheet" href="{% static "encyclopedia/title.css" %}">
+</head>
+<body>
+
+    <nav id="nav-holder">
+
+       <div class="nav-element-holder">
+            <a class="nav-element" href="{% url "index" %}" >Go back to Home</a>
+       </div>
+
+    </nav>
+
+        <!--Inputting the head here from python file-->
+        <h1 class="title-head"> Edit Wiki: {{ title }} </h1>
+
+
+        <form method="post" action="{% url "edit" title %}">
+
+            <!--Printing the data from the function-->
+            <div class="entry-data-holderboy">
+
+                {% csrf_token %}
+                <textarea name="wiki-content" id="wiki-content" autofocus required wrap="soft" rows="4" cols="50" ="Enter The Content Of You Wiki"> {{ entry_data }} </textarea>
+                <button type="submit" id="wiki-button">Submit</button>
+            </div>
+
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki: New Page</title>
+
+    <link rel="stylesheet" href="{% static "encyclopedia/newpage.css" %}">
+</head>
+<body>
+
+    <h1 id="title-head">Create a new wiki page!</h1>
+
+    <form action="{% url "newpage" %}" method="post">
+
+        <div id="wiki-holder">
+
+            {% csrf_token %}
+            
+            <input name="wiki-title" id="wiki-title" type="text" autofocus required placeholder="Enter Title Of Your Wiki">
+            <textarea name="wiki-content" id="wiki-content" autofocus required wrap="soft" rows="4" cols="50" placeholder="Enter The Content Of You Wiki"></textarea>
+            <button type="submit" id="wiki-button">Submit</button>
+
+        </div>
+    </form>
+
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+body
+{
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#nav-holder
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: cornflowerblue;
+    height: 80px;
+    margin-bottom: 80px;
+
+}
+
+.nav-element-holder
+{
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.nav-element
+{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-family: monospace;
+    font-size: 18px;
+    transition: 1s;
+}
+
+.nav-element:hover
+{
+    text-decoration: underline;
+}
+
+.title-head
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:cornflowerblue;
+    font-size: 54px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-shadow: 1px 1px 4px grey;
+    transition: 1s;
+}
+
+.title-head:hover
+{
+    transform: scale(1.1);
+}
+
+.entry-data-holder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.entry-data-holderboy
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.entry-data
+{
+    font-family: monospace;
+    font-size: 16px;
+    color: grey;
+}
+
+#wiki-content
+{
+    padding-left: 10px;
+    padding-top: 20px;
+    font-family: monospace;
+    font-size: 14px;
+    color: grey;
+    border: 2px solid lightcoral;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: black;
+    border-radius: 20px;
+    transition: 0.15s;
+    border-radius: 2px;
+}
+
+#wiki-content:hover
+{
+    background-color: lightblue;
+}
+
+#wiki-button
+{
+    padding: 10px 50px;
+    border: none;
+    color: white;
+    background-color: deepskyblue;
+    transition: 1s;
+    border-radius: 2px;
+}
+
+#wiki-button:hover
+{
+    padding: 10px 70px;
+    background-color: darkorchid;
+}
