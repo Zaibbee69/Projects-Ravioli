@@ -1,0 +1,38 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+New Post
+{% endblock title %}
+
+{% block stylers %}
+
+<link href="{% static "network/newPost.css" %}" rel="stylesheet">   
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <h1 class="main-header">Make a Post</h1>
+
+    <br><br>
+    <br><br>
+
+    <form action="{% url "new_post" %}" method="post"> 
+        {% csrf_token %}
+
+        <div class="form-item-container">
+
+            <!--My Django Form for new posts-->
+            <label for="form-text-area" class="material-symbols-outlined">pages</label>
+            {{ form }}
+
+            <!--Submit-button-->
+            <button type="submit" class="form-submit">Post</button>
+        </div>
+
+    </form>
+
+
+{% endblock body %}

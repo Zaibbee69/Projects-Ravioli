@@ -1,0 +1,132 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+
+{{ username }}
+
+{% endblock title %}
+
+{% block stylers %}
+
+<link href="{% static "network/profile.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+{% block body %}
+
+    <!--The user names header-->
+    <div class="user-head-container">
+
+        <!--Checking who clicked on the profile-->
+        {% if own_user %}
+            <h2 class="user-head-greet"> Hey there! </h2>
+        {% else %}
+            <h2 class="user-head-greet"> Sneak a Look! </h2>
+        {% endif %}
+            <h1 class="user-head-name"> {{ username }} </h1>
+    </div>
+
+    <!--All the follower details of the user-->
+    <div class="user-details-container">
+        <p class="user-followers" id="follower-count">Followers: {{ profile_viewer.followers.count }}</p>
+        <p class="user-followers" id="following-count">Following: {{ profile_viewer.following.count }}</p>
+    </div>
+
+    <hr>
+
+    <!--Now i will be adding a to follow button which is specific-->
+    {% if request.user.is_authenticated and request.user != profile_viewer %}
+
+
+            <div class="follow-button-container">
+
+                <button data-user-named="{{ username }}" class="follow-button" type="submit">
+
+                    {% if is_following %}
+                        Unfollow
+                    {% else %}
+                        Follow
+                    {% endif  %}
+
+                </button>
+            </div>
+
+        
+    
+    {% endif %}
+
+    <!--Now displaying all the posts-->
+    <h2 class="post-header">Posts</h2>
+
+    {% for post in posts %}
+        
+    <div id="post-{{ post.id }}" class="post-item">
+
+        <!--First Putting the users name-->
+        <h2 class="post-user"><a style="color: var(--postUser);" href="{% url "profile_user" post.creator.username %}" style="text-decoration: none;">{{ post.creator.username }}</a></h2>
+
+        <!--Now putting the content of the post-->
+        <div class="post-content-container">
+            <p class="post-content"> {{ post.content }}</p>
+        </div>
+
+        <ul class="post-list">
+
+            <!--Now putting the time of the post-->
+            <li><small class="post-time"> {{ post.time|date:"F j, Y, g:i a" }}</small></li>
+
+            <!--Now showing the number of the likes a post has-->
+            <li><p id="like-count-{{ post.id }}" class="post-like">Likes: {{ post.like_count }}</p></li>
+        </ul>
+
+        
+        <div post-button-container>
+            <!--Making a check if user is the creator of the post-->
+            {% if post.creator == request.user %}
+                <button class="edit-button" data-post-id="{{ post.id }}">Edit</button>
+            {% endif %}
+
+            <!--Checking if post is already liked-->
+            <button class="like-button" data-post-id="{{ post.id }}">
+                {% if request.user in post.likes.all %}
+                    Unlike
+                {% else %}
+                    Like
+                {% endif %}
+            </button>
+                
+        </div>
+
+    </div>
+
+    <hr>
+    {% endfor %}
+
+
+    <!--Nav links for the paging headers-->
+    <div class="pagination-container">
+
+        {% if posts.has_previous %}
+            <div class="pagination-links">
+                <a style="color: var(--colorDefault);" href="?page={{ posts.previous_page_number }}">Previous</a>
+            </div>
+        {% endif %}
+    
+        <div>
+            <span class="messager">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+            </span>
+        </div>    
+    
+        {% if posts.has_next %}
+            <div class="pagination-links">
+                <a style="color: var(--colorDefault);" href="?page={{ posts.next_page_number }}">Next</a>
+            </div>
+        {% endif %}
+    </div>
+
+        
+
+{% endblock body %}

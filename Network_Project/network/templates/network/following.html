@@ -1,0 +1,87 @@
+{% extends "network/layout.html" %}
+
+{% block title %}
+
+Following
+
+{% endblock title %}
+
+{% block body %}
+
+    <!--Main header of posts-->
+    
+    <div class="header-container">
+        <h1 class="following-main">Posts</h1>
+        <h2 class="following-support">of all the fellah's you following!</h2>
+    </div>
+
+    {% for post in posts %}
+
+    <div id="post-{{ post.id }}" class="post-item">
+
+        <!--First Putting the users name-->
+        <h2 class="post-user"><a style="color: var(--postUser);" href="{% url "profile_user" post.creator.username %}" style="text-decoration: none;">{{ post.creator.username }}</a></h2>
+
+        <!--Now putting the content of the post-->
+        <div class="post-content-container">
+            <p class="post-content"> {{ post.content }}</p>
+        </div>
+
+        <ul class="post-list">
+
+            <!--Now putting the time of the post-->
+            <li><small class="post-time"> {{ post.time|date:"F j, Y, g:i a" }}</small></li>
+
+            <!--Now showing the number of the likes a post has-->
+            <li><p id="like-count-{{ post.id }}" class="post-like">Likes: {{ post.like_count }}</p></li>
+        </ul>
+
+        
+        <div post-button-container>
+            <!--Making a check if user is the creator of the post-->
+            {% if post.creator == request.user %}
+                <button class="edit-button" data-post-id="{{ post.id }}">Edit</button>
+            {% endif %}
+
+            <!--Checking if post is already liked-->
+            <button class="like-button" data-post-id="{{ post.id }}">
+                {% if request.user in post.likes.all %}
+                    Unlike
+                {% else %}
+                    Like
+                {% endif %}
+            </button>
+                
+        </div>
+
+    </div>
+        <hr>
+        
+    {% empty %}
+        <p class="messager">You are not following anyone yet.</p>
+    {% endfor %}
+
+
+    <!--Nav links for the paging headers-->
+    <div class="pagination-container">
+
+        {% if posts.has_previous %}
+            <div class="pagination-links">
+                <a style="color: var(--colorDefault);" href="?page={{ posts.previous_page_number }}">Previous</a>
+            </div>
+        {% endif %}
+    
+        <div>
+            <span class="messager">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+            </span>
+        </div>    
+    
+        {% if posts.has_next %}
+            <div class="pagination-links">
+                <a style="color: var(--colorDefault);" href="?page={{ posts.next_page_number }}">Next</a>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,382 @@
+/*Colors i will be using through out my website*/
+    $lightGrey: rgb(169, 169, 169);
+    $greyMedium: #3d4146;
+    $greyModerate: #212529;
+    $jetBlack: black;
+    $cream: rgb(255, 255, 249);
+    $blueMedium: rgb(25, 72, 192);
+    $blueModerate: rgb(81, 116, 255);
+    $blueExotic: rgb(119, 154, 228);
+    $smokeyWhite: whitesmoke;
+
+/*Random Specifications*/
+    $spacingStandard: 40px;
+
+/*All my Fonts*/
+
+    $modernMonoFont: Roboto Mono;
+    $monoFont: monospace;
+    $boldFont: Ubuntu;
+    $elegantFont: Roboto Slab;
+    $defaultFont: Poppins;
+    $decentFont: Roboto;
+
+/*Dark THEME*/
+.dark-theme
+{
+    --bg: #{$greyModerate};
+    --fontColor: #{$smokeyWhite};
+    --navColor: #{$jetBlack};
+    --fontStyle: #{$defaultFont};
+    --colorDefault: #{$smokeyWhite};
+    --themer: #{$smokeyWhite};
+    --mainHeader: #{$smokeyWhite};
+    --postBorder: #{$lightGrey};
+    --postUser: #{$smokeyWhite};
+    --followHeadBack: #{$smokeyWhite};
+    --followHeadFront: #{$lightGrey};
+    --buttonFront: #{$jetBlack};
+}
+
+/* Light theme */
+.light-theme 
+{
+    --bg: #{$cream};
+    --fontColor: #{$jetBlack};
+    --navColor: #{$blueMedium};
+    --fontStyle: #{$defaultFont};
+    --colorDefault: #{$smokeyWhite};
+    --themer: #{$jetBlack};
+    --mainHeader: #{$blueModerate};
+    --postBorder: #{$blueModerate};
+    --postUser: #{$blueMedium};
+    --followHeadBack: #{$blueModerate};
+    --followHeadFront: #{$blueExotic};
+    --buttonFront: #{$blueExotic};
+}
+
+*
+{
+    transition: 0.5s;
+}
+
+/*All my SASS extenders */
+%flexer-extender
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%box-shadow-extender
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+%bottom-line-effect-extender
+{
+    position: relative;
+
+    &::after
+    {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        background: var(--colorDefault);
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: 0.5s;
+    }
+
+    &:hover::after
+    {
+        transform: scaleX(1);
+    }
+}
+
+%buttoner-extender
+{
+    border: none;
+    padding: 12px 50px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    cursor: pointer;
+    &:hover
+    {
+        padding: 14px 65px;
+    }
+}
+
+%hover-extender
+{
+    &:hover
+    {
+        transform: scale(1.015);
+    }
+}
+
+body
+{
+  background-color: var(--bg);
+  color: var(--fontColor);
+  font-family: var(--fontStyle);
+  padding-top: 140px;
+  transition: 1s;
+}
+
+.navbar-main
+{
+  @extend %flexer-extender;
+  @extend %box-shadow-extender;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;  
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: var(--navColor);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 4px;
+  transition: 1s;
+  z-index: 999;
+}
+
+.nav-main-component-container
+{
+    flex: 3;
+    padding-left: 25px;
+}
+
+.nav-main-component
+{
+    @extend %bottom-line-effect-extender;
+    font-family: $boldFont;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-left: 2px solid var(--colorDefault);
+    border-right: 2px solid var(--colorDefault);
+    color: $lightGrey;
+}
+
+.nav-user-component-container
+{
+    flex: 5;
+}
+
+.nav-user-component
+{
+    text-decoration: none;
+    color: var(--colorDefault);
+    font-family: $boldFont;
+    font-weight: bolder;
+    font-size: 16px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--colorDefault);
+}
+
+.nav-component-container
+{
+    flex: 1;
+}
+
+.nav-component
+{
+    @extend %bottom-line-effect-extender;
+    text-decoration: none;
+    color: var(--colorDefault);
+    font-family: $modernMonoFont;
+    font-size: 14px;
+}
+
+#change-theme
+{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.messager
+{
+    color: var(--fontColor);
+    font-family: $decentFont;
+    border-bottom: 1px solid var(--fontColor);
+}
+
+.material-symbols-outlined {
+    color: var(--themer);
+    transition: 1s;
+    border-bottom: 2px double $smokeyWhite;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.main-header
+{
+    @extend %flexer-extender;
+    font-family: $elegantFont;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    color: var(--mainHeader);
+}
+
+.posts-container
+{
+    @extend %flexer-extender;
+    border-bottom: 10px groove var(--mainHeader);
+    margin: 80px;
+}
+
+.post-item
+{
+    @extend %flexer-extender;
+    @extend %box-shadow-extender;
+    @extend %hover-extender;
+    @extend %bottom-line-effect-extender;
+    flex-direction: column;
+    border: 2px outset var(--postBorder);
+    margin: $spacingStandard;
+    padding: 20px 250px;
+    border-radius: 16px;
+    transition: 1s;
+}
+
+.post-user
+{
+    font-family: $boldFont;
+    font-size: 28px;
+    color: var(--postUser);
+    border-bottom: 2px double var(--postUser);
+    margin-bottom: 20px;
+}
+
+.post-list
+{
+    @extend %flexer-extender;
+    justify-content: flex-start;
+    flex-direction: column;
+    list-style: circle;
+    font-family: $modernMonoFont;
+}
+
+.post-time
+{
+    color: var(--postBorder);
+    border-bottom: 1px solid var(--postBorder);
+}
+
+.post-like
+{
+    font-size: 14px;
+}
+
+.header-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.following-main
+{
+    color:  var(--mainHeader);
+    margin: 20px;
+    font-family: $elegantFont;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-left: 8px groove var(--followHeadBack);
+    border-right: 8px groove var(--followHeadBack);
+}
+
+.following-support
+{
+    color: var(--followHeadFront);
+    font-size: medium;
+    border-bottom: 2px solid var(--followHeadBack);
+    font-family: $boldFont;
+    margin-bottom: 50px;
+}
+
+.pagination-container
+{
+    @extend %flexer-extender;
+    gap: 20px;
+    font-family: $modernMonoFont;
+}
+
+.pagination-links
+{
+    @extend %buttoner-extender;
+    background-color: var(--navColor);
+    color: var(--colorDefault);
+}
+
+.edit-button
+{
+    padding: 10px 50px;
+    margin: $spacingStandard;
+    cursor: pointer;
+    transition: 0.5s;
+    color: $smokeyWhite;
+    border: none;
+    background-color: var(--buttonFront);
+    font-family: $boldFont;
+
+    &:hover
+    {
+        padding: 10px 58px;
+    }
+}
+
+.like-button
+{
+    padding: 10px 50px;
+    margin: $spacingStandard;
+    cursor: pointer;
+    transition: 0.5s;
+    color: $smokeyWhite;
+    border: none;
+    border-bottom: 3px groove var(--fontColor);
+    background-color: var(--buttonFront);
+    font-family: $monoFont;
+
+    &:hover
+    {
+        padding: 10px 58px;
+    }
+}
+
+.footer-banner
+{
+    margin-top: 250px;
+}
+
+.footer
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    font-family: $boldFont;
+}
+
+.footer-one
+{
+    color: lightgray;
+    font-size: 16px;
+}
+
+.footer-two
+{
+    font-size: 14px;
+}
+
+.footer-three
+{
+    font-family: $modernMonoFont;
+    font-size: 12px;
+}

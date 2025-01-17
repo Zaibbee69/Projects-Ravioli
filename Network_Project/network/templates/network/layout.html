@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ChatterBox: {% block title %}{% endblock %}</title>
+        
+        <link href="{% static 'network/styles.css' %}" rel="stylesheet">
+
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+        <!--Google Icons-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+        <!--Added a block for different types of style sheets-->
+        {% block stylers %}
+        {% endblock stylers %}
+
+        <!--All my JS code-->
+        <script src="{% static "network/index.js" %}"></script>
+    </head>
+    <body class="dark-theme">
+
+        <!--Navbar-->
+        <nav class="navbar-main">
+            <div class="nav-main-component-container">
+                <a class="nav-main-component" href="{% url "index" %}">ChatterBox</a>
+            </div>
+          
+            {% if user.is_authenticated %}
+                
+                <div class="nav-user-component-container">
+                    <a class="nav-user-component" href="{% url "profile_user" request.user %}"><strong>{{ user.username }}</strong></a>
+                </div>
+
+            {% endif %}
+                
+            {% if user.is_authenticated %}
+                <!--Link so user can make new posts-->
+                <div class="nav-component-container">
+                    <a class="nav-component" href="{% url "new_post" %}">New Post</a>
+                </div>
+                
+            {% endif %}
+
+                <!--Button to allow user to change themes-->
+                <div class="nav-component-container">
+                    <abbr title="Change Theme">
+                        <button id="change-theme" type="button">
+                            <span class="material-symbols-outlined">contrast</span>
+                        </button>
+                    </abbr>
+                </div>
+                
+                <div class="nav-component-container">
+                    <a class="nav-component" href="{% url 'index' %}">All Posts</a>
+                </div>
+        
+            {% if user.is_authenticated %}
+    
+                <div class="nav-component-container">   
+                    <a class="nav-component" href="{% url "following" %}">Following</a>
+                </div>
+                
+                <div class="nav-component-container">
+                    <a class="nav-component" href="{% url 'logout' %}">Log Out</a>
+                </div>
+                
+            {% else %}
+        
+                <div class="nav-component-container">
+                    <a class="nav-component" href="{% url 'login' %}">Log In</a>
+                </div>
+                
+                <div class="nav-component-container">
+                    <a class="nav-component" href="{% url 'register' %}">Register</a>
+                </div>
+
+            {% endif %}
+
+          </nav>
+        
+        <div class="body">
+            {% block body %}
+            {% endblock %}
+        </div>
+
+        <hr class="footer-banner">
+        <div class="footer">
+            <p class="footer-one">@All rights reserved</p>
+            <p class="footer-two">Made by Jahan Zaib</p>
+            <p class="footer-three">A Social Networking Project</p>
+        </div>
+    </body>
+</html>

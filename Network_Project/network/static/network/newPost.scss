@@ -1,0 +1,75 @@
+@use "styles";
+
+
+.dark-theme
+{
+    --headerColor: #{styles.$smokeyWhite};
+    --headerBottom: #{styles.$lightGrey};
+    --linearOne: #{styles.$greyModerate};
+    --linearTwo: #{styles.$greyModerate};
+    --linearThree: #{styles.$jetBlack};
+    --formBack: #{styles.$smokeyWhite};
+    --formFront: #{styles.$jetBlack};
+    --buttonFront: #{styles.$smokeyWhite};
+    --buttonBack: #{styles.$jetBlack};
+}
+
+.light-theme
+{
+    --headerColor: #{styles.$blueModerate};
+    --headerBottom: #{styles.$blueMedium};
+    --linearOne: #{styles.$cream};
+    --linearTwo: #{styles.$smokeyWhite};
+    --linearThree: #{styles.$blueMedium};
+    --formBack: #{styles.$blueMedium};
+    --formFront: #{styles.$cream};
+    --buttonFront: #{styles.$smokeyWhite};
+    --buttonBack: #{styles.$blueMedium};
+}
+
+*
+{
+    transition: 1s;
+}
+
+body
+{
+    background-image: linear-gradient(to right bottom, var(--linearOne), var(--linearTwo), var(--linearThree));
+}
+
+.main-header
+{
+    @extend %flexer-extender;
+    justify-content: flex-start;
+    margin-left: styles.$spacingStandard;
+    font-family: styles.$elegantFont;
+    color: var(--headerColor);
+    text-decoration: underline;
+    text-decoration-color: var(--headerBottom);
+}
+
+.form-text-area
+{
+    padding: styles.$spacingStandard;
+    background-color: var(--formBack);
+    color: var(--formFront);
+    margin-right: 60px;
+    margin-top: styles.$spacingStandard;
+    border-radius: 4px;
+    border: 4px groove styles.$lightGrey;
+}
+
+.form-item-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.form-submit
+{
+    @extend %buttoner-extender;
+    font-family: styles.$modernMonoFont;
+    margin-top: styles.$spacingStandard;
+    color: var(--buttonFront);
+    background-color: var(--buttonBack);
+}

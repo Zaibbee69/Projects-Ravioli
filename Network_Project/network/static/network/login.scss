@@ -1,0 +1,85 @@
+/*backdrop-filter: blur(20px);*/
+@use "styles";
+
+.dark-theme
+{
+    --formBack: #{styles.$greyMedium};
+    --formFront: #{styles.$greyModerate};
+    --formText: #{styles.$smokeyWhite};
+    --formInner: #{styles.$greyMedium};
+    --buttonFront: #{styles.$smokeyWhite};
+    --buttonBack: #{styles.$jetBlack};
+}
+
+.light-theme
+{
+    --formBack: #{styles.$smokeyWhite};
+    --formFront: #{styles.$blueMedium};
+    --formText: #{styles.$blueMedium};
+    --formInner: #{styles.$cream};
+    --buttonFront: #{styles.$cream};
+    --buttonBack: #{styles.$blueModerate};
+}
+
+*
+{
+    transition: 1s;
+}
+
+.loginer-header
+{
+    margin: 80px 160px;
+    font-family: styles.$elegantFont;
+    font-weight: bold;
+    font-size: 40px;
+    color: styles.$smokeyWhite;
+    text-decoration: underline;
+    border-bottom: 2px solid white;
+}
+
+.form-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: var(--formBack);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.form-container-main
+{
+    @extend %flexer-extender;
+    @extend %box-shadow-extender;
+    flex-direction: column;
+    background-color: var(--formFront);
+    border: 2px solid styles.$jetBlack;
+    border-radius: 10px;
+}
+
+.form-item
+{
+    border: none;
+    padding: 14px 80px;
+    margin: 20px;
+    background-color: var(--formInner);
+    font-family: styles.$modernMonoFont;
+    color: var(--formText);
+
+    &::placeholder
+    {
+        text-align: center;
+        color: var(--formText);
+    }
+}
+
+.form-item-container
+{
+    @extend %flexer-extender;
+}
+
+.submit-button
+{
+    @extend %buttoner-extender;
+    color: var(--buttonFront);
+    background-color: var(--buttonBack);
+}

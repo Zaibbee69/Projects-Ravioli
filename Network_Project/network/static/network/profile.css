@@ -1,0 +1,381 @@
+/*Colors i will be using through out my website*/
+/*Random Specifications*/
+/*All my Fonts*/
+/*Dark THEME*/
+.dark-theme {
+  --bg: #212529;
+  --fontColor: whitesmoke;
+  --navColor: black;
+  --fontStyle: Poppins;
+  --colorDefault: whitesmoke;
+  --themer: whitesmoke;
+  --mainHeader: whitesmoke;
+  --postBorder: rgb(169, 169, 169);
+  --postUser: whitesmoke;
+  --followHeadBack: whitesmoke;
+  --followHeadFront: rgb(169, 169, 169);
+  --buttonFront: black;
+}
+
+/* Light theme */
+.light-theme {
+  --bg: rgb(255, 255, 249);
+  --fontColor: black;
+  --navColor: rgb(25, 72, 192);
+  --fontStyle: Poppins;
+  --colorDefault: whitesmoke;
+  --themer: black;
+  --mainHeader: rgb(81, 116, 255);
+  --postBorder: rgb(81, 116, 255);
+  --postUser: rgb(25, 72, 192);
+  --followHeadBack: rgb(81, 116, 255);
+  --followHeadFront: rgb(119, 154, 228);
+  --buttonFront: rgb(119, 154, 228);
+}
+
+* {
+  transition: 0.5s;
+}
+
+/*All my SASS extenders */
+.user-head-container, .user-details-container, .follow-button-container, .follow-button, .footer, .pagination-container, .header-container, .post-list, .post-item, .posts-container, .main-header, .navbar-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-item, .navbar-main {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.follow-button, .post-item, .nav-component, .nav-main-component {
+  position: relative;
+}
+.follow-button::after, .post-item::after, .nav-component::after, .nav-main-component::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: var(--colorDefault);
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+.follow-button:hover::after, .post-item:hover::after, .nav-component:hover::after, .nav-main-component:hover::after {
+  transform: scaleX(1);
+}
+
+.follow-button, .pagination-links {
+  border: none;
+  padding: 12px 50px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  cursor: pointer;
+}
+.follow-button:hover, .pagination-links:hover {
+  padding: 14px 65px;
+}
+
+.post-item:hover {
+  transform: scale(1.015);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fontColor);
+  font-family: var(--fontStyle);
+  padding-top: 140px;
+  transition: 1s;
+}
+
+.navbar-main {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: var(--navColor);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 4px;
+  transition: 1s;
+  z-index: 999;
+}
+
+.nav-main-component-container {
+  flex: 3;
+  padding-left: 25px;
+}
+
+.nav-main-component {
+  font-family: Ubuntu;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-left: 2px solid var(--colorDefault);
+  border-right: 2px solid var(--colorDefault);
+  color: rgb(169, 169, 169);
+}
+
+.nav-user-component-container {
+  flex: 5;
+}
+
+.nav-user-component {
+  text-decoration: none;
+  color: var(--colorDefault);
+  font-family: Ubuntu;
+  font-weight: bolder;
+  font-size: 16px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--colorDefault);
+}
+
+.nav-component-container {
+  flex: 1;
+}
+
+.nav-component {
+  text-decoration: none;
+  color: var(--colorDefault);
+  font-family: Roboto Mono;
+  font-size: 14px;
+}
+
+#change-theme {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.messager {
+  color: var(--fontColor);
+  font-family: Roboto;
+  border-bottom: 1px solid var(--fontColor);
+}
+
+.material-symbols-outlined {
+  color: var(--themer);
+  transition: 1s;
+  border-bottom: 2px double whitesmoke;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.main-header {
+  font-family: Roboto Slab;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  color: var(--mainHeader);
+}
+
+.posts-container {
+  border-bottom: 10px groove var(--mainHeader);
+  margin: 80px;
+}
+
+.post-item {
+  flex-direction: column;
+  border: 2px outset var(--postBorder);
+  margin: 40px;
+  padding: 20px 250px;
+  border-radius: 16px;
+  transition: 1s;
+}
+
+.post-user {
+  font-family: Ubuntu;
+  font-size: 28px;
+  color: var(--postUser);
+  border-bottom: 2px double var(--postUser);
+  margin-bottom: 20px;
+}
+
+.post-list {
+  justify-content: flex-start;
+  flex-direction: column;
+  list-style: circle;
+  font-family: Roboto Mono;
+}
+
+.post-time {
+  color: var(--postBorder);
+  border-bottom: 1px solid var(--postBorder);
+}
+
+.post-like {
+  font-size: 14px;
+}
+
+.header-container {
+  flex-direction: column;
+}
+
+.following-main {
+  color: var(--mainHeader);
+  margin: 20px;
+  font-family: Roboto Slab;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 8px groove var(--followHeadBack);
+  border-right: 8px groove var(--followHeadBack);
+}
+
+.following-support {
+  color: var(--followHeadFront);
+  font-size: medium;
+  border-bottom: 2px solid var(--followHeadBack);
+  font-family: Ubuntu;
+  margin-bottom: 50px;
+}
+
+.pagination-container {
+  gap: 20px;
+  font-family: Roboto Mono;
+}
+
+.pagination-links {
+  background-color: var(--navColor);
+  color: var(--colorDefault);
+}
+
+.edit-button {
+  padding: 10px 50px;
+  margin: 40px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: whitesmoke;
+  border: none;
+  background-color: var(--buttonFront);
+  font-family: Ubuntu;
+}
+.edit-button:hover {
+  padding: 10px 58px;
+}
+
+.like-button {
+  padding: 10px 50px;
+  margin: 40px;
+  cursor: pointer;
+  transition: 0.5s;
+  color: whitesmoke;
+  border: none;
+  border-bottom: 3px groove var(--fontColor);
+  background-color: var(--buttonFront);
+  font-family: monospace;
+}
+.like-button:hover {
+  padding: 10px 58px;
+}
+
+.footer-banner {
+  margin-top: 250px;
+}
+
+.footer {
+  flex-direction: column;
+  font-family: Ubuntu;
+}
+
+.footer-one {
+  color: lightgray;
+  font-size: 16px;
+}
+
+.footer-two {
+  font-size: 14px;
+}
+
+.footer-three {
+  font-family: Roboto Mono;
+  font-size: 12px;
+}
+
+.dark-theme {
+  --userHeadBack: rgb(169, 169, 169);
+  --userHeadFront: whitesmoke;
+  --userNameFront: rgb(169, 169, 169);
+  --userNameBack: whitesmoke;
+  --userFollowFront: whitesmoke;
+  --userFollowBack: rgb(169, 169, 169);
+  --userFollowLinearOne: #3d4146;
+  --userFollowLinearTwo: black;
+}
+
+.light-theme {
+  --userHeadBack: rgb(81, 116, 255);
+  --userHeadFront: rgb(25, 72, 192);
+  --userNameFront: rgb(119, 154, 228);
+  --userNameBack: rgb(25, 72, 192);
+  --userFollowFront: rgb(119, 154, 228);
+  --userFollowBack: rgb(81, 116, 255);
+  --userFollowLinearOne: rgb(81, 116, 255);
+  --userFollowLinearTwo: rgb(25, 72, 192);
+}
+
+* {
+  transition: 1s;
+}
+
+.user-head-container {
+  flex-direction: column;
+}
+
+.user-head-greet {
+  color: var(--userHeadFront);
+  border-bottom: 8px solid var(--userHeadBack);
+  font-family: Ubuntu;
+}
+
+.user-head-name {
+  font-family: Roboto Slab;
+  font-size: 38px;
+  color: var(--userNameFront);
+  border-left: 4px solid var(--userNameBack);
+  border-right: 4px solid var(--userNameBack);
+  padding: 0px 20px;
+}
+
+.user-details-container {
+  flex-direction: row;
+  gap: 20px;
+}
+
+.user-followers {
+  font-family: Roboto Mono;
+  font-size: 13px;
+  background-image: linear-gradient(var(--userFollowLinearOne), var(--userFollowLinearTwo));
+  padding: 4px 10px;
+  margin-top: 20px;
+  color: whitesmoke;
+  border-bottom: 10px groove var(--userFollowLinearTwo);
+}
+
+.follow-button-container {
+  background-color: var(--userFollowLinearOne);
+  width: 200px;
+  height: 200px;
+  margin-left: 530px;
+  margin-top: 60px;
+  border-radius: 200px;
+}
+
+.follow-button {
+  font-family: Roboto;
+  background-color: var(--userFollowLinearTwo);
+  color: whitesmoke;
+  border-bottom: 2px dashed whitesmoke;
+}
+.follow-button:hover {
+  padding: 12px 50px;
+  transform: rotateZ(8deg);
+}
+
+.post-header {
+  font-size: 32px;
+  font-family: Roboto Mono;
+  margin: 40px;
+  text-decoration: underline;
+}/*# sourceMappingURL=profile.css.map */

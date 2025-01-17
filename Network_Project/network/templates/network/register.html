@@ -1,0 +1,50 @@
+{% extends "network/layout.html" %}
+
+{% load static %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block stylers %}
+
+    <link href="{% static "network/login.css" %}" rel="stylesheet">
+
+{% endblock stylers %}
+
+
+{% block body %}
+
+    <div class="form-container">
+        <div class="form-container-main">
+            <h1 class="loginer-header">Register</h1>
+
+            {% if message %}
+                <div class="messager">{{ message }}</div>
+            {% endif %}
+
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <div class="form-item-container">
+                    <input class="form-item" autofocus type="text" name="username" placeholder="Username">
+                </div>
+                <div class="form-item-container">
+                    <input class="form-item" type="email" name="email" placeholder="Email Address">
+                </div>
+                <div class="form-item-container">
+                    <input class="form-item" type="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-item-container">
+                    <input class="form-item" type="password" name="confirmation" placeholder="Confirm Password">
+                </div>
+                <div class="form-item-container">
+                    <input class="submit-button" type="submit" value="Register">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="messager" style="margin: 60px;">Already have an account? <a href="{% url 'login' %}">Log In here.</a></div>
+
+{% endblock %}

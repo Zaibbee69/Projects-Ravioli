@@ -1,0 +1,109 @@
+@use "styles";
+
+
+.dark-theme
+{
+    --userHeadBack: #{styles.$lightGrey};
+    --userHeadFront: #{styles.$smokeyWhite};
+    --userNameFront: #{styles.$lightGrey};
+    --userNameBack: #{styles.$smokeyWhite};
+    --userFollowFront: #{styles.$smokeyWhite};
+    --userFollowBack: #{styles.$lightGrey};
+    --userFollowLinearOne: #{styles.$greyMedium};
+    --userFollowLinearTwo: #{styles.$jetBlack};
+}
+
+.light-theme
+{
+    --userHeadBack: #{styles.$blueModerate};
+    --userHeadFront: #{styles.$blueMedium};
+    --userNameFront: #{styles.$blueExotic};
+    --userNameBack: #{styles.$blueMedium};
+    --userFollowFront: #{styles.$blueExotic};
+    --userFollowBack: #{styles.$blueModerate};
+    --userFollowLinearOne: #{styles.$blueModerate};
+    --userFollowLinearTwo: #{styles.$blueMedium};
+}
+
+*
+{
+    transition: 1s;
+}
+
+.user-head-container
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.user-head-greet
+{
+    color: var(--userHeadFront);
+    border-bottom: 8px solid var(--userHeadBack);
+    font-family: styles.$boldFont;
+}
+
+.user-head-name
+{
+    font-family: styles.$elegantFont;
+    font-size: 38px;
+    color: var(--userNameFront);
+    border-left: 4px solid var(--userNameBack);
+    border-right: 4px solid var(--userNameBack); 
+    padding: 0px 20px;
+}
+
+.user-details-container
+{
+    @extend %flexer-extender;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.user-followers
+{
+    font-family: styles.$modernMonoFont;
+    font-size: 13px;
+    background-image: linear-gradient(var(--userFollowLinearOne), var(--userFollowLinearTwo));
+    padding: 4px 10px;
+    margin-top: 20px;
+    color: styles.$smokeyWhite;
+    border-bottom: 10px groove var(--userFollowLinearTwo);
+}
+
+.follow-button-container
+{
+    @extend %flexer-extender;
+    background-color: var(--userFollowLinearOne);
+    width: 200px;
+    height: 200px;
+    margin-left: 530px;
+    margin-top: 60px;
+    border-radius: 200px;
+}
+
+.follow-button
+{
+    @extend %flexer-extender;
+    @extend %buttoner-extender;
+    @extend %bottom-line-effect-extender;
+    font-family: styles.$decentFont;
+    background-color: var(--userFollowLinearTwo);
+    color: styles.$smokeyWhite;
+    border-bottom: 2px dashed styles.$smokeyWhite;
+
+    &:hover
+    {
+        padding: 12px 50px;
+        transform: rotateZ(8deg);
+    }
+}
+
+.post-header
+{
+    font-size: 32px;
+    font-family: styles.$modernMonoFont;
+    margin: styles.$spacingStandard;
+    text-decoration: underline;
+
+}
