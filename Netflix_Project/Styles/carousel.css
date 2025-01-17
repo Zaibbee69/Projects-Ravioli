@@ -1,0 +1,81 @@
+.carousel 
+{
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    height: 300px;
+    overflow: hidden;
+    border: 4px solid var(--white);
+    margin-left: 300px;
+}
+
+.carousel-item
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fade 25s infinite;
+    opacity: 0;
+}
+
+.carousel-image
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-text
+{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 10%;
+
+    background-color: var(--darkRed);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.carousel-item:nth-child(1)
+{
+    animation-delay: 0s;
+}
+
+.carousel-item:nth-child(2) 
+{
+    animation-delay: 5s;
+}
+
+.carousel-item:nth-child(3)
+{
+    animation-delay: 10s;
+}
+
+.carousel-item:nth-child(4) 
+{
+    animation-delay: 15s;
+}
+
+.carousel-item:nth-child(5) 
+{
+    animation-delay: 20s;
+}
+
+
+@keyframes fade 
+{
+    0%, 20%, 100% 
+    {
+        opacity: 0;
+    }
+    5%, 15% 
+    {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,160 @@
+/*Made variables for swapping colours easily*/
+:root
+{
+    --greyBlack: #181818;
+    --jetBlack: #000000;
+    --white: whitesmoke;
+    --red: #D7171E;
+    --darkRed: #ae0006;
+
+    --leftspace: 20px;
+}
+
+body
+{
+    background-color: var(--greyBlack);
+    font-family: "Roboto", sans-serif;
+    
+    padding-top: 70px;
+}
+
+#pop-main
+{
+    margin-left: var(--leftspace);
+}
+
+#pop-head
+{
+    color: var(--white);
+    font-size: 44px;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: colour 6s infinite;
+}
+
+#pop-text
+{
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#actors-main
+{
+    margin-left: var(--leftspace);
+    width: 800px;
+}
+#actors-head
+{
+    color: var(--white);
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: colour 6s infinite;
+}
+
+#actors-text
+{
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#actors-grid-main
+{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    column-gap: 30px;
+    margin-left: var(--leftspace);
+}
+
+
+.actors-pic-holder
+{
+    width: 150px;
+}
+
+.actors-pic
+{ 
+    width: 100%;
+    border-radius: 50px;
+    border: 5px solid var(--darkRed);
+}
+
+.actors-name
+{
+    color: var(--white);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.footer-main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.footer-text
+{
+    color: var(--white);
+    font-family: cursive;
+    font-size: large;
+}
+
+.footer-textpt2
+{
+    color: gray;
+    font-family: cursive;
+    font-size: medium;
+}
+
+.footer-textpt3
+{
+    color: gray;
+    font-family: cursive;
+    font-size: small;
+}
+
+.footer-textpt4
+{
+    color: gray;
+    font-family: cursive;
+    font-size: smaller;
+}
+
+.web-link
+{
+    color: var(--darkRed);
+}
+@keyframes colour 
+{
+    0%
+    {
+        color: var(--white);
+    }
+    40%
+    {
+        color: var(--red);
+    }
+    70%
+    {
+        color: var(--darkRed);
+    }
+    100%
+    {
+        color: var(--white);
+    }
+}
+
+@keyframes fade 
+{
+    0%, 20%, 100% 
+    {
+        opacity: 0;
+    }
+    5%, 15% 
+    {
+        opacity: 1;
+    }
+}
