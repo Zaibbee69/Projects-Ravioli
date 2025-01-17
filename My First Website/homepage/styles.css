@@ -1,0 +1,126 @@
+/* Colors for the nav-Bar heading */
+
+.navbar
+{
+    background-color: #3C1053FF;
+    border-style: double;
+    border-width: thick;
+    border-color: #1167b1;
+}
+
+.navbar-toggler
+{
+    color:white;
+    background-color: #1167b1;
+}
+
+#about
+{
+    color: grey;
+    text-align: center;
+}
+
+.navbar-brand
+{
+    color: white;
+}
+
+.nav-link
+{
+    color: grey;
+    text-align: center;
+    border-bottom: double;
+    border-color: #1167b1;
+    font-size: medium;
+}
+
+/* Colors for my webpage */
+
+body
+{
+    background-color: grey;
+    background-image: linear-gradient(to right , #ddb9a3  , white) ;
+}
+
+/* Anchor tag for the image*/
+
+#background-image
+{
+    position: fixed;
+    right : -3% ;
+    top: 25%;
+    width: 300px;
+    height: 500px;
+    margin-right: 4em;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+}
+
+/* Colors for my headings */
+
+#div1
+{
+    color: #1167b1;
+    width: 15%;
+    border-color: #3C1053FF;
+    border-bottom: dotted;
+    text-align: left;
+    margin-left: 1em;
+
+}
+
+#div2
+{
+    color: #3C1053FF;
+    width: 10%;
+    border-color: #1167b1;
+    border-bottom: dotted;
+    text-align: left;
+    margin-left: 1em;
+}
+
+#border
+{
+    border-bottom: 6px double #3C1053FF;
+    width: 1000px;
+}
+
+/* For my text */
+
+i
+{
+    color: #1167b1;
+}
+
+p
+{
+    margin-left: 2em;
+    text-align: left;
+}
+
+#p1
+{
+    border-radius: 25px;
+    background: #3C1053FF;
+    padding: 20px;
+    width: 750px;
+    height: 150px;
+    margin-left: 2em;
+}
+
+#p2
+{
+    border-radius: 25px;
+    background: #1167b1;
+    padding: 20px;
+    width: 600px;
+    height: 150px;
+    margin-left: 2em;
+}
+
+#list
+{
+    color: white;
+}
+

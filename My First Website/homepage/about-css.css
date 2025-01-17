@@ -1,0 +1,61 @@
+/*cream #FFF3B0 red #7C0A02 brown #91785D blue #101E4A grey #B3B6B7 */
+
+#butt:hover
+{
+    color:#7C0A02;
+    background-color:#91785D ;
+}
+
+#butt
+{
+    color: #101E4A;
+    border-radius: 20px;
+    border-color: black;
+    margin-left: 1em;
+    background-color: #B3B6B7 ;
+}
+
+#bio-part
+{
+    margin-left: 1em;
+
+}
+
+#bio-head
+{
+    color:#7C0A02;
+    border-bottom: double #91785D;
+    border-width: 10px;
+    width :40px;
+}
+
+#bio-row
+{
+    height: 2px;
+    color: red;
+    background-color: yellow;
+}
+
+#bio-list
+{
+    border-radius: 25px;
+    background: #B3B6B7;
+    padding:25px;
+    width: 750px;
+    height: 150px;
+    margin-left: 1em;
+}
+
+#b
+{
+    background-image: linear-gradient(to right , #FFF3B0 , #B3B6B7);
+}
+
+#carouselExampleSlidesOnly
+{
+    width: 500px;
+    margin: auto;
+}
+
+
+
