@@ -1,0 +1,72 @@
+#linked-job-header
+{
+    color: var(--white);
+    margin-left: 30px;
+}
+
+#linked-job-header-styler
+{
+    color: var(--linkedseablue);
+}
+
+
+#linked-job-text
+{
+    color: var(--white);
+    list-style: square;
+}
+
+#linked-job-cards-main
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.linked-job-cards
+{
+    background-color: var(--white);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.linked-job-pic
+{
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    border: 2px solid var(--linkedblue);
+}
+
+.linked-job-name
+{
+    color: var(--linkedseablue);
+    margin-left: 30px;
+}
+
+.linked-job-button
+{
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--linkedseablue);
+    color: var(--white);
+    margin-left: 40px;
+    margin-bottom: 40px;
+    transition: padding 1s, background-color 1s, opacity 0.15s;
+}
+
+.linked-job-button:hover
+{
+    padding: 15px 50px;
+    background-color: var(--instalightpurple);
+}
+
+.linked-job-button:active
+{
+    opacity: 0.8;
+}

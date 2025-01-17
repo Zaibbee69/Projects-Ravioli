@@ -1,0 +1,58 @@
+:root
+{
+    --white: whitesmoke;
+    --instablue: #4E61CA;
+    --instacandy: #F54F53;
+    --instalightpurple: #C837AB;
+    --linkedblue: #a3e2ff;
+    --linkedseablue: #006898;
+}
+
+body
+{
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+}
+
+#flex-main
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#nav-main
+{
+    background: linear-gradient(to right , #FEC53F, rgb(223, 20, 91), rgb(233, 43, 43), #56a2ed, #2488eb, #006898);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-text
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+}
+
+#end-main
+{
+    background: linear-gradient(to right , #FEC53F, rgb(223, 20, 91), rgb(233, 43, 43), #56a2ed, #2488eb, #006898);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#end-text
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-family: cursive;
+}
+
+
+
+

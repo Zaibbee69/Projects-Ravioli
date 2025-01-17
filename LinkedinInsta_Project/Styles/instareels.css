@@ -1,0 +1,57 @@
+#insta-reels-cards-main
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.insta-reels-cards
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--instacandy);
+
+}
+
+.insta-reels-pic
+{
+    width: 230px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    border: 2px solid var(--instalightpurple);
+}
+
+.insta-reels-button
+{
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--instablue);
+    color: var(--white);
+    margin-bottom: 40px;
+    transition: padding 1s, background-color 1s, opacity 0.15s;
+    position: absolute;
+    bottom: 0;
+    right: 30;
+}
+
+.insta-reels-button:hover
+{
+    padding: 15px 50px;
+    background-color: var(--instacandy);
+}
+
+.insta-reels-button:active
+{
+    opacity: 0.8;
+}
