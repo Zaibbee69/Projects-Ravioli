@@ -1,0 +1,429 @@
+$cream: rgb(255, 255, 239);
+$lightestRed: rgb(255, 191, 191);
+$lightRed: rgb(252, 34, 77);
+$mediumRed: rgb(255, 109, 109);
+$darkRed: maroon;
+$darkestRed: darkred;
+
+
+$elegantFont: Raleway;
+$funkyFont: Edu Australia VIC WA NT Hand;
+$headingFont: Grey Qo;
+$gothFont: Modern Antiqua;
+$defaultFont: Lora;
+$decentFont: Montserrat;
+$modernMonoFont: Roboto Mono;
+$monoFont: monospace;
+
+
+%flexer-extender
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%former
+{
+    height: 35px;
+    width: 200px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    font-size: 14px;
+    font-family: $modernMonoFont;
+}
+
+%naver
+{
+    padding: 10px 40px;
+    border: none;  
+    color: white;
+    transition: 0.15s ease-in;
+    font-family: $modernMonoFont;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+%naver:hover
+{
+    padding: 12px 50px;
+}
+
+%statuser
+{
+    font-style: italic;
+    font-family: $decentFont;
+    font-weight: bold;
+    color: $mediumRed;
+}
+body
+{
+    padding: 60px;
+    font-family: $elegantFont;
+    background-color: $cream;
+    transition: 1s;
+}
+
+.loginer-header
+{
+    @extend %flexer-extender;
+    font-family: $modernMonoFont;
+    font-weight: bold;
+    font-size: 34px;
+    color: $darkestRed;
+    text-decoration: underline;
+    text-decoration-color: $lightRed;
+    margin-bottom: 80px;
+}
+
+.message
+{
+    font-family: $decentFont;
+    color: $lightRed;
+}
+
+.form-item-holder
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+.form-item-input-one
+{
+    @extend %former;
+    background-color: $lightestRed;
+    color: $darkRed;
+    border: 2px solid $darkestRed;
+}
+
+#label-one
+{
+    font-family: $monoFont;
+    color: $mediumRed;
+    font-size: larger;
+
+}
+
+.form-item-input-two
+{
+    @extend %former;
+    background-color: $mediumRed;
+    color: $cream;
+    border: none;
+}
+
+#label-two
+{
+    font-family: $monoFont;
+    color: $mediumRed;
+    font-size: medium;
+}
+
+.loginer-button
+{
+    font-family: $gothFont;
+    font-weight: bold;
+    padding: 10px 60px;
+    cursor: zoom-in;
+    background-color: $lightestRed;
+    color: $darkRed;
+    transition: 0.15s;
+}
+
+.loginer-button:hover
+{
+    padding: 12px 70px;
+    background-color: $lightRed;
+    color: white;
+}
+
+.loginer-button:active
+{
+    opacity: 0.8;
+}
+
+#loginer-second
+{
+    font-family: $gothFont;
+    font-weight: bold;
+    padding: 10px 60px;
+    cursor: zoom-in;
+    background-color: $mediumRed;
+    color: $cream;
+    transition: 0.15s;
+}
+
+#main-header
+{
+    @extend %flexer-extender;
+    font-family: $gothFont;
+    font-size: 38px;
+    color: $lightRed;
+    text-decoration: underline;
+    text-decoration-color: $darkestRed;
+    transition: 0.5s;
+}
+
+#main-header:hover
+{
+    transform: rotate(10deg);
+}
+
+#firstletter
+{
+    font-family: $elegantFont;
+    color: $darkRed;
+}
+
+#user-header
+{
+    font-family: $modernMonoFont;
+    color: $lightRed;
+    border-bottom: 2px solid $lightRed;
+    width: 200px;
+}
+
+#user-header::first-letter
+{
+    font-family: $elegantFont;
+    color: $darkRed;
+}   
+
+.nav-holder
+{
+    @extend %flexer-extender;
+    justify-content: space-evenly;
+    height: 60px;
+    background-color: $lightRed;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 1s;
+    margin-bottom: 60px;
+}
+
+.nav-item-one
+{
+    @extend %naver;
+    background-color: $lightestRed;
+}
+
+.nav-item-one:hover
+{
+    background-color: $mediumRed;
+}
+
+.nav-item-two
+{
+    @extend %naver;
+    background-color: $mediumRed;
+}
+
+.nav-item-two:hover
+{
+    background-color: $lightestRed;
+}
+
+.nav-item-three
+{
+    @extend %naver;
+    background-color: $darkRed;
+}
+
+.nav-item-three:hover
+{
+    background-color: $lightestRed;
+}
+
+.mail-header
+{
+    font-family: $modernMonoFont;
+    font-size: 30px;
+    text-align: center;
+    color: $mediumRed;
+    text-decoration: underline;
+    text-decoration-color: $mediumRed;
+}
+
+.email-component
+{
+    @extend %flexer-extender;
+    justify-content: space-between;
+    margin: 14px 12px;
+    padding: 20px;
+    background-color: white;
+    cursor: pointer;
+    border-bottom: 2px solid $mediumRed;
+    transition: 1s;
+}
+
+.email-component:hover
+{
+    transform: scale(1.005);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.read-status 
+{
+    @extend %statuser;
+}
+
+.name-status
+{
+    @extend %statuser;
+    font-style: normal;
+    font-size: medium;
+    font-family: $modernMonoFont;
+    text-decoration: underline;
+}
+
+.archive-button
+{
+    @extend %naver;
+    background-color: $mediumRed;
+}
+
+.archive-button:hover
+{
+    background-color: $lightestRed;
+}
+
+@keyframes smoother {
+    from{
+        opacity: 1;
+    }
+    to{
+        margin: 0px 0px;
+        padding: 0px 0px;
+        opacity: 0.7;
+    }
+}
+
+.smoo-ther
+{
+    animation: smoother 1s;
+}
+
+#compose-form
+{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.compose-item-holder
+{
+    @extend %flexer-extender;
+}
+
+#compose-sender
+{
+    @extend %former;
+    border: 2px solid $lightestRed;
+    margin-top: 42px;
+    color: $lightRed;
+}
+
+#compose-recipients
+{
+    @extend %former;
+    border: 2px solid $lightestRed;
+    margin-left: 20px;
+    background-color: $lightRed;
+    color: white;
+}
+
+#compose-subject
+{
+    @extend %former;
+    color: $mediumRed;
+    border: 2px solid $mediumRed;
+}
+
+#compose-body
+{
+    border: 2px solid $mediumRed;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    margin-left: 20px;
+    color: $mediumRed;
+    padding: 10px 10px;
+}
+
+#compose-body::placeholder
+{
+    font-family: $modernMonoFont;
+    color: $mediumRed;
+}
+
+.footer
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+}
+
+#footer1
+{
+    color: $mediumRed;
+    font-family: $monoFont;
+}
+
+#footer2
+{
+    font-family: $modernMonoFont;
+}
+
+#footer3
+{
+    font-weight: bold;
+}
+
+#email-view
+{
+    @extend %flexer-extender;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stronger
+{
+    margin-right: 15px;
+    color: $darkestRed;
+    font-family: $decentFont;
+}
+
+.reply-one
+{
+    color: $lightRed;
+    font-family: $modernMonoFont;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.reply-two
+{
+    color: $mediumRed;
+    font-family: $elegantFont;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+#reply-button
+{
+    @extend %naver;
+    background-color: $mediumRed;
+    color: white;
+}
+
+.reply-body
+{
+    @extend %flexer-extender;
+    background-color: $lightestRed;
+    color: $darkRed;
+    font-family: $modernMonoFont;
+    margin: 30px 60px;
+    border-bottom: 2px solid $darkRed;
+}

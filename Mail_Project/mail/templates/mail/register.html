@@ -1,0 +1,35 @@
+{% extends "mail/layout.html" %}
+
+{% block body %}
+
+    <h2 class="loginer-header">Register</h2>
+
+    {% if message %}
+        <div class="message">{{ message }}</div>
+    {% endif %}
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        <div class="form-item-holder">
+            <label for="form-item-input-one" id="label-one">Email Address</label>
+            <input class="form-item-input-one" type="email" name="email">
+        </div>
+        <div class="form-item-holder">
+            <label for="form-item-input-one" id="label-one">Password</label>
+            <input class="form-item-input-one" type="password" name="password">
+        </div>
+        <div class="form-item-holder">
+            <label for="form-item-input-one" id="label-two">Confirm Password</label>
+            <input class="form-item-input-two" type="password" name="confirmation">
+        </div>
+
+        <div class="form-item-holder">
+            <input id="loginer-second" class="loginer-button" type="submit" value="Register">
+        </div>
+    </form>
+
+    <br><br>
+    <br><br>
+    <p class="message">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    <!--Main Website Header-->
+    <h1 id="main-header"><span id="firstletter">M</span>ail<span id="firstletter">N</span>est</h1>
+
+    <h2 id="user-header">{{ request.user.email }}</h2>
+
+    <nav class="nav-holder">
+        <div class="nav-item-holder">
+            <button class="nav-item-one" id="inbox">Inbox</button>
+        </div>
+        <div class="nav-item-holder">
+            <button class="nav-item-two" id="compose">Compose</button>
+        </div>
+        <div class="nav-item-holder">
+            <button class="nav-item-one" id="sent">Sent</button>
+        </div>
+        <div class="nav-item-holder">
+            <button class="nav-item-two" id="archived">Archived</button>
+        </div>
+        <div class="nav-item-holder">
+            <a class="nav-item-three" href="{% url 'logout' %}" style="text-decoration: none;">Log Out</a>
+        </div>
+    </nav>
+
+
+    <div id="emails-view">
+    </div>
+
+    <div id="email-view">
+    </div>
+    
+    <div id="compose-view">
+        <h3 class="mail-header">New Email</h3>
+        <hr>
+        <form id="compose-form">
+            <div class="compose-item-holder">
+                <labele id="label-one">From:</label> <input disabled class="form-control" id="compose-sender" value="{{ request.user.email }}">
+            </div>
+            <div class="compose-item-holder">
+                <labele id="label-one">To:</label> <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="compose-item-holder">
+                <labele id="label-one" style="margin-right: 12px;">Subject:</label><input class="form-control" id="compose-subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <div class="compose-item-holder">
+                <input type="submit" style="margin-bottom: 20px;"class="nav-item-two"/>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+    <script src="{% static 'mail/inbox.js' %}"></script>
+
+{% endblock %}

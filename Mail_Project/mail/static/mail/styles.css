@@ -1,0 +1,334 @@
+.reply-body, #email-view, .footer, .compose-item-holder, .email-component, .nav-holder, #main-header, .form-item-holder, .loginer-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#compose-subject, #compose-recipients, #compose-sender, .form-item-input-two, .form-item-input-one {
+  height: 35px;
+  width: 200px;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-family: Roboto Mono;
+}
+
+#reply-button, .archive-button, .nav-item-three, .nav-item-two, .nav-item-one {
+  padding: 10px 40px;
+  border: none;
+  color: white;
+  transition: 0.15s ease-in;
+  font-family: Roboto Mono;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+#reply-button:hover, .archive-button:hover, .nav-item-three:hover, .nav-item-two:hover, .nav-item-one:hover {
+  padding: 12px 50px;
+}
+
+.name-status, .read-status {
+  font-style: italic;
+  font-family: Montserrat;
+  font-weight: bold;
+  color: rgb(255, 109, 109);
+}
+
+body {
+  padding: 60px;
+  font-family: Raleway;
+  background-color: rgb(255, 255, 239);
+  transition: 1s;
+}
+
+.loginer-header {
+  font-family: Roboto Mono;
+  font-weight: bold;
+  font-size: 34px;
+  color: darkred;
+  text-decoration: underline;
+  text-decoration-color: rgb(252, 34, 77);
+  margin-bottom: 80px;
+}
+
+.message {
+  font-family: Montserrat;
+  color: rgb(252, 34, 77);
+}
+
+.form-item-holder {
+  flex-direction: column;
+}
+
+.form-item-input-one {
+  background-color: rgb(255, 191, 191);
+  color: maroon;
+  border: 2px solid darkred;
+}
+
+#label-one {
+  font-family: monospace;
+  color: rgb(255, 109, 109);
+  font-size: larger;
+}
+
+.form-item-input-two {
+  background-color: rgb(255, 109, 109);
+  color: rgb(255, 255, 239);
+  border: none;
+}
+
+#label-two {
+  font-family: monospace;
+  color: rgb(255, 109, 109);
+  font-size: medium;
+}
+
+.loginer-button {
+  font-family: Modern Antiqua;
+  font-weight: bold;
+  padding: 10px 60px;
+  cursor: zoom-in;
+  background-color: rgb(255, 191, 191);
+  color: maroon;
+  transition: 0.15s;
+}
+
+.loginer-button:hover {
+  padding: 12px 70px;
+  background-color: rgb(252, 34, 77);
+  color: white;
+}
+
+.loginer-button:active {
+  opacity: 0.8;
+}
+
+#loginer-second {
+  font-family: Modern Antiqua;
+  font-weight: bold;
+  padding: 10px 60px;
+  cursor: zoom-in;
+  background-color: rgb(255, 109, 109);
+  color: rgb(255, 255, 239);
+  transition: 0.15s;
+}
+
+#main-header {
+  font-family: Modern Antiqua;
+  font-size: 38px;
+  color: rgb(252, 34, 77);
+  text-decoration: underline;
+  text-decoration-color: darkred;
+  transition: 0.5s;
+}
+
+#main-header:hover {
+  transform: rotate(10deg);
+}
+
+#firstletter {
+  font-family: Raleway;
+  color: maroon;
+}
+
+#user-header {
+  font-family: Roboto Mono;
+  color: rgb(252, 34, 77);
+  border-bottom: 2px solid rgb(252, 34, 77);
+  width: 200px;
+}
+
+#user-header::first-letter {
+  font-family: Raleway;
+  color: maroon;
+}
+
+.nav-holder {
+  justify-content: space-evenly;
+  height: 60px;
+  background-color: rgb(252, 34, 77);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 1s;
+  margin-bottom: 60px;
+}
+
+.nav-item-one {
+  background-color: rgb(255, 191, 191);
+}
+
+.nav-item-one:hover {
+  background-color: rgb(255, 109, 109);
+}
+
+.nav-item-two {
+  background-color: rgb(255, 109, 109);
+}
+
+.nav-item-two:hover {
+  background-color: rgb(255, 191, 191);
+}
+
+.nav-item-three {
+  background-color: maroon;
+}
+
+.nav-item-three:hover {
+  background-color: rgb(255, 191, 191);
+}
+
+.mail-header {
+  font-family: Roboto Mono;
+  font-size: 30px;
+  text-align: center;
+  color: rgb(255, 109, 109);
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 109, 109);
+}
+
+.email-component {
+  justify-content: space-between;
+  margin: 14px 12px;
+  padding: 20px;
+  background-color: white;
+  cursor: pointer;
+  border-bottom: 2px solid rgb(255, 109, 109);
+  transition: 1s;
+}
+
+.email-component:hover {
+  transform: scale(1.005);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.name-status {
+  font-style: normal;
+  font-size: medium;
+  font-family: Roboto Mono;
+  text-decoration: underline;
+}
+
+.archive-button {
+  background-color: rgb(255, 109, 109);
+}
+
+.archive-button:hover {
+  background-color: rgb(255, 191, 191);
+}
+
+@keyframes smoother {
+  from {
+    opacity: 1;
+  }
+  to {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    opacity: 0.7;
+  }
+}
+.smoo-ther {
+  animation: smoother 1s;
+}
+
+#compose-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#compose-sender {
+  border: 2px solid rgb(255, 191, 191);
+  margin-top: 42px;
+  color: rgb(252, 34, 77);
+}
+
+#compose-recipients {
+  border: 2px solid rgb(255, 191, 191);
+  margin-left: 20px;
+  background-color: rgb(252, 34, 77);
+  color: white;
+}
+
+#compose-subject {
+  color: rgb(255, 109, 109);
+  border: 2px solid rgb(255, 109, 109);
+}
+
+#compose-body {
+  border: 2px solid rgb(255, 109, 109);
+  background-color: whitesmoke;
+  border-radius: 6px;
+  margin-left: 20px;
+  color: rgb(255, 109, 109);
+  padding: 10px 10px;
+}
+
+#compose-body::-moz-placeholder {
+  font-family: Roboto Mono;
+  color: rgb(255, 109, 109);
+}
+
+#compose-body::placeholder {
+  font-family: Roboto Mono;
+  color: rgb(255, 109, 109);
+}
+
+.footer {
+  flex-direction: column;
+}
+
+#footer1 {
+  color: rgb(255, 109, 109);
+  font-family: monospace;
+}
+
+#footer2 {
+  font-family: Roboto Mono;
+}
+
+#footer3 {
+  font-weight: bold;
+}
+
+#email-view {
+  flex-direction: column;
+  background-color: white;
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.stronger {
+  margin-right: 15px;
+  color: darkred;
+  font-family: Montserrat;
+}
+
+.reply-one {
+  color: rgb(252, 34, 77);
+  font-family: Roboto Mono;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.reply-two {
+  color: rgb(255, 109, 109);
+  font-family: Raleway;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+#reply-button {
+  background-color: rgb(255, 109, 109);
+  color: white;
+}
+
+.reply-body {
+  background-color: rgb(255, 191, 191);
+  color: maroon;
+  font-family: Roboto Mono;
+  margin: 30px 60px;
+  border-bottom: 2px solid maroon;
+}/*# sourceMappingURL=styles.css.map */
