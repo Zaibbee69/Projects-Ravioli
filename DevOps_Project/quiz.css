@@ -78,6 +78,8 @@ body {
 
 .nav-main-item {
   font-size: 32px;
+  margin-left: 25px;
+  flex: 1;
 }
 
 .nav-side-item-ctn {
