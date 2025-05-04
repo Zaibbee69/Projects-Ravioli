@@ -1,0 +1,33 @@
+{% extends 'main_app/layout.html' %}
+
+{% block main %}
+<div class="container">
+    <h2 class="search-header"><i style="color: #b4a7d6 !important;" class="fa-solid fa-cloud"></i> Search Results for "<span class="marker">{{ query }}</span>"</h2>
+    
+    {% if movies %}
+    <div class="movies-grid">
+        {% for movie in movies %}
+        <a style="text-decoration: none;"href="{% url 'movie_details' movie.id %}" class="movie-link">
+            <div class="card">
+            
+                <img src="https://image.tmdb.org/t/p/w300{{ movie.poster_path }}" alt="{{ movie.title }}">
+            
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.title }}</h5>
+                    <p class="card-text">{{ movie.overview|slice:":100" }}...</p>
+                    <p class="card-footer text-body-secondary" style="color: #b4a7d6 !important;"><i style="color: #BB86FC;"class="fa-solid fa-star"></i> Rating {{ movie.vote_average }}</p>
+                </div>
+            </div>
+        </a>
+            
+        {% endfor %}
+
+
+
+
+    </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</div>
+{% endblock main%}

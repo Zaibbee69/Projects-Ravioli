@@ -1,0 +1,48 @@
+{% extends "main_app/layout.html" %}
+
+{% load static %}
+
+
+{% block main %}
+
+
+<section class="hero-section">
+    <div class="img-ctn">
+        <img src="{% static "main-img.jpg" %}" class="img-fluid hero-imger" alt="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-text-ctn">
+            <h1 class="hero-text">
+                Experience Cinema <span class="hero-styler">Like Never Before.</span>
+            </h1>
+            <p class="hero-text-sub">
+                With Film Horizon you can watch over 20,000 free movies and shows, plus Live TV on almost any device. What are you waiting for?
+            </p>
+            <button class="btn hero-btn">Watch Now</button>
+        </div>
+    </div>
+</section>
+
+<section class="body-section">
+    {% for category, movies in movie_categories.items %}
+        <h1 id="{{ category|slugify }}" class="pop-header">{{ category }}</h1>
+        <div class="pop-section">
+            <div class="card-container">
+                {% for movie in movies %}
+                <a style="text-decoration: none;"href="{% url 'movie_details' movie.id %}" class="movie-link">
+                    <div class="card">
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" class="card-img-top" alt="{{ movie.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ movie.title }}</h5>
+                            <p class="card-text">{{ movie.overview|slice:":100" }}...</p>
+                            <p class="card-footer text-body-secondary" style="color: #b4a7d6 !important;"><i style="color: #BB86FC;"class="fa-solid fa-star"></i> Rating {{ movie.vote_average }}</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    
+</section>
+
+{% endblock main %}

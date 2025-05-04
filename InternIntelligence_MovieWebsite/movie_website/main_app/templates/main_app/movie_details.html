@@ -1,0 +1,77 @@
+{% extends "main_app/layout.html" %}
+
+{% load static %}
+
+
+{% block main %}
+
+<div class="container movie-details">
+    <div class="movie-header">
+        <h1>{{ movie.title }}</h1>
+        <p style="color: #b4a7d6;"class="release-date"><strong class="marker">Released:</strong> {{ movie.release_date }}</p>
+    </div>
+
+    <div class="movie-content">
+        <div class="movie-poster">
+            <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}">
+        </div>
+        <div class="movie-info">
+            <p><strong class="marker">Duration:</strong> {{ movie.runtime }} min</p>
+            <p><strong class="marker">Overview:</strong> {{ movie.overview }}</p>
+            <p><strong class="marker">Genres:</strong> 
+                {% for genre in movie.genres %}
+                    {{ genre.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+            <p><strong class="marker">Rating:</strong> <i style="color: #BB86FC;"class="fa-solid fa-star"></i> {{ movie.vote_average }}/10 ({{ movie.vote_count }} votes)</p>
+        </div>
+    </div>
+
+    <!-- Movie Cast Section -->
+    <div class="movie-cast">
+        <h2><i style="color: #BB86FC;" class="fa-solid fa-money-bill"></i> Cast <i style="color: #b4a7d6;" class="fa-solid fa-money-bill"></i></h2>
+        <div class="cast-container">
+            {% for actor in credits.cast|slice:":10" %}
+            <div class="cast-member">
+                <img src="https://image.tmdb.org/t/p/w200{{ actor.profile_path }}" alt="{{ actor.name }}">
+                <p class="actor-name">{{ actor.name }}</p>
+                <p>Acting As</p>
+                <p class="character"> {{ actor.character }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Similar Movies Section -->
+    <h2 class="similar-header"><i style="color: #b4a7d6;" class="fa-solid fa-dice-two"></i> Similar Movies</h2>
+    <div class="pop-section">
+        <div class="card-container">
+            {% for similar in similar_movies|slice:":10" %}
+            <a style="text-decoration: none;"href="{% url 'movie_details' similar.id %}" class="movie-link">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w500{{ similar.poster_path }}" class="card-img-top" alt="{{ similar.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ similar.title }}</h5>
+                        <p class="card-text">{{ similar.overview|slice:":100" }}...</p>
+                        <p class="card-footer text-body-secondary" style="color: #b4a7d6 !important;"><i style="color: #BB86FC;"class="fa-solid fa-star"></i> Rating {{ similar.vote_average }}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</div>
+{% endblock main %}
