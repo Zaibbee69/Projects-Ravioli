@@ -1,3 +1,9 @@
 [submodule "Portfolio"]
 	path = Portfolio
 	url = git@github.com:Zaibbee69/Portfolio.git
+[submodule "Todo-List-App"]
+	path = Todo-List-App
+	url = git@github.com:Zaibbee69/Todo-List-App.git
+[submodule "FARAS-Car-Insurance"]
+	path = FARAS-Car-Insurance
+	url = git@github.com:Zaibbee69/FARAS-Car-Insurance.git
