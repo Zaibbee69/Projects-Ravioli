@@ -7,3 +7,6 @@
 [submodule "FARAS-Car-Insurance"]
 	path = FARAS-Car-Insurance
 	url = git@github.com:Zaibbee69/FARAS-Car-Insurance.git
+[submodule "MovieWind"]
+	path = MovieWind
+	url = git@github.com:Zaibbee69/MovieWind.git
