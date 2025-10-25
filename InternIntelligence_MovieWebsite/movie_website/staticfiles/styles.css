@@ -1,0 +1,460 @@
+body {
+  position: relative;
+  font-family: Roboto;
+  padding: 0px;
+  padding-top: 44px;
+  margin: 0px;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, #121212, #121212, #121212, #121212, #121212, #121212, #693C83);
+}
+
+.nav-logo-ctn {
+  position: absolute; /* It will stay at the top until scrolled */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000; /* Change as needed */
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1050; /* Higher than navbar */
+  border: none;
+}
+
+.nav-logo {
+  font-size: 26px;
+  font-family: Tektur;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.logo-style {
+  color: #BB86FC;
+  font-style: italic;
+}
+
+.naver {
+  background-color: black !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1040;
+}
+
+.nav-element {
+  text-decoration: none;
+  font-family: Exo;
+  font-weight: bold;
+  font-size: 16px;
+  flex: 1;
+  color: white;
+}
+
+.nav-search {
+  padding: 10px 40px;
+  border-radius: 30px;
+  border: none;
+}
+
+.home-btn {
+  border: 2px solid #b4a7d6 !important;
+  border-radius: 80px;
+  padding: 8px 20px;
+  transition: 0.15s;
+}
+.home-btn:hover {
+  background-color: #693C83;
+  color: #EDEDED;
+  border: 2px solid #EDEDED !important;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.fa-fire, .fa-video-slash {
+  color: #B197FC;
+}
+
+.searcher {
+  color: #b4a7d6 !important;
+  border: 2px solid #b4a7d6 !important;
+  transition: 0.15s;
+}
+.searcher:hover {
+  color: #EDEDED !important;
+  background-color: #b4a7d6 !important;
+}
+
+.search-bar {
+  background-color: #1E1E1E !important;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+.hero-section .img-ctn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.hero-section .img-ctn .hero-imger {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-section .img-ctn .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+.hero-section .img-ctn .hero-text-ctn {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  width: 500px;
+  padding: 40px;
+  background: linear-gradient(to right, rgba(30, 30, 46, 0.9), rgba(0, 0, 0, 0));
+  color: #EDEDED;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transform: translateY(-50%);
+}
+
+.hero-styler {
+  color: #BB86FC;
+}
+
+.pop-header {
+  color: #BB86FC;
+  font-size: xx-large;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+.pop-section {
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.pop-section {
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents wrapping */
+  padding-bottom: 10px;
+}
+
+.card-container {
+  display: flex;
+  gap: 10px; /* Space between cards */
+}
+
+.card {
+  flex: 0 0 auto; /* Prevents shrinking */
+  width: 200px; /* Adjust as needed */
+  scroll-snap-align: start;
+}
+
+.card img {
+  width: 100%; /* Makes image fully fit the card */
+  height: 250px; /* Fixes image height */
+  -o-object-fit: cover;
+     object-fit: cover; /* Ensures images don't stretch */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures proper spacing */
+  padding: 10px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap; /* Keeps text on one line */
+  overflow: hidden; /* Prevents text from overflowing */
+  text-overflow: ellipsis; /* Adds "..." when text is too long */
+}
+
+.card-text {
+  font-size: 0.9rem;
+  line-height: 1.2; /* Adjusts line spacing */
+  height: 50px; /* Limits to about 2-3 lines */
+  overflow: hidden; /* Prevents text from spilling out */
+  text-overflow: ellipsis; /* Adds "..." when text overflows */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Allows max 3 lines */
+  -webkit-box-orient: vertical;
+  white-space: normal; /* Allows multi-line text */
+  color: #A0A0A0;
+}
+
+.card-time {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.pop-section {
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Firefox */
+}
+
+.pop-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.pop-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
+.card {
+  background-color: #1E1E1E;
+  color: #EDEDED;
+}
+
+.hero-btn {
+  background-color: #BB86FC;
+  color: #EDEDED;
+  transition: 0.15s;
+}
+.hero-btn:hover {
+  opacity: 0.9;
+}
+
+.movie-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  border: 2px solid transparent;
+}
+.movie-link:hover {
+  border: 2px solid #b4a7d6;
+}
+
+.card {
+  overflow: hidden; /* Ensures the image doesn't overflow */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie-link:hover .card-img-top {
+  transform: scale(1.1); /* Zooms in the poster image only */
+}
+
+footer {
+  background: rgba(30, 30, 46, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+footer .footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+footer .footer-links li {
+  display: inline;
+}
+footer .footer-links li a {
+  color: #b4a7d6;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+footer .footer-links li a:hover {
+  color: #d1c4e9;
+}
+footer .social-icons {
+  display: flex;
+  gap: 15px;
+}
+footer .social-icons a {
+  font-size: 1.5rem;
+  color: #b4a7d6;
+  transition: transform 0.3s ease-in-out;
+}
+footer .social-icons a:hover {
+  transform: scale(1.1);
+  color: #d1c4e9;
+}
+
+.movie-details {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.movie-header {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+.movie-header h1 {
+  text-decoration: underline;
+  text-decoration-color: #693C83;
+}
+.movie-header p {
+  color: #BB86FC;
+}
+
+.marker {
+  color: #BB86FC;
+}
+
+.movie-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-poster img {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.movie-cast {
+  margin-top: 30px;
+}
+
+.cast-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cast-member {
+  text-align: center;
+  min-width: 120px;
+}
+
+.cast-member img {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.movie-details {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.movie-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.movie-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.movie-poster img {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.movie-cast, .similar-movies {
+  margin-top: 30px;
+}
+
+.cast-container, .similar-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.cast-member, .similar-card {
+  text-align: center;
+  min-width: 120px;
+}
+
+.cast-member img, .similar-card img {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cast-member img:hover, .similar-card img:hover {
+  transform: scale(1.1);
+}
+
+.movie-cast h2 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.release-date {
+  color: #b4a7d6;
+}
+
+.actor-name {
+  margin-top: 40px;
+  font-weight: bold;
+  color: #b4a7d6;
+}
+
+.character {
+  color: #BB86FC;
+}
+
+.similar-header {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-decoration: underline;
+  text-decoration-color: #BB86FC;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.search-header {
+  margin-top: 80px;
+  margin-bottom: 60px;
+  text-decoration: underline;
+  text-decoration-color: #BB86FC;
+  color: #EDEDED;
+}

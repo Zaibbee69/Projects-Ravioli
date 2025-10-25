@@ -1,0 +1,548 @@
+$primaryBgd: #121212;
+$secondaryBgd: #1E1E1E;
+$textPr: #E0E0E0;
+$textSr: #A0A0A0;
+$success: #03DAC6;
+$warning: #FFB74D;
+$error: #CF6679;
+
+
+$blackGrey: #121212;
+$deepPurple: #693C83;
+$mediumPurple: rgba(30, 30, 46, 0.9);
+$mutedPinkish: #B5838D;
+$offWhite: #EDEDED;
+$lighterBlack: #1E1E1E;
+$lightPurple: #b4a7d6;
+$moderatePurple:  #BB86FC;
+
+$robotoFont: Roboto;
+$tekturFont: Tektur;
+$exoFont: Exo;
+
+%flexer-extender
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body
+{
+    position: relative;
+    font-family: $robotoFont;
+    padding: 0px;
+    padding-top: 44px;
+    margin: 0px;
+    box-sizing: border-box;
+   
+    background: linear-gradient(to bottom, $blackGrey, $blackGrey, $blackGrey, $blackGrey, $blackGrey, $blackGrey, $deepPurple);
+}
+
+.nav-logo-ctn
+{
+    position: absolute; /* It will stay at the top until scrolled */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000; /* Change as needed */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1050; /* Higher than navbar */
+    border: none;
+}
+
+.nav-logo
+{
+    font-size: 26px;
+    font-family: $tekturFont;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.logo-style
+{
+    color: $moderatePurple;
+    font-style: italic;
+}
+
+.naver
+{
+    background-color: black !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+}
+
+.nav-element
+{
+    text-decoration: none;
+    font-family: $exoFont;
+    font-weight: bold;
+    font-size: 16px;
+    flex: 1;
+    color: white;
+}
+
+.nav-search
+{
+    padding: 10px 40px;
+    border-radius: 30px;
+    border: none;
+}
+
+.home-btn
+{
+    border: 2px solid $lightPurple !important;
+    border-radius: 80px;
+    padding: 8px 20px;
+    transition: 0.15s;
+    &:hover
+    {
+        background-color: $deepPurple;
+        color: $offWhite;
+        border: 2px solid $offWhite !important;
+    }
+}
+
+footer
+{
+    margin-top: 100px;
+}
+
+.fa-fire, .fa-video-slash
+{
+    color: #B197FC;
+}
+
+.searcher
+{
+    color: $lightPurple !important;
+    border: 2px solid $lightPurple !important;
+    transition: 0.15s;
+
+    &:hover
+    {
+        color: $offWhite !important;
+        background-color: $lightPurple !important;
+    }
+}
+
+.search-bar
+{
+    background-color: $lighterBlack !important;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; // Adjust height based on your needs
+    overflow: hidden;
+    margin-bottom: 90px;
+
+    .img-ctn {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .hero-imger {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); 
+            // Darker at the top, fades out towards the bottom
+        }
+
+        .hero-text-ctn {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 500px;
+            padding: 40px;
+            background: linear-gradient(to right, $mediumPurple, rgba(0, 0, 0, 0)); 
+            color: $offWhite;
+            backdrop-filter: blur(10px);
+            transform: translateY(-50%); // Centers the text vertically
+        }
+    }
+}
+
+.hero-styler
+{
+    color: $moderatePurple;
+}
+
+.pop-header
+{
+    color: $moderatePurple;
+    font-size: xx-large;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.pop-section {
+    margin-left: 20px;
+    display: flex;
+    flex-wrap: wrap; // Ensures responsiveness
+    gap: 40px; // Adds spacing between cards
+    align-items: flex-start; // Aligns items properly
+    margin-bottom: 40px;
+}
+
+.pop-section {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping */
+    padding-bottom: 10px;
+}
+
+.card-container {
+    display: flex;
+    gap: 10px; /* Space between cards */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevents shrinking */
+    width: 200px; /* Adjust as needed */
+    scroll-snap-align: start;
+}
+
+.card img {
+    width: 100%; /* Makes image fully fit the card */
+    height: 250px; /* Fixes image height */
+    object-fit: cover; /* Ensures images don't stretch */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures proper spacing */
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap; /* Keeps text on one line */
+    overflow: hidden; /* Prevents text from overflowing */
+    text-overflow: ellipsis; /* Adds "..." when text is too long */
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.2; /* Adjusts line spacing */
+    height: 50px; /* Limits to about 2-3 lines */
+    overflow: hidden; /* Prevents text from spilling out */
+    text-overflow: ellipsis; /* Adds "..." when text overflows */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Allows max 3 lines */
+    -webkit-box-orient: vertical;
+    white-space: normal; /* Allows multi-line text */
+    color: $textSr;
+}
+
+
+.card-time {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+
+.pop-section {
+    scroll-behavior: smooth;
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Firefox */
+}
+
+.pop-section::-webkit-scrollbar {
+    height: 8px;
+}
+
+.pop-section::-webkit-scrollbar-thumb 
+{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+}
+
+
+
+.card
+{
+    background-color: $lighterBlack;
+    color: $offWhite;
+
+}
+
+.hero-btn
+{
+    background-color: $moderatePurple;
+    color: $offWhite;
+    transition: 0.15s;
+    &:hover
+    {
+        opacity: 0.9;
+    }
+}
+
+.movie-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    border: 2px solid transparent;
+
+    &:hover
+    {
+        border: 2px solid $lightPurple;
+    }
+}
+
+.card {
+    overflow: hidden; /* Ensures the image doesn't overflow */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.card-img-top {
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-link:hover .card-img-top {
+    transform: scale(1.1); /* Zooms in the poster image only */
+}
+
+
+
+footer {
+    background: rgba(30, 30, 46, 0.9);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+
+        li {
+            display: inline;
+
+            a {
+                color: #b4a7d6;
+                text-decoration: none;
+                transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: #d1c4e9;
+                }
+            }
+        }
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+
+        a {
+            font-size: 1.5rem;
+            color: #b4a7d6;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+                color: #d1c4e9;
+            }
+        }
+    }
+}
+
+
+
+.movie-details {
+    margin-top: 30px;
+    color: #fff;
+}
+
+.movie-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 100px;
+
+    h1
+    {
+        text-decoration: underline;
+        text-decoration-color: $deepPurple;
+    }
+
+    p
+    {
+        color: $moderatePurple;
+    }
+}
+
+
+.marker
+{
+    color: $moderatePurple;
+}
+
+.movie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.movie-poster img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.movie-cast {
+    margin-top: 30px;
+}
+
+.cast-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.cast-member {
+    text-align: center;
+    min-width: 120px;
+}
+
+.cast-member img {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+
+.movie-details {
+    margin-top: 30px;
+    color: #fff;
+}
+
+.movie-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.movie-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.movie-poster img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.movie-cast, .similar-movies {
+    margin-top: 30px;
+}
+
+.cast-container, .similar-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.cast-member, .similar-card {
+    text-align: center;
+    min-width: 120px;
+}
+
+.cast-member img, .similar-card img {
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cast-member img:hover, .similar-card img:hover {
+    transform: scale(1.1);
+}
+
+.movie-cast
+{
+    h2
+    {
+        margin-top: 60px;
+        margin-bottom: 60px;
+
+    }
+}
+
+.release-date
+{
+    color: $lightPurple;
+}
+
+.actor-name
+{
+    margin-top: 40px;
+    font-weight: bold;
+    color: $lightPurple;
+}
+
+.character
+{
+    color: $moderatePurple;
+}
+
+.similar-header
+{
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-decoration: underline;
+    text-decoration-color: $moderatePurple;
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.search-header
+{
+    margin-top: 80px;
+    margin-bottom: 60px;
+    text-decoration: underline;
+    text-decoration-color: $moderatePurple;
+    color: $offWhite;
+}
