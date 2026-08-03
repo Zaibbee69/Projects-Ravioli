@@ -10,3 +10,9 @@
 [submodule "MovieWind"]
 	path = MovieWind
 	url = git@github.com:Zaibbee69/MovieWind.git
+[submodule "Missing-Persons-and-Crime-Pattern-Tracking-System"]
+	path = Missing-Persons-and-Crime-Pattern-Tracking-System
+	url = git@github.com:Zaibbee69/Missing-Persons-and-Crime-Pattern-Tracking-System.git
+[submodule "hidden-object-game"]
+	path = hidden-object-game
+	url = git@github.com:Zaibbee69/hidden-object-game.git
